@@ -1,7 +1,7 @@
 @import '../../../styles/settings.scss';
 
 .root {
-  background-color: black;
+  background-color: $main-color;
   position: fixed;
   top: 0;
   right: 0;
@@ -14,7 +14,7 @@
 }
 
 .title_link {
-  color: white;
+  color: $secondary-color;
   text-decoration: none;
 
 }
@@ -30,12 +30,12 @@
 }
 
 .navigation_link {
-  color: white;
+  color: $secondary-color;
   text-decoration: none;
   padding-bottom: 2px;
   font-size: 25px;
 }
 
 .active {
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid $secondary-color;;
 }
