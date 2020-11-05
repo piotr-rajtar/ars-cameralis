@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import clsx from 'clsx';
 
@@ -8,11 +9,44 @@ import clsx from 'clsx';
 
 import styles from './Header.module.scss';
 
+
 const Component = ({ className, children }) => (
-  <div className={clsx(className, styles.root)}>
-    <h1>Header</h1>
-    {children}
-  </div>
+  <header className={clsx(className, styles.root)}>
+    <h1 className={styles.title}>
+      <NavLink exact to='/' className={styles.title_link}>
+        Ars Cameralis
+      </NavLink>
+    </h1>
+    <nav>
+      <ul className={styles.navigation}>
+        <li className={styles.navigation_item}>
+          <NavLink exact to='/' activeClassName={styles.active} className={styles.navigation_link}>
+            Strona główna
+          </NavLink>
+        </li>
+        <li className={styles.navigation_item}>
+          <NavLink exact to='/kalendarz' activeClassName={styles.active} className={styles.navigation_link}>
+            Kalendarium
+          </NavLink>
+        </li>
+        <li className={styles.navigation_item}>
+          <NavLink exact to='/czlonkowie' activeClassName={styles.active} className={styles.navigation_link}>
+            Członkowie
+          </NavLink>
+        </li>
+        <li className={styles.navigation_item}>
+          <NavLink exact to='/galeria' activeClassName={styles.active} className={styles.navigation_link}>
+            Galeria
+          </NavLink>
+        </li>
+        <li className={styles.navigation_item}>
+          <NavLink exact to='/kontakt' activeClassName={styles.active} className={styles.navigation_link}>
+            Kontakt
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
+  </header>
 );
 
 Component.propTypes = {
