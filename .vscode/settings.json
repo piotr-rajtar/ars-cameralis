@@ -1,0 +1,5 @@
+{
+    "blueprint.templatesPath": [
+        "./client/dev/blueprint-templates"
+    ]
+}
