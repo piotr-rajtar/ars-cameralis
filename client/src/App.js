@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import { CssBaseline } from '@material-ui/core';
-
 import { store } from './redux/store';
+
+import { CssBaseline } from '@material-ui/core';
 
 import { MainLayout } from './components/layout/MainLayout/MainLayout';
 import { Calendar } from './components/views/Calendar/Calendar';
