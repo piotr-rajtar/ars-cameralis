@@ -8,10 +8,14 @@ import clsx from 'clsx';
 
 import styles from './MainLayout.module.scss';
 
+import { Header } from '../Header/Header';
+import { Footer } from '../Footer/Footer';
+
 const Component = ({ className, children }) => (
   <div className={clsx(className, styles.root)}>
-    <h1>MainLayout</h1>
+    <Header />
     {children}
+    <Footer />
   </div>
 );
 
