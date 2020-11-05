@@ -8,11 +8,30 @@ import clsx from 'clsx';
 
 import styles from './Footer.module.scss';
 
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+
 const Component = ({ className, children }) => (
-  <div className={clsx(className, styles.root)}>
-    <h1>Footer</h1>
-    {children}
-  </div>
+  <footer className={clsx(className, styles.root)}>
+    <ul className={styles.footer}>
+      <li className={styles.footer_item}>
+        <a href='https://www.facebook.com/acameralis' target='_blank' rel='noreferrer'>
+          <FacebookIcon className={styles.icon} />
+        </a>
+      </li>
+      <li className={styles.footer_item}>
+        <a href='https://www.instagram.com/chor_arscameralis' target='_blank' rel='noreferrer'>
+          <InstagramIcon className={styles.icon} />
+        </a>
+      </li>
+      <li className={styles.footer_item}>
+        <a href='https://www.youtube.com/channel/UCalCJcqBtt66lsN4p-jCfLA' target='_blank' rel='noreferrer'>
+          <YouTubeIcon className={styles.icon} />
+        </a>
+      </li>
+    </ul>
+  </footer>
 );
 
 Component.propTypes = {
