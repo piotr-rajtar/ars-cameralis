@@ -10,7 +10,62 @@ import styles from './Homepage.module.scss';
 
 const Component = ({ className }) => (
   <div className={clsx(className, styles.root)}>
-    <h1>Homepage</h1>
+    <h1 className={styles.title}>Fajnie, że jesteś!</h1>
+
+    <section className={styles.about}>
+      <h1 className={styles.subtitle}>O nas</h1>
+      <p className={styles.about_description}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum.
+      </p>
+    </section>
+
+    <section className={styles.repertoire}>
+      <h1 className={styles.subtitle}>Repertuar</h1>
+      <div className={styles.container}>
+        <div className={styles.row}>
+          <div className={styles.box}>
+            <img
+              src='https://cdn.pixabay.com/photo/2016/03/23/20/49/music-note-1275650_960_720.png'
+              className={styles.photo_box}
+              alt='nuta'
+            />
+            <span className={styles.title_box}>Lorem</span>
+          </div>
+          <div className={styles.box}>
+            <img
+              src='https://cdn.pixabay.com/photo/2016/03/23/20/49/music-note-1275650_960_720.png'
+              className={styles.photo_box}
+              alt='nuta'
+            />
+            <span className={styles.title_box}>Ipsum</span>
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.box}>
+            <img
+              src='https://cdn.pixabay.com/photo/2016/03/23/20/49/music-note-1275650_960_720.png'
+              className={styles.photo_box}
+              alt='nuta'
+            />
+            <span className={styles.title_box}>Lorem</span>
+          </div>
+          <div className={styles.box}>
+            <img
+              src='https://cdn.pixabay.com/photo/2016/03/23/20/49/music-note-1275650_960_720.png'
+              className={styles.photo_box}
+              alt='nuta'
+            />
+            <span className={styles.title_box}>Ipsum</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </div>
 );
 
