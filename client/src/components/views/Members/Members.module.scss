@@ -1,4 +1,78 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+  background-color: $secondary-color;
+}
+
+.title {
+  text-align: center;
+  font-size: 50px;
+  padding: 20px 0;
+}
+
+.subtitle {
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 60px;
+}
+
+.subtitle::after {
+  position: absolute;
+  content: '';
+  background: $main-color;
+  width: 100px;
+  height: 6px;
+  bottom: -10px;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
+.slide_box {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.single_box {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.photo {
+  width: 100%;
+}
+
+.photo_title {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 25px;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.slide_box:hover, .single_box:hover {
+  .photo_title {
+    display: block;
+  }
+
+  .photo {
+    opacity: 0.3;
+  }
+}
+
+.voices {
+  padding-bottom: 30px;
+}
+
