@@ -14,9 +14,7 @@ import { Footer } from '../Footer/Footer';
 const Component = ({ className, children }) => (
   <div className={clsx(className, styles.root)}>
     <Header />
-    <section className={styles.container}>
-      {children}
-    </section>
+    {children}
     <Footer />
   </div>
 );
