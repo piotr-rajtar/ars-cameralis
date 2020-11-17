@@ -6,4 +6,16 @@
 
 body {
   margin: 0;
+  height: 100vh;
+  font-size: 10px;
+  -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none;  /* Hide scrollbar for Firefox */
+
+  #root {
+    height: 100%;
+  }
+}
+
+body::-webkit-scrollbar { /* Hide scrollbar for Chrome */
+  display: none;
 }
