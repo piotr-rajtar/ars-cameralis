@@ -3,59 +3,8 @@
 .root {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 20px 50px;
   background-color: $secondary-color;
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.row {
-  flex: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.box {
-  width: 150px;
-  height: 150px;
-  position: relative;
-  border-width: 5px;
-  border-style: double;
-  border-color: $main-color;
-  margin: 10px;
-  padding: 5px;
-}
-
-.title_box {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: bold;
-  font-size: 25px;
-}
-
-.photo_box {
-  width: 100%;
-}
-
-.box:hover {
-  .title_box {
-    display: block;
-  }
-
-  .photo_box {
-    opacity: 0.2;
-  }
-}
-
-.repertoire {
-  padding-bottom: 50px;
 }
 
 
