@@ -8,9 +8,11 @@ import clsx from 'clsx';
 
 import styles from './Homepage.module.scss';
 
+import { PageTitle } from '../../common/PageTitle/PageTitle';
+
 const Component = ({ className }) => (
   <div className={clsx(className, styles.root)}>
-    <h1 className={styles.title}>Fajnie, że jesteś!</h1>
+    <PageTitle>Fajnie, że jesteś!</PageTitle>
 
     <section className={styles.about}>
       <h1 className={styles.subtitle}>O nas</h1>
