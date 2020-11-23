@@ -21,17 +21,22 @@ const Component = ({ className, children }) => (
       <ul className={styles.navigation}>
         <li className={styles.navigation_item}>
           <NavLink exact to='/' activeClassName={styles.active} className={styles.navigation_link}>
-            Strona główna
-          </NavLink>
-        </li>
-        <li className={styles.navigation_item}>
-          <NavLink exact to='/kalendarz' activeClassName={styles.active} className={styles.navigation_link}>
-            Kalendarium
+            O nas
           </NavLink>
         </li>
         <li className={styles.navigation_item}>
           <NavLink exact to='/czlonkowie' activeClassName={styles.active} className={styles.navigation_link}>
             Członkowie
+          </NavLink>
+        </li>
+        <li className={styles.navigation_item}>
+          <NavLink exact to='/repertuar' activeClassName={styles.active} className={styles.navigation_link}>
+            Repertuar
+          </NavLink>
+        </li>
+        <li className={styles.navigation_item}>
+          <NavLink exact to='/oferta' activeClassName={styles.active} className={styles.navigation_link}>
+            Oferta
           </NavLink>
         </li>
         <li className={styles.navigation_item}>
