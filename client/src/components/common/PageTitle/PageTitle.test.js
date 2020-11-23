@@ -4,7 +4,7 @@ import { PageTitleComponent } from './PageTitle';
 
 describe('Component PageTitle', () => {
   it('should render without crashing', () => {
-    const component = shallow(<PageTitleComponent pageTitle='Test Title' />);
+    const component = shallow(<PageTitleComponent>Text</PageTitleComponent>);
     expect(component).toBeTruthy();
   });
 });

@@ -5,14 +5,14 @@ import clsx from 'clsx';
 
 import styles from './PageTitle.module.scss';
 
-const Component = ({ className, pageTitle }) => (
+const Component = ({ className, children }) => (
   <h1 className={clsx(className, styles.root)}>
-    {pageTitle}
+    {children}
   </h1>
 );
 
 Component.propTypes = {
-  pageTitle: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
   className: PropTypes.string,
 };
 
