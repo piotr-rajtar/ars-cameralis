@@ -10,22 +10,13 @@ import styles from './Homepage.module.scss';
 
 import { PageTitle } from '../../common/PageTitle/PageTitle';
 import { PageSubtitle } from '../../common/PageSubtitle/PageSubtitle';
+import { About } from '../../features/About/About';
 
 const Component = ({ className }) => (
   <div className={clsx(className, styles.root)}>
     <PageTitle>Fajnie, że jesteś!</PageTitle>
 
-    <section className={styles.about}>
-      <PageSubtitle>O nas</PageSubtitle>
-      <p className={styles.about_description}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-        anim id est laborum.
-      </p>
-    </section>
+    <About />
 
     <section className={styles.repertoire}>
       <PageSubtitle>Repertuar</PageSubtitle>
