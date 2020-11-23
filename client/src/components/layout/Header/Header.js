@@ -21,7 +21,7 @@ const Component = ({ className, children }) => (
       <ul className={styles.navigation}>
         <li className={styles.navigation_item}>
           <NavLink exact to='/' activeClassName={styles.active} className={styles.navigation_link}>
-            Strona główna
+            O nas
           </NavLink>
         </li>
         <li className={styles.navigation_item}>
