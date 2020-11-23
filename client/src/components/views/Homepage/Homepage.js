@@ -9,13 +9,14 @@ import clsx from 'clsx';
 import styles from './Homepage.module.scss';
 
 import { PageTitle } from '../../common/PageTitle/PageTitle';
+import { PageSubtitle } from '../../common/PageSubtitle/PageSubtitle';
 
 const Component = ({ className }) => (
   <div className={clsx(className, styles.root)}>
     <PageTitle>Fajnie, że jesteś!</PageTitle>
 
     <section className={styles.about}>
-      <h1 className={styles.subtitle}>O nas</h1>
+      <PageSubtitle>O nas</PageSubtitle>
       <p className={styles.about_description}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -27,7 +28,7 @@ const Component = ({ className }) => (
     </section>
 
     <section className={styles.repertoire}>
-      <h1 className={styles.subtitle}>Repertuar</h1>
+      <PageSubtitle>Repertuar</PageSubtitle>
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles.box}>
