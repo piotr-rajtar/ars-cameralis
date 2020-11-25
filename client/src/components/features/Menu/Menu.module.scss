@@ -8,10 +8,16 @@
   display: flex;
   justify-content: space-between;
   padding: 0;
+  margin: 0;
+
+  li:last-of-type {
+    margin-right: 0;
+  }
 }
 
 .navigation_item {
   display: inline-block;
+  margin-right: 30px;
 }
 
 .navigation_link {
