@@ -7,37 +7,8 @@
   right: 0;
   width: 100%;
   z-index: 999;
-}
-
-.title {
-  text-align: center;
-  font-size: 40px;
-}
-
-.title_link {
-  color: $secondary-color;
-  text-decoration: none;
-
-}
-
-.navigation {
-  list-style-type: none;
   display: flex;
-  justify-content: space-around;
-  padding: 0;
-}
-
-.navigation_item {
-  display: inline-block;
-}
-
-.navigation_link {
-  color: $secondary-color;
-  text-decoration: none;
-  padding-bottom: 2px;
-  font-size: 25px;
-}
-
-.active {
-  border-bottom: 3px solid $secondary-color;;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
 }
