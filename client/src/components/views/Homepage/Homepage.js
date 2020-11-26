@@ -8,14 +8,15 @@ import clsx from 'clsx';
 
 import styles from './Homepage.module.scss';
 
-import { PageTitle } from '../../common/PageTitle/PageTitle';
 import { About } from '../../features/About/About';
+import { Splash } from '../../features/Splash/Splash';
 
 const Component = ({ className }) => (
   <div className={clsx(className, styles.root)}>
-    <PageTitle>Fajnie, że jesteś!</PageTitle>
 
-    <About />
+    <Splash />
+
+    <About className={styles.about} />
 
   </div>
 );

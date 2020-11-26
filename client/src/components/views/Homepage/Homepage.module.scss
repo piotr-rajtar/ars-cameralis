@@ -1,10 +1,13 @@
 @import '../../../styles/settings.scss';
 
 .root {
+  width: 100%;
+  padding-bottom: 150px;
+}
+
+.about {
   max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 20px 50px;
-  background-color: $secondary-color;
+  margin: 50px auto 0;
 }
 
 
