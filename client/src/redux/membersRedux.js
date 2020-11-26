@@ -1,5 +1,9 @@
 /* selectors */
-export const getAllMembers = ({members}) => members.data;
+export const getConductor = ({ members }) => members.data.conductor;
+export const getAllSopranos = ({ members }) => members.data.soprano;
+export const getAllAltos = ({ members }) => members.data.alto;
+export const getAllTenors = ({ members }) => members.data.tenor;
+export const getAllBass = ({ members }) => members.data.bass;
 
 /* action name creator */
 // const reducerName = 'members';
