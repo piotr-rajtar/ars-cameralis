@@ -1,0 +1,21 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  height: 100vh;
+  position: relative;
+  background-image: url(https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/116471767_2450725638559860_4763492988959378248_o.jpg?_nc_cat=109&ccb=2&_nc_sid=730e14&_nc_ohc=ePjWgEutSHEAX-jFV45&_nc_ht=scontent-waw1-1.xx&oh=6415d7a45416f1935a00775b09a79bcd&oe=5FE132D8);
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.splash_text {
+  color: $secondary-color;
+  font-size: 120px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  width: 100%;
+}
