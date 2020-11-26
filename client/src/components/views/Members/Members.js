@@ -11,27 +11,30 @@ import 'swiper/components/pagination/pagination.scss';
 
 import clsx from 'clsx';
 
-// import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
+import { connect } from 'react-redux';
+import { getConductor, getAllSopranos, getAllAltos, getAllTenors, getAllBass } from '../../../redux/membersRedux';
 
 import styles from './Members.module.scss';
 
+import { PageTitle } from '../../common/PageTitle/PageTitle';
+import { PageSubtitle } from '../../common/PageSubtitle/PageSubtitle';
+
 SwiperCore.use([Navigation, Pagination]);
 
-const Component = ({ className, children }) => (
+const Component = ({ className, conductor, sopranos, altos, tenors, bass }) => (
   <div className={clsx(className, styles.root)}>
-    <h1 className={styles.title}>Członkowie</h1>
+    <PageTitle>Oto my:</PageTitle>
 
     <section className={styles.voices}>
-      <h2 className={styles.subtitle}>Dyrygent</h2>
+      <PageSubtitle>Dyrygent</PageSubtitle>
       <div className={styles.single_box}>
-        <img src='https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png' className={styles.photo} alt='dyrygent'/>
-        <p className={styles.photo_title}>Dyrygent</p>
+        <img src={conductor.photo} className={styles.photo} alt={conductor.name}/>
+        <p className={styles.photo_title}>{conductor.name}</p>
       </div>
     </section>
 
     <section className={styles.voices}>
-      <h2 className={styles.subtitle}>Sopran</h2>
+      <PageSubtitle>Sopran</PageSubtitle>
       <Swiper
         grabCursor = 'true'
         slidesPerView = {1}
@@ -46,59 +49,19 @@ const Component = ({ className, children }) => (
         pagination={{ clickable: true }}
         navigation
       >
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/03/25/16/24/female-296989_960_720.png' className={styles.photo} alt='sopran'/>
-            <p className={styles.photo_title}>Sopran #1</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/03/25/16/24/female-296989_960_720.png' className={styles.photo} alt='sopran'/>
-            <p className={styles.photo_title}>Sopran #2</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/03/25/16/24/female-296989_960_720.png' className={styles.photo} alt='sopran'/>
-            <p className={styles.photo_title}>Sopran #3</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/03/25/16/24/female-296989_960_720.png' className={styles.photo} alt='sopran'/>
-            <p className={styles.photo_title}>Sopran #4</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/03/25/16/24/female-296989_960_720.png' className={styles.photo} alt='sopran'/>
-            <p className={styles.photo_title}>Sopran #5</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/03/25/16/24/female-296989_960_720.png' className={styles.photo} alt='sopran'/>
-            <p className={styles.photo_title}>Sopran #6</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/03/25/16/24/female-296989_960_720.png' className={styles.photo} alt='sopran'/>
-            <p className={styles.photo_title}>Sopran #7</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/03/25/16/24/female-296989_960_720.png' className={styles.photo} alt='sopran'/>
-            <p className={styles.photo_title}>Sopran #8</p>
-          </div>
-        </SwiperSlide>
+        {sopranos.map(soprano => (
+          <SwiperSlide key={soprano.id}>
+            <div className={styles.slide_box}>
+              <img src={soprano.photo} className={styles.photo} alt={`${soprano.name} zdjęcie`}/>
+              <p className={styles.photo_title}>{soprano.name}</p>
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </section>
 
     <section className={styles.voices}>
-      <h2 className={styles.subtitle}>Alt</h2>
+      <PageSubtitle>Alt</PageSubtitle>
       <Swiper
         grabCursor = 'true'
         slidesPerView = {1}
@@ -113,59 +76,19 @@ const Component = ({ className, children }) => (
         pagination={{ clickable: true }}
         navigation
       >
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/03/25/16/24/female-296989_960_720.png' className={styles.photo} alt='alt'/>
-            <p className={styles.photo_title}>Alt #1</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/03/25/16/24/female-296989_960_720.png' className={styles.photo} alt='alt'/>
-            <p className={styles.photo_title}>Alt #2</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/03/25/16/24/female-296989_960_720.png' className={styles.photo} alt='alt'/>
-            <p className={styles.photo_title}>Alt #3</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/03/25/16/24/female-296989_960_720.png' className={styles.photo} alt='alt'/>
-            <p className={styles.photo_title}>Alt #4</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/03/25/16/24/female-296989_960_720.png' className={styles.photo} alt='alt'/>
-            <p className={styles.photo_title}>Alt #5</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/03/25/16/24/female-296989_960_720.png' className={styles.photo} alt='alt'/>
-            <p className={styles.photo_title}>Alt #6</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/03/25/16/24/female-296989_960_720.png' className={styles.photo} alt='alt'/>
-            <p className={styles.photo_title}>Alt #7</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/03/25/16/24/female-296989_960_720.png' className={styles.photo} alt='alt'/>
-            <p className={styles.photo_title}>Alt #8</p>
-          </div>
-        </SwiperSlide>
+        {altos.map(alto => (
+          <SwiperSlide key={alto.id}>
+            <div className={styles.slide_box}>
+              <img src={alto.photo} className={styles.photo} alt={`${alto.name} zdjęcie`}/>
+              <p className={styles.photo_title}>{alto.name}</p>
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </section>
 
     <section className={styles.voices}>
-      <h2 className={styles.subtitle}>Tenor</h2>
+      <PageSubtitle>Tenor</PageSubtitle>
       <Swiper
         grabCursor = 'true'
         slidesPerView = {1}
@@ -180,59 +103,19 @@ const Component = ({ className, children }) => (
         pagination={{ clickable: true }}
         navigation
       >
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/04/03/10/44/person-311292_960_720.png' className={styles.photo} alt='tenor'/>
-            <p className={styles.photo_title}>Tenor #1</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/04/03/10/44/person-311292_960_720.png' className={styles.photo} alt='tenor'/>
-            <p className={styles.photo_title}>Tenor #2</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/04/03/10/44/person-311292_960_720.png' className={styles.photo} alt='tenor'/>
-            <p className={styles.photo_title}>Tenor #3</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/04/03/10/44/person-311292_960_720.png' className={styles.photo} alt='tenor'/>
-            <p className={styles.photo_title}>Tenor #4</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/04/03/10/44/person-311292_960_720.png' className={styles.photo} alt='tenor'/>
-            <p className={styles.photo_title}>Tenor #5</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/04/03/10/44/person-311292_960_720.png' className={styles.photo} alt='tenor'/>
-            <p className={styles.photo_title}>Tenor #6</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/04/03/10/44/person-311292_960_720.png' className={styles.photo} alt='tenor'/>
-            <p className={styles.photo_title}>Tenor #7</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/04/03/10/44/person-311292_960_720.png' className={styles.photo} alt='tenor'/>
-            <p className={styles.photo_title}>Tenor #8</p>
-          </div>
-        </SwiperSlide>
+        {tenors.map(tenor => (
+          <SwiperSlide key={tenor.id}>
+            <div className={styles.slide_box}>
+              <img src={tenor.photo} className={styles.photo} alt={`${tenor.name} zdjęcie`}/>
+              <p className={styles.photo_title}>{tenor.name}</p>
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </section>
 
     <section className={styles.voices}>
-      <h2 className={styles.subtitle}>Bas</h2>
+      <PageSubtitle>Bas</PageSubtitle>
       <Swiper
         grabCursor = 'true'
         slidesPerView = {1}
@@ -247,78 +130,44 @@ const Component = ({ className, children }) => (
         pagination={{ clickable: true }}
         navigation
       >
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/04/03/10/44/person-311292_960_720.png' className={styles.photo} alt='bas'/>
-            <p className={styles.photo_title}>Bas #1</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/04/03/10/44/person-311292_960_720.png' className={styles.photo} alt='bas'/>
-            <p className={styles.photo_title}>Bas #2</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/04/03/10/44/person-311292_960_720.png' className={styles.photo} alt='bas'/>
-            <p className={styles.photo_title}>Bas #3</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/04/03/10/44/person-311292_960_720.png' className={styles.photo} alt='bas'/>
-            <p className={styles.photo_title}>Bas #4</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/04/03/10/44/person-311292_960_720.png' className={styles.photo} alt='bas'/>
-            <p className={styles.photo_title}>Bas #5</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/04/03/10/44/person-311292_960_720.png' className={styles.photo} alt='bas'/>
-            <p className={styles.photo_title}>Bas #6</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/04/03/10/44/person-311292_960_720.png' className={styles.photo} alt='bas'/>
-            <p className={styles.photo_title}>Bas #7</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.slide_box}>
-            <img src='https://cdn.pixabay.com/photo/2014/04/03/10/44/person-311292_960_720.png' className={styles.photo} alt='bas'/>
-            <p className={styles.photo_title}>Bas #8</p>
-          </div>
-        </SwiperSlide>
+        {bass.map(bassus => (
+          <SwiperSlide key={bassus.id}>
+            <div className={styles.slide_box}>
+              <img src={bassus.photo} className={styles.photo} alt={`${bassus.name} zdjęcie`}/>
+              <p className={styles.photo_title}>{bassus.name}</p>
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </section>
   </div>
 );
 
 Component.propTypes = {
-  children: PropTypes.node,
   className: PropTypes.string,
+  conductor: PropTypes.object,
+  sopranos: PropTypes.array,
+  altos: PropTypes.array,
+  tenors: PropTypes.array,
+  bass: PropTypes.array,
 };
 
-
-
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
+const mapStateToProps = state => ({
+  conductor: getConductor(state),
+  sopranos: getAllSopranos(state),
+  altos: getAllAltos(state),
+  tenors: getAllTenors(state),
+  bass: getAllBass(state),
+});
 
 // const mapDispatchToProps = state => ({
 //   someAction: arg => dispatchEvent(reduxActionCreator(arg)),
 // });
 
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
+const Container = connect(mapStateToProps)(Component);
 
 export {
-  Component as Members,
-  // Container as Members,
+  // Component as Members,
+  Container as Members,
   Component as MembersComponent,
 };
