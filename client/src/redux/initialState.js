@@ -1,11 +1,13 @@
 export const initialState = {
   members: {
     data: {
-      conductor: {
-        id: 1,
-        name: 'Dyrygent',
-        photo: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
-      },
+      conductor: [
+        {
+          id: 1,
+          name: 'Dyrygent',
+          photo: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+        },
+      ],
       soprano: [
         {
           id: 1,
