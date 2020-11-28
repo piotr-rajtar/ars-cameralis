@@ -2,11 +2,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { MembersComponent } from './Members';
 
-const conductor = {
-  id: 1,
-  name: 'Dyrygent',
-  photo: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
-};
+const conductor = [
+  {
+    id: 1,
+    name: 'Dyrygent',
+    photo: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+  },
+];
 
 const soprano = [
   {
