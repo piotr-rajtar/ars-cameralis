@@ -34,6 +34,7 @@ const Component = ({ className, slides }) => (
     }}
     pagination={{ clickable: true }}
     navigation
+    centerInsufficientSlides={true}
     className={clsx(className, styles.root)}
   >
     {slides.map(slide => (
