@@ -3,51 +3,18 @@
 .root {
   max-width: 1140px;
   margin: 0 auto;
-  padding-bottom: 150px;
-}
-
-.slide_box {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-}
-
-.single_box {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-}
-
-.photo {
-  width: 100%;
-}
-
-.photo_title {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: bold;
-  font-size: 25px;
-  margin: 0;
-  width: 100%;
-  text-align: center;
-}
-
-.slide_box:hover, .single_box:hover {
-  .photo_title {
-    display: block;
-  }
-
-  .photo {
-    opacity: 0.3;
-  }
+  padding: 100px 0 150px;
 }
 
 .voices {
-  padding-bottom: 30px;
+  margin: 60px 0;
+}
+
+.first_line {
+  margin-top: 0;
+}
+
+.last_line {
+  margin-bottom: 0;
 }
 

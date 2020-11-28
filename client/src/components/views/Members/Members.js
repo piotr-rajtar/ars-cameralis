@@ -21,7 +21,7 @@ const Component = ({ className, conductor, sopranos, altos, tenors, bass }) => (
   <div className={clsx(className, styles.root)}>
     <PageTitle>Oto my:</PageTitle>
 
-    <section className={styles.voices}>
+    <section className={styles.voices + ' ' + styles.first_line}>
       <PageSubtitle>Dyrygent</PageSubtitle>
       <MemberSwiper slides={conductor} />
     </section>
@@ -41,7 +41,7 @@ const Component = ({ className, conductor, sopranos, altos, tenors, bass }) => (
       <MemberSwiper slides={tenors} />
     </section>
 
-    <section className={styles.voices}>
+    <section className={styles.voices + ' ' + styles.last_line}>
       <PageSubtitle>Bas</PageSubtitle>
       <MemberSwiper slides={bass} />
     </section>
@@ -50,7 +50,7 @@ const Component = ({ className, conductor, sopranos, altos, tenors, bass }) => (
 
 Component.propTypes = {
   className: PropTypes.string,
-  conductor: PropTypes.object,
+  conductor: PropTypes.array,
   sopranos: PropTypes.array,
   altos: PropTypes.array,
   tenors: PropTypes.array,
