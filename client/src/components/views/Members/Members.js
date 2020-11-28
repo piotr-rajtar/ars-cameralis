@@ -1,10 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import SwiperCore, { Navigation, Pagination } from 'swiper';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
@@ -19,7 +15,7 @@ import styles from './Members.module.scss';
 import { PageTitle } from '../../common/PageTitle/PageTitle';
 import { PageSubtitle } from '../../common/PageSubtitle/PageSubtitle';
 
-SwiperCore.use([Navigation, Pagination]);
+import { MemberSwiper } from '../../features/MemberSwiper/MemberSwiper';
 
 const Component = ({ className, conductor, sopranos, altos, tenors, bass }) => (
   <div className={clsx(className, styles.root)}>
@@ -27,118 +23,27 @@ const Component = ({ className, conductor, sopranos, altos, tenors, bass }) => (
 
     <section className={styles.voices}>
       <PageSubtitle>Dyrygent</PageSubtitle>
-      <div className={styles.single_box}>
-        <img src={conductor.photo} className={styles.photo} alt={conductor.name}/>
-        <p className={styles.photo_title}>{conductor.name}</p>
-      </div>
+      <MemberSwiper slides={conductor} />
     </section>
 
     <section className={styles.voices}>
       <PageSubtitle>Sopran</PageSubtitle>
-      <Swiper
-        grabCursor = 'true'
-        slidesPerView = {1}
-        breakpoints = {{
-          640: {
-            slidesPerView: 2,
-          },
-          768: {
-            slidesPerView: 3,
-          },
-        }}
-        pagination={{ clickable: true }}
-        navigation
-      >
-        {sopranos.map(soprano => (
-          <SwiperSlide key={soprano.id}>
-            <div className={styles.slide_box}>
-              <img src={soprano.photo} className={styles.photo} alt={`${soprano.name} zdjęcie`}/>
-              <p className={styles.photo_title}>{soprano.name}</p>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <MemberSwiper slides={sopranos} />
     </section>
 
     <section className={styles.voices}>
       <PageSubtitle>Alt</PageSubtitle>
-      <Swiper
-        grabCursor = 'true'
-        slidesPerView = {1}
-        breakpoints = {{
-          640: {
-            slidesPerView: 2,
-          },
-          768: {
-            slidesPerView: 3,
-          },
-        }}
-        pagination={{ clickable: true }}
-        navigation
-      >
-        {altos.map(alto => (
-          <SwiperSlide key={alto.id}>
-            <div className={styles.slide_box}>
-              <img src={alto.photo} className={styles.photo} alt={`${alto.name} zdjęcie`}/>
-              <p className={styles.photo_title}>{alto.name}</p>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <MemberSwiper slides={altos} />
     </section>
 
     <section className={styles.voices}>
       <PageSubtitle>Tenor</PageSubtitle>
-      <Swiper
-        grabCursor = 'true'
-        slidesPerView = {1}
-        breakpoints = {{
-          640: {
-            slidesPerView: 2,
-          },
-          768: {
-            slidesPerView: 3,
-          },
-        }}
-        pagination={{ clickable: true }}
-        navigation
-      >
-        {tenors.map(tenor => (
-          <SwiperSlide key={tenor.id}>
-            <div className={styles.slide_box}>
-              <img src={tenor.photo} className={styles.photo} alt={`${tenor.name} zdjęcie`}/>
-              <p className={styles.photo_title}>{tenor.name}</p>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <MemberSwiper slides={tenors} />
     </section>
 
     <section className={styles.voices}>
       <PageSubtitle>Bas</PageSubtitle>
-      <Swiper
-        grabCursor = 'true'
-        slidesPerView = {1}
-        breakpoints = {{
-          640: {
-            slidesPerView: 2,
-          },
-          768: {
-            slidesPerView: 3,
-          },
-        }}
-        pagination={{ clickable: true }}
-        navigation
-      >
-        {bass.map(bassus => (
-          <SwiperSlide key={bassus.id}>
-            <div className={styles.slide_box}>
-              <img src={bassus.photo} className={styles.photo} alt={`${bassus.name} zdjęcie`}/>
-              <p className={styles.photo_title}>{bassus.name}</p>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <MemberSwiper slides={bass} />
     </section>
   </div>
 );
