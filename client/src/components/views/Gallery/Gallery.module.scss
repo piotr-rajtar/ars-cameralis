@@ -3,51 +3,60 @@
 .root {
   max-width: 1140px;
   margin: 0 auto;
-  background-color: $main-color;
+  padding: 100px 0 150px;
 }
 
-.top_swiper {
-  padding: 30px 0 20px;
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.thumbs_swiper {
-  width: 100%;
-  height: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px 0;
-}
-
-.thumb_slide {
-  height: 100%;
-  width: 95%;
-  margin: 0 auto;
-  opacity: 0.4;
-}
-
-.top_slide {
-  width: 100%;
-  height: 450px;
-  background-color: $main-color;
-}
-
-.thumb_photo {
+.photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  margin: 0 auto;
 }
 
-.top_photo {
+.photobox {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  cursor: pointer;
+  box-shadow: 5px 5px $main-color;
+  border-radius: 5%;
+}
+
+.fulscreen_photobox_off {
+  display: none;
+}
+
+.photo:hover {
+  transform: scale(1.2);
+  transition: 1s;
+}
+
+.fullscreen_on {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  cursor: pointer;
+  background-color: $main-color;
+}
+
+.fullscreen_off {
+  display: none;
+}
+
+.fullscreen_photo {
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-
-.active_slide {
-  .thumb_slide {
-    opacity: 1;
-  }
 }
 
 
