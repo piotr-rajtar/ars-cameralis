@@ -19,7 +19,7 @@ import { MemberSwiper } from '../../features/MemberSwiper/MemberSwiper';
 
 const Component = ({ className, conductor, sopranos, altos, tenors, bass }) => (
   <div className={clsx(className, styles.root)}>
-    <PageTitle>Oto my:</PageTitle>
+    <PageTitle>Członkowie</PageTitle>
 
     <section className={styles.voices + ' ' + styles.first_line}>
       <PageSubtitle>Dyrygent</PageSubtitle>
