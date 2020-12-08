@@ -10,6 +10,9 @@ import styles from './Contact.module.scss';
 
 import { PageTitle } from '../../common/PageTitle/PageTitle';
 
+import Alert from '@material-ui/lab/Alert';
+import Snackbar from '@material-ui/core/Snackbar';
+
 class Component extends React.Component {
 
   state = {
@@ -61,12 +64,58 @@ class Component extends React.Component {
     });
   }
 
+  snackbarClose = () => {
+    this.setState({
+      snackbar: {
+        snackbarOpen: false,
+        snackbarMessage: '',
+      },
+    });
+  }
+
+  showAlert(error) {
+    if(error) {
+      this.setState({
+        snackbar: {
+          snackbarOpen: true,
+          snackbarMessage: error,
+          alertSeverity: 'error',
+        },
+      });
+    }
+    else {
+      this.setState({
+        snackbar: {
+          snackbarOpen: true,
+          snackbarMessage: 'Wiadomość została wysłana, dziękujemy!',
+          alertSeverity: 'success',
+        },
+      });
+    }
+  }
+
   render() {
     const { className } = this.props;
     const { name, surname, email, message } = this.state.formData;
+    const { snackbar } = this.state;
 
     return(
       <div className={clsx(className, styles.root)}>
+
+        <Snackbar
+          anchorOrigin={{vertical: 'top', horizontal: 'center'}}
+          open={snackbar.snackbarOpen}
+          autoHideDuration={6000}
+          onClose={this.snackbarClose}
+        >
+          <Alert
+            variant='filled'
+            severity={snackbar.alertSeverity}
+            onClose={this.snackbarClose}
+          >
+            {snackbar.snackbarMessage}
+          </Alert>
+        </Snackbar>
 
         <PageTitle>Napisz do nas!</PageTitle>
 
