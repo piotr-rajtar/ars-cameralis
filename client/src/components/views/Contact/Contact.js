@@ -10,6 +10,8 @@ import styles from './Contact.module.scss';
 
 import { PageTitle } from '../../common/PageTitle/PageTitle';
 
+import { emailParser } from '../../../utils';
+
 import Alert from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
 
@@ -46,10 +48,23 @@ class Component extends React.Component {
   }
 
   formSubmit = (event) => {
-    event.preventDefault();
-    alert('wyslane');
+    const { name, surname, email, message } = this.state.formData;
 
-    this.clearForm();
+    event.preventDefault();
+
+    let error = null;
+
+    let validEmail = emailParser(email);
+
+    if(!name || !surname || !email || !message) error = 'Wszystkie pola muszą być uzupełnione';
+    else if(name.length < 3 || name.length > 20) error = 'Niedozwolona długość imienia. Dozwolona liczba znaków: 3-20';
+    else if(surname.length < 3 || surname.length > 20) error = 'Niedozwolona długość nazwiska. Dozwolona liczba znaków: 3-20';
+    else if(message.length > 500) error = 'Niedozwolona długość wiadomości. Maksymalna liczba znaków: 500';
+    else if(!validEmail) error = 'Nieprawidłowy adres email';
+
+    this.showAlert(error);
+
+    if(!error) this.clearForm();
   }
 
   clearForm = () => {
@@ -69,6 +84,7 @@ class Component extends React.Component {
       snackbar: {
         snackbarOpen: false,
         snackbarMessage: '',
+        alertSeverity: '',
       },
     });
   }
@@ -152,6 +168,7 @@ class Component extends React.Component {
               type='text'
               id='surname'
               name='nazwisko'
+              required
               className={styles.input_field_name}
               value={surname}
               minLength={3}
@@ -172,6 +189,7 @@ class Component extends React.Component {
               type='email'
               id='email'
               name='email'
+              required
               className={styles.input_field}
               value={email}
               onChange={this.handleChange}
