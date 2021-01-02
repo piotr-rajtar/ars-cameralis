@@ -22,7 +22,7 @@
     "react"
   ],
   "extends": [
-    "eslint:recommended",
+    //"eslint:recommended",
     "plugin:react/recommended",
     "react-app"
   ],
