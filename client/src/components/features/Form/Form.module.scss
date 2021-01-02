@@ -1,0 +1,68 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form_group {
+  width: 60%;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+.form_group_name {
+  @extend .form_group;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.input_field {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 0;
+  font-size: 20px;
+}
+
+.input_field:focus {
+  outline: none;
+  box-shadow: 0 0 10px $main-color;
+}
+
+.input_field_name {
+  @extend .input_field;
+  width: 49%;
+}
+
+.message {
+  @extend .input_field;
+  height: 250px;
+  resize: none;
+}
+
+.button {
+  width: 20%;
+  height: 50px;
+  background-color: $main-color;
+  border: 0;
+  border-radius: 5px;
+  color: $secondary-color;
+  font-size: 30px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.label {
+  width: 49%;
+  color: $main-color;
+  font-size: 20px;
+}
