@@ -5,6 +5,8 @@ import clsx from 'clsx';
 
 import styles from './Form.module.scss';
 
+import { MessageCounter } from '../MessageCounter/MessageCounter';
+
 const Component = ({ className, formSubmit, handleChange, name, surname, email, message }) => (
   <form className={clsx(className, styles.root)} autoComplete='off' onSubmit={formSubmit}>
     <div className={styles.form_group_name}>
@@ -69,9 +71,10 @@ const Component = ({ className, formSubmit, handleChange, name, surname, email, 
     <div className={styles.form_group}>
       <label
         htmlFor='message'
-        className={styles.label}
+        className={styles.message_label}
       >
-        <span>Wiadomość ({message.length}/500)</span>
+        <span>Wiadomość</span>
+        <MessageCounter length={message.length} />
       </label>
 
       <textarea

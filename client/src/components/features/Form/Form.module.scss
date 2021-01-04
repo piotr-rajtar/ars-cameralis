@@ -66,3 +66,10 @@
   color: $main-color;
   font-size: 20px;
 }
+
+.message_label {
+  @extend .label;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
