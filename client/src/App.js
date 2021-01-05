@@ -16,6 +16,7 @@ import { Homepage } from './components/views/Homepage/Homepage';
 import { Members } from './components/views/Members/Members';
 import { Offer } from './components/views/Offer/Offer';
 import { Repertoire } from './components/views/Repertoire/Repertoire';
+import { NotFound } from './components/views/NotFound/NotFound';
 
 const App = () => (
   <Provider store={store}>
@@ -30,6 +31,7 @@ const App = () => (
             <Route exact path='/oferta' component={Offer} />
             <Route exact path='/galeria' component={Gallery} />
             <Route exact path='/kontakt' component={Contact} />
+            <Route path='*' component={NotFound} />
           </Switch>
         </MainLayout>
       </StylesProvider>
