@@ -1,13 +1,12 @@
 module.exports = {
   css: {
-    extract: false,
-    modules: false,
+    requireModuleExtension: true,
     loaderOptions: {
       scss: {
         modules: {
           localIdentName: '[name]-[hash]',
         },
-        localsConvention: 'camelCase',
+        localsConvention: 'camelCaseOnly',
       },
     },
   },

@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <header-container />
+    <nav-bar />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import headerContainer from './components/headerContainer/headerContainer.vue';
+import NavBar from './components/NavBar.vue';
 
-@Component({ components: { headerContainer } })
+@Component({ components: { NavBar } })
 export default class App extends Vue {}
 </script>
 
-<style lang="scss"></style>
+<style lang="scss" module="style"></style>
