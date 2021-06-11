@@ -6,10 +6,12 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import NavBar from './components/NavBar.vue';
+import NavBar from './components/navigation/NavBar.vue';
 
 @Component({ components: { NavBar } })
 export default class App extends Vue {}
 </script>
 
-<style lang="scss" module="style"></style>
+<style lang="scss" module="style">
+@import './scss/globals.scss';
+</style>

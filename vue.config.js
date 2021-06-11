@@ -2,7 +2,7 @@ module.exports = {
   css: {
     requireModuleExtension: true,
     loaderOptions: {
-      scss: {
+      css: {
         modules: {
           localIdentName: '[name]-[hash]',
         },
