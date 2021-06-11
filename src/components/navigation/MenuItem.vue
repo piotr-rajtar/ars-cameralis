@@ -1,6 +1,8 @@
 <template>
   <li :class="style.navLink">
-    <router-link :to="link" :class="style.link"><slot /></router-link>
+    <router-link :to="link" :class="style.link" :active-class="style.active"
+      ><slot
+    /></router-link>
   </li>
 </template>
 
@@ -26,10 +28,15 @@ export default class MenuItem extends Vue {
 
 .link {
   text-decoration: none;
+  padding-bottom: $spacing-unit;
 
   &:visited,
   &:active {
     color: inherit;
   }
+}
+
+.active {
+  border-bottom: 0.5 * $spacing-unit solid $secondary-color;
 }
 </style>
