@@ -1,8 +1,8 @@
 <template>
   <li :class="style.navLink">
-    <router-link :to="link" :class="style.link" :active-class="style.active"
-      ><slot
-    /></router-link>
+    <router-link :to="link" :class="style.link" :active-class="style.active">
+      <slot />
+    </router-link>
   </li>
 </template>
 

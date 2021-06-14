@@ -1,8 +1,8 @@
 <template>
-  <header>
-    <nav :class="style.container">
+  <header :class="style.container">
+    <nav :class="style.navigation">
       <logo />
-      <menu-item-list />
+      <menu-item-list :menuItems="menuItems" />
     </nav>
   </header>
 </template>
@@ -11,17 +11,26 @@
 import { Component, Vue } from 'vue-property-decorator';
 import Logo from './Logo.vue';
 import MenuItemList from './MenuItemList.vue';
+import { menuItems } from './menuData';
+import { LinkListItemI } from '../../typings';
 
 @Component({ components: { Logo, MenuItemList } })
-export default class NavBar extends Vue {}
+export default class NavBar extends Vue {
+  menuItems: LinkListItemI[] = menuItems;
+}
 </script>
 
 <style lang="scss" module="style">
 @import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
 .container {
-  display: flex;
+  position: fixed;
+  width: 100%;
+}
+
+.navigation {
+  @include flex-space-between;
   padding: 3 * $spacing-unit 5 * $spacing-unit;
-  justify-content: space-between;
   background-color: $main-color;
 }
 </style>

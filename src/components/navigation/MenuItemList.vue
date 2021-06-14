@@ -7,27 +7,25 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 import MenuItem from './MenuItem.vue';
-import { menuItems } from './menuData';
-import { MenuItemI } from '../../typings';
+import { LinkListItemI } from '../../typings';
 
 @Component({ components: { MenuItem } })
 export default class MenuItemList extends Vue {
-  menuItems: MenuItemI[] = menuItems;
+  @Prop({ type: Array }) menuItems!: LinkListItemI;
 }
 </script>
 
 <style lang="scss" module="style">
 @import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
 
 $nav-link-size: 30px;
 
 .navLinksContainer {
+  @include flex-aligned-center-space-around;
   list-style-type: none;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   color: $secondary-color;
   font-size: $nav-link-size;
 }
