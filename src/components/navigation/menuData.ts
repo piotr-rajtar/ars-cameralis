@@ -1,6 +1,6 @@
-import { MenuItemI } from '../../typings';
+import { LinkListItemI } from '../../typings';
 
-export const menuItems: MenuItemI[] = [
+export const menuItems: LinkListItemI[] = [
   {
     name: 'O nas',
     link: '/about',
