@@ -22,6 +22,7 @@ export default class FooterItemList extends Vue {
 
 <style lang="scss" module="style">
 @import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
 
 $nav-link-size: 30px;
 
