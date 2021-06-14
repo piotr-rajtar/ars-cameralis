@@ -17,6 +17,7 @@ export default class MenuItem extends Vue {
 
 <style lang="scss" module="style">
 @import '../../scss/variables.scss';
+
 .navLink {
   margin-right: 10 * $spacing-unit;
   cursor: pointer;

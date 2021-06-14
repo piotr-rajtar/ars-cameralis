@@ -23,6 +23,7 @@ export default class NavBar extends Vue {
 <style lang="scss" module="style">
 @import '../../scss/variables.scss';
 @import '../../scss/mixins.scss';
+
 .container {
   position: fixed;
   width: 100%;
