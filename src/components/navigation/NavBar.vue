@@ -27,6 +27,7 @@ export default class NavBar extends Vue {
 .container {
   position: fixed;
   width: 100%;
+  top: 0;
 }
 
 .navigation {
