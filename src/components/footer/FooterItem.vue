@@ -10,20 +10,20 @@
     <a :href="link" target="_blank">
       <facebook-icon
         v-if="isFacebookIconVisible"
-        :fill-color="iconFillColor"
-        :size="65"
+        :fill-color="fbIconFillColor"
+        :size="60"
         :class="style.icon"
       />
       <instagram-icon
         v-if="isInstagramIconVisible"
         :fill-color="iconFillColor"
-        :size="60"
+        :size="40"
         :class="style.icon"
       />
       <youtube-icon
         v-if="isYouTubeIconVisible"
         :fill-color="iconFillColor"
-        :size="65"
+        :size="40"
         :class="style.icon"
       />
     </a>
@@ -45,6 +45,10 @@ export default class FooterItem extends Vue {
     return '#ffffff';
   }
 
+  get fbIconFillColor(): string {
+    return '#3b5998';
+  }
+
   get isFacebookIconVisible(): boolean {
     return this.name === 'facebook' ? true : false;
   }
@@ -63,7 +67,7 @@ export default class FooterItem extends Vue {
 @import '../../scss/variables.scss';
 @import '../../scss/mixins.scss';
 
-$icon-box-size: 70px;
+$icon-box-size: 50px;
 
 .navLink {
   @include flex-centered;
@@ -87,7 +91,7 @@ $icon-box-size: 70px;
 }
 
 .facebook {
-  background-color: $facebook-color;
+  background-color: $secondary-color;
 }
 
 .instagram {
