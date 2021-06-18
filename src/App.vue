@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="style.container">
     <nav-bar />
     <main>
       <router-view />
@@ -19,4 +19,12 @@ export default class App extends Vue {}
 
 <style lang="scss" module="style">
 @import './scss/globals.scss';
+
+.container {
+  background-image: url('./assets/demo1.jpg');
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
 </style>
