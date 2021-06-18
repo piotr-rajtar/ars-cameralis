@@ -1,10 +1,5 @@
 <template>
   <div :class="style.container">
-    <img
-      src="../../assets/demo1.jpg"
-      alt="background image"
-      :class="style.image"
-    />
     <h2 :class="style.title">Lorem ipsum dolor sit amet!</h2>
   </div>
 </template>
@@ -19,29 +14,26 @@ export default class Homepage extends Vue {}
 <style lang="scss" module="style">
 @import '../../scss/variables.scss';
 @import '../../scss/mixins.scss';
-
-$title-overlay: rgba(0, 0, 0, 0.7);
+@import '../../scss/media.scss';
 
 .container {
-  width: 100%;
   height: 100vh;
-  position: relative;
-}
-
-.image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .title {
   position: absolute;
-  color: $secondary-color;
-  background: $title-overlay;
   padding: 10 * $spacing-unit;
   bottom: 50 * $spacing-unit;
   width: 100%;
+  color: $secondary-color;
+  background: $overlay;
   font-size: $font-size-title;
   text-align: right;
+
+  @include screen-medium {
+    bottom: 50%;
+    text-align: center;
+    $font-size-title-mobile: 40px;
+  }
 }
 </style>
