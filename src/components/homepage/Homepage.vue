@@ -16,6 +16,8 @@ export default class Homepage extends Vue {}
 @import '../../scss/mixins.scss';
 @import '../../scss/media.scss';
 
+$mobile-overlay: rgba(0, 0, 0, 0.4);
+
 .container {
   height: 100vh;
 }
@@ -31,9 +33,10 @@ export default class Homepage extends Vue {}
   text-align: right;
 
   @include screen-medium {
-    bottom: 50%;
-    text-align: center;
-    $font-size-title-mobile: 40px;
+    bottom: 38%;
+    font-size: $font-size-title-mobile;
+    padding: 2 * $spacing-unit 3 * $spacing-unit;
+    background: $mobile-overlay;
   }
 }
 </style>

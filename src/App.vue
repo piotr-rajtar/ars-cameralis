@@ -19,6 +19,8 @@ export default class App extends Vue {}
 
 <style lang="scss" module="style">
 @import './scss/globals.scss';
+@import './scss/variables.scss';
+@import './scss/media.scss';
 
 .container {
   background-image: url('./assets/demo1.jpg');
@@ -26,5 +28,11 @@ export default class App extends Vue {}
   background-size: cover;
   width: 100%;
   height: 100vh;
+
+  @include screen-medium {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: $main-color;
+  }
 }
 </style>
