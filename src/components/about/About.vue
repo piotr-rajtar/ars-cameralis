@@ -39,6 +39,8 @@ export default class About extends Vue {
   color: $secondary-color;
 
   @include screen-medium {
+    padding: 5 * $spacing-unit;
+    max-height: 70vh;
     overflow-y: scroll;
   }
 }
