@@ -48,6 +48,11 @@ export default class About extends Vue {
 .header {
   text-align: center;
   font-size: $font-size-title;
+  margin-bottom: 15 * $spacing-unit;
+
+  @include screen-medium {
+    margin-bottom: 5 * $spacing-unit;
+  }
 }
 
 .paragraph {

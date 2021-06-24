@@ -34,7 +34,7 @@ $mobile-overlay: rgba(0, 0, 0, 0.4);
 
   @include screen-medium {
     bottom: 38%;
-    font-size: $font-size-title-mobile;
+    font-size: $font-size-title-medium;
     padding: 2 * $spacing-unit 3 * $spacing-unit;
     background: $mobile-overlay;
   }

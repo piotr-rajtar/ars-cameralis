@@ -5,5 +5,12 @@ export interface LinkListItemI {
 
 export interface Member {
   name: string;
-  image: string;
+  image?: string;
+}
+
+export interface VoiceTableRow {
+  sopran: Member;
+  alt: Member;
+  tenor: Member;
+  bas: Member;
 }
