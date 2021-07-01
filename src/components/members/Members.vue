@@ -82,7 +82,7 @@ export default class Members extends Vue {
 }
 
 .members {
-  margin-top: 35 * $spacing-unit;
+  margin: 35 * $spacing-unit 0 30 * $spacing-unit;
   padding: 15 * $spacing-unit;
   width: 80%;
   max-height: 80vh;
@@ -90,11 +90,11 @@ export default class Members extends Vue {
   color: $secondary-color;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 
   @include screen-medium {
     padding: 5 * $spacing-unit;
     max-height: 70vh;
-    overflow-y: scroll;
   }
 }
 

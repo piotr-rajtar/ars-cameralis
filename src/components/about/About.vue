@@ -31,17 +31,17 @@ export default class About extends Vue {
 }
 
 .textContainer {
-  margin-top: 35 * $spacing-unit;
+  margin: 35 * $spacing-unit 0 30 * $spacing-unit;
   padding: 15 * $spacing-unit;
   width: 80%;
   max-height: 80vh;
   background: $overlay;
   color: $secondary-color;
+  overflow-y: scroll;
 
   @include screen-medium {
     padding: 5 * $spacing-unit;
     max-height: 70vh;
-    overflow-y: scroll;
   }
 }
 

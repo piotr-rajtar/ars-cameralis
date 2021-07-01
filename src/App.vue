@@ -27,7 +27,7 @@ export default class App extends Vue {}
   background-position: center center;
   background-size: cover;
   width: 100%;
-  height: 100vh;
+  min-height: 100%;
 
   @include screen-medium {
     background-size: contain;
