@@ -3,12 +3,13 @@
     <div :class="style.textContainer">
       <h1 :class="style.header">Oferta</h1>
       <div :class="style.tileContainer">
-        <div :class="style.tile">Koncerty</div>
-        <div :class="style.tile">Oprawa liturgii</div>
-        <div :class="style.tile">Chrzciny</div>
-        <div :class="style.tile">Komunie</div>
-        <div :class="style.tile">Śluby</div>
-        <div :class="style.tile">Pogrzeby</div>
+        <div
+          v-for="(item, index) in offerItems"
+          :key="index"
+          :class="style.tile"
+        >
+          {{ item }}
+        </div>
       </div>
     </div>
   </div>
@@ -16,9 +17,12 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { offerItems } from './offerContent';
 
 @Component({})
-export default class Offer extends Vue {}
+export default class Offer extends Vue {
+  offerItems = offerItems;
+}
 </script>
 
 <style lang="scss" module="style">
