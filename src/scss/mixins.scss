@@ -19,3 +19,9 @@
     display: flex;
     justify-content: space-between;
 }
+
+@mixin flex-tile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
