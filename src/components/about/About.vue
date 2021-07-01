@@ -37,7 +37,7 @@ export default class About extends Vue {
   max-height: 80vh;
   background: $overlay;
   color: $secondary-color;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   @include screen-medium {
     padding: 5 * $spacing-unit;

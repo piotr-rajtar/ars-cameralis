@@ -90,7 +90,7 @@ export default class Members extends Vue {
   color: $secondary-color;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   @include screen-medium {
     padding: 5 * $spacing-unit;
