@@ -3,8 +3,9 @@
     <div :class="style.conductor">
       <h1 :class="style.header">Dyrygent</h1>
       <div :class="style.conductorItemContainer">
-        <div :class="style.conductorPhotoContainer">
-          <img :class="style.image" src="../../assets/placeholder.jpg" />
+        <div :class="[style.conductorPhotoContainer, style.tile]">
+          <!-- <img :class="style.image" src="../../assets/placeholder.jpg" /> -->
+          ZDJĘCIE
         </div>
         <p :class="style.description">{{ conductorDescription }}</p>
       </div>
@@ -68,13 +69,14 @@ export default class Conductor extends Vue {
   }
 }
 
-.conductorPhotoContainer {
-  width: 300px;
-  height: 300px;
-  margin: 5 * $spacing-unit;
-  border: none;
-  display: inline-block;
-}
+//wyłączone na potrzeby demo
+// .conductorPhotoContainer {
+//   width: 300px;
+//   height: 300px;
+//   margin: 5 * $spacing-unit;
+//   border: none;
+//   display: inline-block;
+// }
 
 .description {
   flex: 50%;
@@ -85,5 +87,16 @@ export default class Conductor extends Vue {
 .image {
   width: 100%;
   height: 100%;
+}
+
+//na potrzeby demo
+.tile {
+  @include flex-centered;
+  width: 300px;
+  height: 300px;
+  border-radius: 2 * $spacing-unit;
+  font-size: $font-size-title-medium;
+  margin: 5 * $spacing-unit;
+  border: 2 * $spacing-unit solid $secondary-color;
 }
 </style>
