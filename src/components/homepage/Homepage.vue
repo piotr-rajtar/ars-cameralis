@@ -32,7 +32,7 @@ $mobile-overlay: rgba(0, 0, 0, 0.4);
   font-size: $font-size-title;
   text-align: right;
 
-  @include screen-medium {
+  @include screen-mobile {
     bottom: 38%;
     font-size: $font-size-title-medium;
     padding: 2 * $spacing-unit 3 * $spacing-unit;

@@ -29,7 +29,7 @@ export default class App extends Vue {}
   width: 100%;
   min-height: 100vh;
 
-  @include screen-medium {
+  @include screen-mobile {
     background-size: contain;
     background-repeat: no-repeat;
     background-color: $main-color;
