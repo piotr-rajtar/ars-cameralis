@@ -4,14 +4,8 @@
   }
 }
 
-@mixin screen-tablet-up {
-  @media (min-width: 900px) {
-    @content;
-  }
-}
-
-@mixin screen-desktop-up {
-  @media (min-width: 1200px) {
+@mixin screen-tablet {
+  @media (max-width: 1200px) {
     @content;
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <li :class="style.navLink">
+  <li :class="style.navLink" @click="onItemClick">
     <router-link :to="link" :class="style.link" :active-class="style.active">
       <slot />
     </router-link>
@@ -7,16 +7,21 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 
 @Component({})
 export default class MenuItem extends Vue {
   @Prop({ type: String }) link!: string;
+  @Emit('itemClick')
+  onItemClick(): void {
+    return;
+  }
 }
 </script>
 
 <style lang="scss" module="style">
 @import '../../scss/variables.scss';
+@import '../../scss/media.scss';
 
 .navLink {
   margin-right: 10 * $spacing-unit;
@@ -24,6 +29,10 @@ export default class MenuItem extends Vue {
 
   &:last-child {
     margin-right: 0;
+  }
+
+  @include screen-tablet {
+    margin: 3 * $spacing-unit 0 3 * $spacing-unit 5 * $spacing-unit;
   }
 }
 
