@@ -4,7 +4,7 @@
       <logo />
       <menu-icon
         :fill-color="iconFillColor"
-        :size="40"
+        :size="35"
         :class="style.menuIcon"
         @click="toggleMobileMenu"
       />

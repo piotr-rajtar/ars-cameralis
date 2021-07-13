@@ -13,8 +13,10 @@ export default class Logo extends Vue {}
 
 <style lang="scss" module="style">
 @import '../../scss/variables.scss';
+@import '../../scss/media.scss';
 
 $logo-size: 40px;
+$logo-size-mobile: 35px;
 
 .link {
   text-decoration: none;
@@ -29,5 +31,9 @@ $logo-size: 40px;
   color: $secondary-color;
   font-size: $logo-size;
   cursor: pointer;
+
+  @include screen-mobile {
+    font-size: $logo-size-mobile;
+  }
 }
 </style>
