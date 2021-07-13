@@ -2,28 +2,16 @@
   <li
     :class="[
       style.navLink,
-      { [style.facebook]: isFacebookIconVisible },
-      { [style.instagram]: isInstagramIconVisible },
-      { [style.youtube]: isYouTubeIconVisible },
+      { [style.facebook]: name === 'facebook' },
+      { [style.instagram]: name === 'instagram' },
+      { [style.youtube]: name === 'youtube' },
     ]"
   >
     <a :href="link" target="_blank">
-      <facebook-icon
-        v-if="isFacebookIconVisible"
+      <component
+        :is="iconType"
         :fill-color="iconFillColor"
-        :size="65"
-        :class="style.icon"
-      />
-      <instagram-icon
-        v-if="isInstagramIconVisible"
-        :fill-color="iconFillColor"
-        :size="60"
-        :class="style.icon"
-      />
-      <youtube-icon
-        v-if="isYouTubeIconVisible"
-        :fill-color="iconFillColor"
-        :size="65"
+        :size="iconSize"
         :class="style.icon"
       />
     </a>
@@ -41,20 +29,39 @@ export default class FooterItem extends Vue {
   @Prop({ type: String }) link!: string;
   @Prop({ type: String }) name!: string;
 
+  tabletBreakPoint = window.matchMedia('(max-width: 1200px)');
+  isMobile: boolean = this.tabletBreakPoint.matches;
+
+  mounted(): void {
+    this.tabletBreakPoint.onchange = this.mediaQueryHandler;
+  }
+
+  mediaQueryHandler(): void {
+    this.isMobile = this.tabletBreakPoint.matches;
+  }
+
+  get iconType(): string {
+    const icons: {
+      [key: string]: string;
+    } = {
+      facebook: 'facebook-icon',
+      instagram: 'instagram-icon',
+      youtube: 'youtube-icon',
+    };
+
+    return icons[this.name];
+  }
+
   get iconFillColor(): string {
     return '#ffffff';
   }
 
-  get isFacebookIconVisible(): boolean {
-    return this.name === 'facebook' ? true : false;
-  }
-
-  get isInstagramIconVisible(): boolean {
-    return this.name === 'instagram' ? true : false;
-  }
-
-  get isYouTubeIconVisible(): boolean {
-    return this.name === 'youtube' ? true : false;
+  get iconSize(): number {
+    if (this.isMobile) {
+      return 45;
+    } else {
+      return this.name === 'instagram' ? 60 : 65;
+    }
   }
 }
 </script>
@@ -62,8 +69,10 @@ export default class FooterItem extends Vue {
 <style lang="scss" module="style">
 @import '../../scss/variables.scss';
 @import '../../scss/mixins.scss';
+@import '../../scss/media.scss';
 
 $icon-box-size: 70px;
+$icon-box-size-mobile: 50px;
 
 .navLink {
   @include flex-centered;
@@ -79,6 +88,11 @@ $icon-box-size: 70px;
 
   &:hover {
     transform: scale(1.1);
+  }
+
+  @include screen-tablet {
+    width: $icon-box-size-mobile;
+    height: $icon-box-size-mobile;
   }
 }
 
