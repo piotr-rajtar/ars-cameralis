@@ -43,9 +43,12 @@ export default class Offer extends Vue {
   color: $secondary-color;
   overflow-y: auto;
 
-  @include screen-mobile {
+  @include screen-tablet {
+    margin: 20 * $spacing-unit 0 0;
     padding: 5 * $spacing-unit;
+    width: 90%;
     max-height: 70vh;
+    border: 1px solid $secondary-color;
   }
 }
 
@@ -72,11 +75,20 @@ export default class Offer extends Vue {
   font-size: $font-size-title-medium;
   margin: 10 * $spacing-unit;
 
-  &:hover {
-    background-color: $secondary-color;
-    opacity: 0.8;
-    color: $main-color;
-    transition: 1s ease;
+  @include desktop {
+    &:hover {
+      background-color: $secondary-color;
+      opacity: 0.8;
+      color: $main-color;
+      transition: 1s ease;
+    }
+  }
+
+  @include screen-mobile {
+    height: 100px;
+    border: $spacing-unit solid $secondary-color;
+    font-size: $font-size-medium;
+    margin: 5 * $spacing-unit;
   }
 }
 </style>
