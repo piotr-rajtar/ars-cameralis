@@ -4,21 +4,21 @@
       <h1 :class="style.header">Kontakt</h1>
       <form :class="style.form">
         <div :class="style.formControlContainer">
-          <label :class="style.label" for="name">Imię</label>
+          <label :class="style.label" for="name">Imię i nazwisko</label>
           <input
             :class="[style.formControl, style.input]"
             type="text"
             id="name"
           />
         </div>
-        <div :class="style.formControlContainer">
+        <!-- <div :class="style.formControlContainer">
           <label :class="style.label" for="surname">Nazwisko</label>
           <input
             :class="[style.formControl, style.input]"
             type="text"
             id="surname"
           />
-        </div>
+        </div> -->
         <div :class="style.formControlContainer">
           <label :class="style.label" for="email">Email</label>
           <input
@@ -33,8 +33,8 @@
             :class="[style.formControl, style.input, style.textarea]"
             type="text"
             id="message"
-            :rows="4"
-            :cols="50"
+            :rows="2"
+            :cols="20"
           />
         </div>
         <button
@@ -78,9 +78,12 @@ export default class Repertoir extends Vue {
   color: $secondary-color;
   overflow-y: auto;
 
-  @include screen-mobile {
+  @include screen-tablet {
+    margin: 20 * $spacing-unit 0 0;
     padding: 5 * $spacing-unit;
+    width: 90%;
     max-height: 70vh;
+    border: 1px solid $secondary-color;
   }
 }
 
@@ -91,6 +94,7 @@ export default class Repertoir extends Vue {
 
   @include screen-mobile {
     margin-bottom: 5 * $spacing-unit;
+    font-size: $font-size-title-medium;
   }
 }
 
@@ -100,33 +104,41 @@ export default class Repertoir extends Vue {
 
 .formControlContainer {
   @include flex-column;
-  width: 70%;
+  width: 50%;
   margin-bottom: 4 * $spacing-unit;
+
+  @include screen-tablet {
+    width: 70%;
+  }
+
+  @include screen-mobile {
+    width: 100%;
+  }
 }
 
 .label {
   color: $secondary-color;
-  font-size: $font-size-title-medium;
+  font-size: $font-size-medium;
   margin-bottom: $spacing-unit;
 }
 
 .formControl {
   background-color: inherit;
-  border: $spacing-unit solid $secondary-color;
+  border: 0.5 * $spacing-unit solid $secondary-color;
   border-radius: 2 * $spacing-unit;
   color: $secondary-color;
-  font-size: $font-size-medium;
+  font-size: $font-size-paragraph;
 }
 
 .input {
-  height: 70px;
+  height: 50px;
   width: 100%;
   padding: 2 * $spacing-unit;
 }
 
 .textarea {
   resize: none;
-  height: 300px;
+  height: 200px;
 }
 
 .button {
@@ -139,6 +151,10 @@ export default class Repertoir extends Vue {
     opacity: 0.8;
     color: $main-color;
     transition: 1s ease;
+  }
+
+  @include screen-tablet {
+    margin-top: 5 * $spacing-unit;
   }
 }
 </style>
