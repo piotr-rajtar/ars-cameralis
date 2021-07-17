@@ -115,7 +115,7 @@ export default class Repertoir extends Vue {
   border: $spacing-unit solid $secondary-color;
   border-radius: 2 * $spacing-unit;
   color: $secondary-color;
-  font-size: $font-size-form;
+  font-size: $font-size-medium;
 }
 
 .input {
