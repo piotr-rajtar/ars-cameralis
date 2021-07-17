@@ -39,9 +39,12 @@ export default class About extends Vue {
   color: $secondary-color;
   overflow-y: auto;
 
-  @include screen-mobile {
+  @include screen-tablet {
+    margin: 20 * $spacing-unit 0 0;
     padding: 5 * $spacing-unit;
+    width: 90%;
     max-height: 70vh;
+    border: 1px solid $secondary-color;
   }
 }
 
