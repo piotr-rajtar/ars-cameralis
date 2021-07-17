@@ -43,9 +43,12 @@ export default class Conductor extends Vue {
   color: $secondary-color;
   overflow-y: auto;
 
-  @include screen-mobile {
+  @include screen-tablet {
+    margin: 20 * $spacing-unit 0 0;
     padding: 5 * $spacing-unit;
+    width: 90%;
     max-height: 70vh;
+    border: 1px solid $secondary-color;
   }
 }
 
@@ -54,7 +57,7 @@ export default class Conductor extends Vue {
   font-size: $font-size-title;
   margin-bottom: 15 * $spacing-unit;
 
-  @include screen-mobile {
+  @include screen-tablet {
     margin-bottom: 5 * $spacing-unit;
   }
 }
@@ -63,7 +66,7 @@ export default class Conductor extends Vue {
   display: flex;
   justify-content: space-between;
 
-  @include screen-mobile {
+  @include screen-tablet {
     flex-direction: column;
     align-items: center;
   }
@@ -98,5 +101,12 @@ export default class Conductor extends Vue {
   font-size: $font-size-title-medium;
   margin: 5 * $spacing-unit;
   border: 2 * $spacing-unit solid $secondary-color;
+
+  @include screen-tablet {
+    margin: 2 * $spacing-unit;
+    border: 0.5 * $spacing-unit solid $secondary-color;
+    width: 250px;
+    height: 250px;
+  }
 }
 </style>
