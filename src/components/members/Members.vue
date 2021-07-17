@@ -2,32 +2,17 @@
   <div :class="style.container">
     <div :class="style.members">
       <h1 :class="style.header">SKŁAD</h1>
-      <table :class="style.table">
-        <thead>
-          <tr>
-            <th :class="style.tableHeader">Sopran</th>
-            <th :class="style.tableHeader">Alt</th>
-            <th :class="style.tableHeader">Tenor</th>
-            <th :class="style.tableHeader">Bas</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(member, index) in membersData" :key="index">
-            <td :class="style.tableCell">
-              {{ member.sopran.name ? member.sopran.name : null }}
-            </td>
-            <td :class="style.tableCell">
-              {{ member.alt.name ? member.alt.name : null }}
-            </td>
-            <td :class="style.tableCell">
-              {{ member.tenor.name ? member.tenor.name : null }}
-            </td>
-            <td :class="style.tableCell">
-              {{ member.bas.name ? member.bas.name : null }}
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <voice-table v-if="!isTablet" :membersData="membersData" />
+      <div v-else>
+        <member-mobile-tile :membersData="sopranoMembers">
+          Sopran
+        </member-mobile-tile>
+        <member-mobile-tile :membersData="altMembers">Alt</member-mobile-tile>
+        <member-mobile-tile :membersData="tenorMembers">
+          Tenor
+        </member-mobile-tile>
+        <member-mobile-tile :membersData="bassMembers">Bas</member-mobile-tile>
+      </div>
     </div>
   </div>
 </template>
@@ -42,17 +27,20 @@ import {
 } from './membersData';
 import { Member, VoiceTableRow } from '../../typings';
 import { maxMembersLength } from '../../utils';
+import VoiceTable from './VoiceTable.vue';
+import MemberMobileTile from './MemberMobileTile.vue';
 
-@Component({})
+@Component({ components: { VoiceTable, MemberMobileTile } })
 export default class Members extends Vue {
   altMembers: Member[] = altMembers;
   bassMembers: Member[] = bassMembers;
   sopranoMembers: Member[] = sopranoMembers;
   tenorMembers: Member[] = tenorMembers;
-
   membersData: Array<VoiceTableRow> = [];
+  tabletBreakPoint = window.matchMedia('(max-width: 900px)');
+  isTablet: boolean = this.tabletBreakPoint.matches;
 
-  created(): void {
+  mounted(): void {
     const maxLength = maxMembersLength(
       this.altMembers,
       this.bassMembers,
@@ -68,6 +56,11 @@ export default class Members extends Vue {
         bas: this.bassMembers[i] ?? '',
       });
     }
+    this.tabletBreakPoint.onchange = this.mediaQueryHandler;
+  }
+
+  mediaQueryHandler(): void {
+    this.isTablet = this.tabletBreakPoint.matches;
   }
 }
 </script>
@@ -92,9 +85,12 @@ export default class Members extends Vue {
   flex-direction: column;
   overflow-y: auto;
 
-  @include screen-mobile {
+  @include screen-tablet {
+    margin: 20 * $spacing-unit 0 0;
     padding: 5 * $spacing-unit;
+    width: 90%;
     max-height: 70vh;
+    border: 1px solid $secondary-color;
   }
 }
 
@@ -103,21 +99,12 @@ export default class Members extends Vue {
   font-size: $font-size-title;
   margin-bottom: 15 * $spacing-unit;
 
-  @include screen-mobile {
+  @include screen-tablet {
     margin-bottom: 5 * $spacing-unit;
   }
-}
 
-.table {
-  font-size: $font-size-title-medium;
-  text-align: center;
-}
-
-.tableHeader {
-  padding-bottom: 3 * $spacing-unit;
-}
-
-.tableCell {
-  padding-top: 2 * $spacing-unit;
+  @include screen-tablet-small {
+    margin-bottom: 8 * $spacing-unit;
+  }
 }
 </style>

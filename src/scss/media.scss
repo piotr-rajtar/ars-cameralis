@@ -4,6 +4,12 @@
   }
 }
 
+@mixin screen-tablet-small {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
 @mixin screen-tablet {
   @media (max-width: 1200px) {
     @content;

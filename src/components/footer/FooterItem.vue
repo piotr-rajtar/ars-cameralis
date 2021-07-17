@@ -30,14 +30,14 @@ export default class FooterItem extends Vue {
   @Prop({ type: String }) name!: string;
 
   tabletBreakPoint = window.matchMedia('(max-width: 1200px)');
-  isMobile: boolean = this.tabletBreakPoint.matches;
+  isTablet: boolean = this.tabletBreakPoint.matches;
 
   mounted(): void {
     this.tabletBreakPoint.onchange = this.mediaQueryHandler;
   }
 
   mediaQueryHandler(): void {
-    this.isMobile = this.tabletBreakPoint.matches;
+    this.isTablet = this.tabletBreakPoint.matches;
   }
 
   get iconType(): string {
@@ -57,7 +57,7 @@ export default class FooterItem extends Vue {
   }
 
   get iconSize(): number {
-    if (this.isMobile) {
+    if (this.isTablet) {
       return 45;
     } else {
       return this.name === 'instagram' ? 60 : 65;
