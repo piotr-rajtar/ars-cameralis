@@ -57,8 +57,9 @@ export default class Conductor extends Vue {
   font-size: $font-size-title;
   margin-bottom: 15 * $spacing-unit;
 
-  @include screen-tablet {
+  @include screen-mobile {
     margin-bottom: 5 * $spacing-unit;
+    font-size: $font-size-title-medium;
   }
 }
 
