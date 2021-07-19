@@ -34,8 +34,11 @@ export default class MemberMobileTile extends Vue {
 }
 
 .tileHeader {
+  margin: 0 auto;
+  padding-bottom: 2 * $spacing-unit;
   font-size: $font-size-title-medium;
-  margin-bottom: 5 * $spacing-unit;
+  width: fit-content;
+  border-bottom: 1px solid $secondary-color;
 }
 
 .list {

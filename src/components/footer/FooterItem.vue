@@ -10,9 +10,9 @@
     <a :href="link" target="_blank">
       <component
         :is="iconType"
-        :fill-color="iconFillColor"
-        :size="iconSize"
+        :size="30"
         :class="style.icon"
+        fill-color="#ffffff"
       />
     </a>
   </li>
@@ -29,17 +29,6 @@ export default class FooterItem extends Vue {
   @Prop({ type: String }) link!: string;
   @Prop({ type: String }) name!: string;
 
-  tabletBreakPoint = window.matchMedia('(max-width: 1200px)');
-  isTablet: boolean = this.tabletBreakPoint.matches;
-
-  mounted(): void {
-    this.tabletBreakPoint.onchange = this.mediaQueryHandler;
-  }
-
-  mediaQueryHandler(): void {
-    this.isTablet = this.tabletBreakPoint.matches;
-  }
-
   get iconType(): string {
     const icons: {
       [key: string]: string;
@@ -51,18 +40,6 @@ export default class FooterItem extends Vue {
 
     return icons[this.name];
   }
-
-  get iconFillColor(): string {
-    return '#ffffff';
-  }
-
-  get iconSize(): number {
-    if (this.isTablet) {
-      return 45;
-    } else {
-      return this.name === 'instagram' ? 60 : 65;
-    }
-  }
 }
 </script>
 
@@ -72,15 +49,15 @@ export default class FooterItem extends Vue {
 @import '../../scss/media.scss';
 
 $icon-box-size: 70px;
-$icon-box-size-mobile: 50px;
+$icon-box-size-mobile: 40px;
 
 .navLink {
   @include flex-centered;
   margin-right: 10 * $spacing-unit;
   cursor: pointer;
   border-radius: 50%;
-  width: $icon-box-size;
-  height: $icon-box-size;
+  width: $icon-box-size-mobile;
+  height: $icon-box-size-mobile;
 
   &:last-child {
     margin-right: 0;

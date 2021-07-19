@@ -35,31 +35,28 @@ export default class Offer extends Vue {
 }
 
 .textContainer {
-  margin: 35 * $spacing-unit 0 30 * $spacing-unit;
-  padding: 15 * $spacing-unit;
+  margin-top: 25 * $spacing-unit;
+  padding: 10 * $spacing-unit;
   width: 80%;
-  max-height: 80vh;
   background: $overlay;
   color: $secondary-color;
   overflow-y: auto;
 
   @include screen-tablet {
-    margin: 20 * $spacing-unit 0 0;
+    margin-top: 20 * $spacing-unit;
     padding: 5 * $spacing-unit;
     width: 90%;
-    max-height: 70vh;
     border: 1px solid $secondary-color;
   }
 }
 
 .header {
   text-align: center;
-  font-size: $font-size-title;
-  margin-bottom: 15 * $spacing-unit;
+  font-size: $font-size-title-medium;
+  margin-bottom: 7 * $spacing-unit;
 
   @include screen-mobile {
     margin-bottom: 5 * $spacing-unit;
-    font-size: $font-size-title-medium;
   }
 }
 
@@ -69,12 +66,13 @@ export default class Offer extends Vue {
 
 .tile {
   @include flex-centered;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   border-radius: 2 * $spacing-unit;
-  border: 2 * $spacing-unit solid $secondary-color;
+  border: $spacing-unit solid $secondary-color;
   font-size: $font-size-title-medium;
-  margin: 10 * $spacing-unit;
+  margin: 5 * $spacing-unit;
+  text-align: center;
 
   @include desktop {
     &:hover {

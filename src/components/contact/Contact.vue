@@ -4,21 +4,21 @@
       <h1 :class="style.header">Kontakt</h1>
       <form :class="style.form">
         <div :class="style.formControlContainer">
-          <label :class="style.label" for="name">Imię i nazwisko</label>
+          <label :class="style.label" for="name">Imię</label>
           <input
             :class="[style.formControl, style.input]"
             type="text"
             id="name"
           />
         </div>
-        <!-- <div :class="style.formControlContainer">
+        <div :class="style.formControlContainer">
           <label :class="style.label" for="surname">Nazwisko</label>
           <input
             :class="[style.formControl, style.input]"
             type="text"
             id="surname"
           />
-        </div> -->
+        </div>
         <div :class="style.formControlContainer">
           <label :class="style.label" for="email">Email</label>
           <input
@@ -70,31 +70,28 @@ export default class Repertoir extends Vue {
 }
 
 .textContainer {
-  margin: 35 * $spacing-unit 0 30 * $spacing-unit;
-  padding: 15 * $spacing-unit;
+  margin-top: 25 * $spacing-unit;
+  padding: 10 * $spacing-unit;
   width: 80%;
-  max-height: 80vh;
   background: $overlay;
   color: $secondary-color;
   overflow-y: auto;
 
   @include screen-tablet {
-    margin: 20 * $spacing-unit 0 0;
+    margin-top: 20 * $spacing-unit;
     padding: 5 * $spacing-unit;
     width: 90%;
-    max-height: 70vh;
     border: 1px solid $secondary-color;
   }
 }
 
 .header {
   text-align: center;
-  font-size: $font-size-title;
-  margin-bottom: 15 * $spacing-unit;
+  font-size: $font-size-title-medium;
+  margin-bottom: 7 * $spacing-unit;
 
   @include screen-mobile {
     margin-bottom: 5 * $spacing-unit;
-    font-size: $font-size-title-medium;
   }
 }
 
@@ -142,7 +139,7 @@ export default class Repertoir extends Vue {
 }
 
 .button {
-  margin-top: 15 * $spacing-unit;
+  margin-top: 5 * $spacing-unit;
   padding: 5 * $spacing-unit 15 * $spacing-unit;
   cursor: pointer;
 
@@ -151,10 +148,6 @@ export default class Repertoir extends Vue {
     opacity: 0.8;
     color: $main-color;
     transition: 1s ease;
-  }
-
-  @include screen-tablet {
-    margin-top: 5 * $spacing-unit;
   }
 }
 </style>

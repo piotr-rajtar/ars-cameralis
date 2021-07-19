@@ -19,13 +19,18 @@ export default class FooterBar extends Vue {
 <style lang="scss" module="style">
 @import '../../scss/variables.scss';
 @import '../../scss/mixins.scss';
+@import '../../scss/media.scss';
 
 .container {
   @include flex-justify-centered;
-  position: fixed;
   width: 100%;
-  bottom: 0;
-  padding: 3 * $spacing-unit 5 * $spacing-unit;
+  margin-top: 10px;
+  padding: 7 * $spacing-unit 5 * $spacing-unit;
   background-color: transparent;
+
+  @include desktop-big {
+    position: fixed;
+    bottom: 0;
+  }
 }
 </style>
