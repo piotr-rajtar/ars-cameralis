@@ -1,6 +1,6 @@
 <template>
   <h1 :class="style.logo">
-    <router-link to="/" :class="style.link">Ars Cameralis</router-link>
+    <router-link to="/" :class="style.link">ars cameralis</router-link>
   </h1>
 </template>
 
@@ -15,8 +15,7 @@ export default class Logo extends Vue {}
 @import '../../scss/variables.scss';
 @import '../../scss/media.scss';
 
-$logo-size: 40px;
-$logo-size-mobile: 35px;
+$logo-size: 30px;
 
 .link {
   text-decoration: none;
@@ -31,9 +30,7 @@ $logo-size-mobile: 35px;
   color: $secondary-color;
   font-size: $logo-size;
   cursor: pointer;
-
-  @include screen-mobile {
-    font-size: $logo-size-mobile;
-  }
+  font-family: $logo-font;
+  font-weight: 100;
 }
 </style>

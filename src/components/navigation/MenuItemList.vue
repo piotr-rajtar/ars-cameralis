@@ -31,7 +31,7 @@ export default class MenuItemList extends Vue {
 @import '../../scss/mixins.scss';
 @import '../../scss/media.scss';
 
-$nav-link-size: 30px;
+$nav-link-size: 20px;
 
 .navLinksContainer {
   @include flex-aligned-center-space-around;

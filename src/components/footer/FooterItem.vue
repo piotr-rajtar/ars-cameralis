@@ -10,7 +10,7 @@
     <a :href="link" target="_blank">
       <component
         :is="iconType"
-        :size="30"
+        :size="35"
         :class="style.icon"
         fill-color="#ffffff"
       />

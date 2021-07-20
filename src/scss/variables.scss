@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans&display=swap');
+
 /* SPACINGS */
 $spacing-unit: 4px;
 
@@ -12,5 +14,8 @@ $overlay: rgba(0, 0, 0, 0.7);
 /* FONTS */
 $font-size-title: 50px;
 $font-size-title-medium: 40px;
+$font-size-title-semi-medium: 35px;
 $font-size-medium: 30px;
 $font-size-paragraph: 20px;
+$main-font: 'Open Sans', sans-serif;
+$logo-font: 'Abril Fatface', cursive;

@@ -28,6 +28,7 @@ export default class About extends Vue {
 
 .container {
   @include flex-centered;
+  font-family: $main-font;
 }
 
 .textContainer {
@@ -59,5 +60,6 @@ export default class About extends Vue {
 .paragraph {
   margin-top: 5 * $spacing-unit;
   font-size: $font-size-paragraph;
+  line-height: 9 * $spacing-unit;
 }
 </style>

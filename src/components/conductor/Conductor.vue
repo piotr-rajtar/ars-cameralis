@@ -32,6 +32,7 @@ export default class Conductor extends Vue {
 
 .container {
   @include flex-centered;
+  font-family: $main-font;
 }
 
 .conductor {
@@ -83,6 +84,7 @@ export default class Conductor extends Vue {
   flex: 50%;
   margin-top: 5 * $spacing-unit;
   font-size: $font-size-paragraph;
+  line-height: 9 * $spacing-unit;
 }
 
 .image {

@@ -1,7 +1,7 @@
 <template>
   <div :class="style.container">
     <div :class="style.members">
-      <h1 :class="style.header">SKŁAD</h1>
+      <h1 :class="style.header">Skład</h1>
       <voice-table v-if="!isTablet" :membersData="membersData" />
       <div v-else>
         <member-mobile-tile :membersData="sopranoMembers">
@@ -72,6 +72,7 @@ export default class Members extends Vue {
 
 .container {
   @include flex-centered;
+  font-family: $main-font;
 }
 
 .members {

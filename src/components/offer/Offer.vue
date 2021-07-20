@@ -32,6 +32,7 @@ export default class Offer extends Vue {
 
 .container {
   @include flex-centered;
+  font-family: $main-font;
 }
 
 .textContainer {

@@ -67,6 +67,7 @@ export default class Repertoir extends Vue {
 
 .container {
   @include flex-centered;
+  font-family: $main-font;
 }
 
 .textContainer {
@@ -125,6 +126,7 @@ export default class Repertoir extends Vue {
   border-radius: 2 * $spacing-unit;
   color: $secondary-color;
   font-size: $font-size-paragraph;
+  font-family: $main-font;
 }
 
 .input {

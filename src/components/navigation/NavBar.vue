@@ -61,6 +61,7 @@ export default class NavBar extends Vue {
 }
 
 .menuItems {
+  font-family: $main-font;
   @include screen-tablet {
     display: none;
   }
