@@ -49,7 +49,7 @@ export default class Repertoir extends Vue {
 
 .header {
   text-align: center;
-  font-size: $font-size-title-medium;
+  font-size: $font-size-large;
   margin-bottom: 7 * $spacing-unit;
 
   @include screen-mobile {

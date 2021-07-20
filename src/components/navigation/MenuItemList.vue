@@ -31,13 +31,11 @@ export default class MenuItemList extends Vue {
 @import '../../scss/mixins.scss';
 @import '../../scss/media.scss';
 
-$nav-link-size: 25px;
-
 .navLinksContainer {
   @include flex-aligned-center-space-around;
   list-style-type: none;
   color: $secondary-color;
-  font-size: $nav-link-size;
+  font-size: $font-size-semi-medium;
   font-family: $main-font;
 
   @include screen-tablet {

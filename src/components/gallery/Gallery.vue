@@ -53,7 +53,7 @@ export default class Offer extends Vue {
 
 .header {
   text-align: center;
-  font-size: $font-size-title-medium;
+  font-size: $font-size-large;
   margin-bottom: 7 * $spacing-unit;
 
   @include screen-mobile {
@@ -71,7 +71,7 @@ export default class Offer extends Vue {
   height: 300px;
   border-radius: 2 * $spacing-unit;
   border: $spacing-unit solid $secondary-color;
-  font-size: $font-size-title-medium;
+  font-size: $font-size-large;
   margin: 5 * $spacing-unit;
 
   &:hover {

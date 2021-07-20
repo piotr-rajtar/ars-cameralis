@@ -95,7 +95,7 @@ export default class Members extends Vue {
 
 .header {
   text-align: center;
-  font-size: $font-size-title-medium;
+  font-size: $font-size-large;
   margin-bottom: 10 * $spacing-unit;
 
   @include screen-mobile {

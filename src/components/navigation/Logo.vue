@@ -15,8 +15,6 @@ export default class Logo extends Vue {}
 @import '../../scss/variables.scss';
 @import '../../scss/media.scss';
 
-$logo-size: 30px;
-
 .link {
   text-decoration: none;
 
@@ -28,7 +26,7 @@ $logo-size: 30px;
 
 .logo {
   color: $secondary-color;
-  font-size: $logo-size;
+  font-size: $font-size-medium;
   cursor: pointer;
   font-family: $logo-font;
   font-weight: 100;

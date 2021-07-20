@@ -53,7 +53,7 @@ export default class Conductor extends Vue {
 
 .header {
   text-align: center;
-  font-size: $font-size-title-medium;
+  font-size: $font-size-large;
   margin-bottom: 7 * $spacing-unit;
 
   @include screen-mobile {
@@ -98,7 +98,7 @@ export default class Conductor extends Vue {
   width: 300px;
   height: 300px;
   border-radius: 2 * $spacing-unit;
-  font-size: $font-size-title-medium;
+  font-size: $font-size-large;
   margin: 5 * $spacing-unit;
   border: 2 * $spacing-unit solid $secondary-color;
 

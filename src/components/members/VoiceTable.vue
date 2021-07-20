@@ -48,7 +48,7 @@ export default class VoiceTable extends Vue {
 
 .tableHeader {
   padding-bottom: 3 * $spacing-unit;
-  font-size: $font-size-title-medium;
+  font-size: $font-size-large;
 }
 
 .tableCell {
