@@ -133,6 +133,12 @@ export default class Repertoir extends Vue {
   height: 50px;
   width: 100%;
   padding: 2 * $spacing-unit;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0.5 * $spacing-unit $spacing-unit 2 * $spacing-unit
+      $secondary-color;
+  }
 }
 
 .textarea {
