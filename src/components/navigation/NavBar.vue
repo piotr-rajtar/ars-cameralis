@@ -1,7 +1,7 @@
 <template>
   <header :class="style.container">
     <nav :class="style.navigation">
-      <logo />
+      <logo @click.native="onLogoClick" />
       <menu-icon
         :fill-color="iconFillColor"
         :size="35"
@@ -34,6 +34,10 @@ export default class NavBar extends Vue {
 
   get iconFillColor(): string {
     return '#ffffff';
+  }
+
+  onLogoClick(): void {
+    this.isMobileMenuVisible = false;
   }
 
   toggleMobileMenu(): void {
