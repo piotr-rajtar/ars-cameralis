@@ -18,6 +18,7 @@ export default class Homepage extends Vue {}
 
 .container {
   height: 100vh;
+  font-family: $main-font;
 }
 
 .title {
