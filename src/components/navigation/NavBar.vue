@@ -1,14 +1,18 @@
 <template>
   <header :class="style.container">
     <nav :class="style.navigation">
-      <logo @click.native="onLogoClick" />
+      <logo @click.native="onDesktopNavItemClick" />
       <menu-icon
         :fill-color="iconFillColor"
         :size="35"
         :class="style.menuIcon"
         @click="toggleMobileMenu"
       />
-      <menu-item-list :menuItems="menuItems" :class="style.menuItems" />
+      <menu-item-list
+        :menuItems="menuItems"
+        :class="style.menuItems"
+        @itemClick="onDesktopNavItemClick"
+      />
     </nav>
     <menu-item-list
       v-if="isMobileMenuVisible"
@@ -36,12 +40,14 @@ export default class NavBar extends Vue {
     return '#ffffff';
   }
 
-  onLogoClick(): void {
+  onDesktopNavItemClick(): void {
     this.isMobileMenuVisible = false;
+    window.scrollTo(0, 0);
   }
 
   toggleMobileMenu(): void {
     this.isMobileMenuVisible = !this.isMobileMenuVisible;
+    window.scrollTo(0, 0);
   }
 }
 </script>
