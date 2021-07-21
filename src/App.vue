@@ -26,6 +26,7 @@ export default class App extends Vue {}
   background-image: url('./assets/demo1.jpg');
   background-position: center center;
   background-size: cover;
+  background-attachment: fixed;
   width: 100%;
   min-height: 100vh;
 
