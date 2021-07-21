@@ -85,6 +85,7 @@ export default class Conductor extends Vue {
   margin-top: 5 * $spacing-unit;
   font-size: $font-size-paragraph;
   line-height: 9 * $spacing-unit;
+  text-align: justify;
 }
 
 .image {
