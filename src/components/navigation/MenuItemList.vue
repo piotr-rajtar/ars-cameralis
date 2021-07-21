@@ -35,7 +35,7 @@ export default class MenuItemList extends Vue {
   @include flex-aligned-center-space-around;
   list-style-type: none;
   color: $secondary-color;
-  font-size: $font-size-semi-medium;
+  font-size: $font-size-paragraph;
   font-family: $main-font;
 
   @include screen-tablet {
@@ -46,6 +46,7 @@ export default class MenuItemList extends Vue {
     height: 100vh;
     overflow-y: auto;
     padding-bottom: 5 * $spacing-unit;
+    font-size: $font-size-semi-medium;
   }
 }
 </style>

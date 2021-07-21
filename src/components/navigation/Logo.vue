@@ -28,9 +28,13 @@ export default class Logo extends Vue {}
 
 .logo {
   color: $secondary-color;
-  font-size: $font-size-medium;
+  font-size: $font-size-large;
   cursor: pointer;
   font-family: $logo-font;
   font-weight: 100;
+
+  @include screen-tablet {
+    font-size: $font-size-medium;
+  }
 }
 </style>
