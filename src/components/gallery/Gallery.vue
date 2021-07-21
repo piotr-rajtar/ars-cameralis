@@ -74,12 +74,6 @@ export default class Offer extends Vue {
   font-size: $font-size-large;
   margin: 5 * $spacing-unit;
 
-  &:hover {
-    background-color: $secondary-color;
-    opacity: 0.8;
-    color: $main-color;
-  }
-
   @include screen-tablet-small {
     height: 250px;
     width: 250px;
