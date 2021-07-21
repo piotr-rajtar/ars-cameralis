@@ -40,7 +40,9 @@ export default class MenuItem extends Vue {
   text-decoration: none;
   padding-bottom: $spacing-unit;
 
+  &:link,
   &:visited,
+  &:hover,
   &:active {
     color: inherit;
   }
