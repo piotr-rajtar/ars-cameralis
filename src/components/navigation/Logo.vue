@@ -18,7 +18,9 @@ export default class Logo extends Vue {}
 .link {
   text-decoration: none;
 
+  &:link,
   &:visited,
+  &:hover,
   &:active {
     color: inherit;
   }
