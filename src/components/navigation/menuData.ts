@@ -18,8 +18,8 @@ export const menuItems: LinkListItemI[] = [
     link: '/repertoir',
   },
   {
-    name: 'Oferta',
-    link: '/offer',
+    name: 'Współpraca',
+    link: '/collaboration',
   },
   {
     name: 'Galeria',

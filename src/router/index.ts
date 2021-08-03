@@ -5,7 +5,7 @@ import About from '../components/about/About.vue';
 import Conductor from '../components/conductor/Conductor.vue';
 import Members from '../components/members/Members.vue';
 import Repertoir from '../components/repertoir/Repertoir.vue';
-import Offer from '../components/offer/Offer.vue';
+import Collaboration from '../components/collaboration/Collaboration.vue';
 import Gallery from '../components/gallery/Gallery.vue';
 import Contact from '../components/contact/Contact.vue';
 
@@ -38,9 +38,9 @@ const routes: Array<RouteConfig> = [
     component: Repertoir,
   },
   {
-    path: '/offer',
-    name: 'Offer',
-    component: Offer,
+    path: '/collaboration',
+    name: 'Collaboration',
+    component: Collaboration,
   },
   {
     path: '/gallery',

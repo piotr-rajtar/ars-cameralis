@@ -1,7 +1,7 @@
 <template>
   <div :class="style.container">
     <div :class="style.textContainer">
-      <h1 :class="style.header">Oferta</h1>
+      <h1 :class="style.header">Współpraca</h1>
       <div :class="style.tileContainer">
         <div
           v-for="(item, index) in offerItems"
@@ -17,10 +17,10 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { offerItems } from './offerContent';
+import { offerItems } from './collaborationContent';
 
 @Component({})
-export default class Offer extends Vue {
+export default class Collaboration extends Vue {
   offerItems = offerItems;
 }
 </script>
