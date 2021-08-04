@@ -2,22 +2,18 @@
   <div :class="style.container">
     <div :class="style.textContainer">
       <h1 :class="style.header">Repertuar</h1>
-      <p :class="style.repertoir">{{ repertoir1 }}</p>
-      <p :class="style.repertoir">{{ repertoir2 }}</p>
-      <p :class="style.repertoir">{{ repertoir3 }}</p>
+      <p :class="style.repertoir">{{ paragraph1 }}</p>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { repertoir1, repertoir2, repertoir3 } from './repertoirContent';
+import { paragraph1 } from './repertoirContent';
 
 @Component({})
 export default class Repertoir extends Vue {
-  repertoir1 = repertoir1;
-  repertoir2 = repertoir2;
-  repertoir3 = repertoir3;
+  paragraph1 = paragraph1;
 }
 </script>
 
