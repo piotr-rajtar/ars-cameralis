@@ -7,7 +7,10 @@
           <!-- <img :class="style.image" src="../../assets/placeholder.jpg" /> -->
           ZDJĘCIE
         </div>
-        <p :class="style.description">{{ conductorDescription }}</p>
+        <div :class="style.description">
+          <p>{{ paragraph1 }}</p>
+          <p>{{ paragraph2 }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -15,13 +18,14 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { conductor, conductorDescription } from './conductorData';
+import { conductor, paragraph1, paragraph2 } from './conductorData';
 import { Member } from '../../typings';
 
 @Component({})
 export default class Conductor extends Vue {
   conductor: Member = conductor;
-  conductorDescription: string = conductorDescription;
+  paragraph1: string = paragraph1;
+  paragraph2: string = paragraph2;
 }
 </script>
 
