@@ -2,63 +2,75 @@ import { Member } from '../../typings';
 
 export const altMembers: Member[] = [
   {
-    name: 'Pierwszy Alt',
+    name: 'Anna Bernat',
   },
   {
-    name: 'Drugi Alt',
+    name: 'Barbara Gumułka',
   },
   {
-    name: 'Trzeci Alt',
+    name: 'Joanna Guja',
   },
   {
-    name: 'Czwarty Alt',
+    name: 'Justyna Tuchowska',
   },
   {
-    name: 'Piąty Alt',
+    name: 'Karolina Filiks',
+  },
+  {
+    name: 'Monika Jawańska',
+  },
+  {
+    name: 'Urszula Rusnak',
   },
 ];
 
 export const bassMembers: Member[] = [
   {
-    name: 'Pierwszy Bas',
+    name: 'Andrzej Galiński',
   },
   {
-    name: 'Drugi Bas',
+    name: 'Bartosz Kowalik',
   },
   {
-    name: 'Trzeci Bas',
+    name: 'Piotr Rajtar',
   },
   {
-    name: 'Czwarty Bas',
+    name: 'Piotr Ślęczka',
   },
 ];
 
 export const sopranoMembers: Member[] = [
   {
-    name: 'Pierwszy Sopran',
+    name: 'Anna Frey',
   },
   {
-    name: 'Drugi Sopran',
+    name: 'Daria Stawiarska',
   },
   {
-    name: 'Trzeci Sopran',
+    name: 'Elżbieta Biega',
   },
   {
-    name: 'Czwarty Sopran',
+    name: 'Judyta Pawlak',
   },
   {
-    name: 'Piąty Sopran',
+    name: 'Paulina Woźniczka',
   },
   {
-    name: 'Szósty Sopran',
+    name: 'Sylwia Odroń',
+  },
+  {
+    name: 'Sylwia Panas',
+  },
+  {
+    name: 'Wanda Sordoń',
   },
 ];
 
 export const tenorMembers: Member[] = [
   {
-    name: 'Pierwszy Tenor',
+    name: 'Bartłomiej Waśko',
   },
   {
-    name: 'Drugi Tenor',
+    name: 'Marek Bebak',
   },
 ];
