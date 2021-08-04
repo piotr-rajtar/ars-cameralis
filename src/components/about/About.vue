@@ -4,20 +4,18 @@
       <h1 :class="style.header">O nas</h1>
       <p :class="style.paragraph">{{ paragraph1 }}</p>
       <p :class="style.paragraph">{{ paragraph2 }}</p>
-      <p :class="style.paragraph">{{ paragraph3 }}</p>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { paragraph1, paragraph2, paragraph3 } from './aboutContent';
+import { paragraph1, paragraph2 } from './aboutContent';
 
 @Component({})
 export default class About extends Vue {
   paragraph1 = paragraph1;
   paragraph2 = paragraph2;
-  paragraph3 = paragraph3;
 }
 </script>
 
