@@ -8,7 +8,7 @@
           ZDJĘCIE
         </div>
         <div :class="style.description">
-          <p>{{ paragraph1 }}</p>
+          <p :class="style.firstParagraph">{{ paragraph1 }}</p>
           <p>{{ paragraph2 }}</p>
         </div>
       </div>
@@ -90,6 +90,10 @@ export default class Conductor extends Vue {
   font-size: $font-size-paragraph;
   line-height: 9 * $spacing-unit;
   text-align: justify;
+}
+
+.firstParagraph {
+  margin-bottom: 5 * $spacing-unit;
 }
 
 .image {
