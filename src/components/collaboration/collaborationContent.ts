@@ -1,8 +1,6 @@
 export const offerItems: Array<string> = [
+  'Przesłuchania do chóru',
   'Koncerty',
   'Oprawa liturgii',
-  'Chrzciny',
-  'Komunie',
   'Śluby',
-  'Pogrzeby',
 ];

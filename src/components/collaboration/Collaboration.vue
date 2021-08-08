@@ -67,8 +67,8 @@ export default class Collaboration extends Vue {
 
 .tile {
   @include flex-centered;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border-radius: 2 * $spacing-unit;
   border: $spacing-unit solid $secondary-color;
   font-size: $font-size-large;
@@ -85,7 +85,7 @@ export default class Collaboration extends Vue {
   }
 
   @include screen-mobile {
-    height: 100px;
+    height: 150px;
     border: $spacing-unit solid $secondary-color;
     font-size: $font-size-medium;
     margin: 5 * $spacing-unit;
