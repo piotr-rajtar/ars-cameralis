@@ -47,9 +47,15 @@
         </button>
       </form>
       <div :class="style.contactBox" @click="onEmailClick">
-        <mail-icon :class="style.mailIcon" :size="25" />
-        <p :class="style.boxInfo">{{ mail }}</p>
-        <copy-icon :class="style.copyIcon" :size="20" />
+        <mail-icon
+          :class="style.mailIcon"
+          :size="isExtraSmallScreen ? 20 : 25"
+        />
+        <p :class="style.contactInfo">{{ mail }}</p>
+        <copy-icon
+          :class="style.copyIcon"
+          :size="isExtraSmallScreen ? 15 : 20"
+        />
       </div>
     </div>
     <div
@@ -60,7 +66,11 @@
       ]"
     >
       <p :class="style.boxInfo">{{ snackbarInfo }}</p>
-      <close-icon :class="style.closeIcon" :size="25" @click="onClose" />
+      <close-icon
+        :class="style.closeIcon"
+        :size="isExtraSmallScreen ? 20 : 25"
+        @click="onClose"
+      />
     </div>
   </div>
 </template>
@@ -78,11 +88,21 @@ export default class Repertoir extends Vue {
   mail: string = mail;
   isSnackBarVisible = false;
   copiedSuccessfully: boolean = false;
+  smallMobileBreakPoint = window.matchMedia('(max-width: 375px)');
+  isExtraSmallScreen: boolean = this.smallMobileBreakPoint.matches;
+
+  mounted(): void {
+    this.smallMobileBreakPoint.onchange = this.mediaQueryHandler;
+  }
 
   get snackbarInfo(): string {
     return this.copiedSuccessfully
       ? 'Skopiowano pomyślnie'
       : 'Błąd w kopiowaniu';
+  }
+
+  mediaQueryHandler(): void {
+    this.isExtraSmallScreen = this.smallMobileBreakPoint.matches;
   }
 
   onEmailClick(): void {
@@ -235,8 +255,16 @@ export default class Repertoir extends Vue {
   }
 }
 
+.boxInfo {
+  font-size: $font-size-paragraph;
+
+  @include screen-mobile {
+    font-size: $font-size-paragraph-small;
+  }
+}
+
 .contactBox {
-  display: inline-flex;
+  @include flex-aligned-center-space-between;
   margin: 15 * $spacing-unit auto 0;
   border: 0.5 * $spacing-unit solid $secondary-color;
   border-radius: 2 * $spacing-unit;
@@ -258,6 +286,14 @@ export default class Repertoir extends Vue {
   }
 }
 
+.contactInfo {
+  @extend .boxInfo;
+
+  @include screen-mobile-small {
+    font-size: $font-size-mobile-small;
+  }
+}
+
 .mailIcon {
   @include flex-align-centered;
   margin-right: 3 * $spacing-unit;
@@ -271,17 +307,8 @@ export default class Repertoir extends Vue {
     margin-left: 6 * $spacing-unit;
   }
 }
-
-.boxInfo {
-  font-size: $font-size-paragraph;
-
-  @include screen-mobile {
-    font-size: $font-size-paragraph-small;
-  }
-}
-
 .snackbar {
-  display: inline-flex;
+  @include flex-centered;
   position: fixed;
   top: 0;
   border: none;
