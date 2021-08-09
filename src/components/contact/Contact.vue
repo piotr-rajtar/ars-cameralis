@@ -2,6 +2,7 @@
   <div :class="style.container">
     <div :class="style.textContainer">
       <h1 :class="style.header">Kontakt</h1>
+      <h2 :class="style.subheader">{{ contactHeader }}</h2>
       <form :class="style.form">
         <div :class="style.formControlContainer">
           <label :class="style.label" for="name">Imię</label>
@@ -45,15 +46,69 @@
           Wyślij
         </button>
       </form>
+      <div :class="style.contactBox" @click="onEmailClick">
+        <mail-icon :class="style.mailIcon" :size="25" />
+        <p :class="style.boxInfo">{{ mail }}</p>
+        <copy-icon :class="style.copyIcon" :size="20" />
+      </div>
+    </div>
+    <div
+      v-if="isSnackBarVisible"
+      :class="[
+        style.snackbar,
+        copiedSuccessfully ? style.snackbarPositive : style.snackbarNegative,
+      ]"
+    >
+      <p :class="style.boxInfo">{{ snackbarInfo }}</p>
+      <close-icon :class="style.closeIcon" :size="25" @click="onClose" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import MailIcon from 'vue-material-design-icons/EmailOutline.vue';
+import CloseIcon from 'vue-material-design-icons/Close.vue';
+import CopyIcon from 'vue-material-design-icons/ContentCopy.vue';
+import { contactHeader, mail } from './contactData';
 
-@Component({})
+@Component({ components: { MailIcon, CloseIcon, CopyIcon } })
 export default class Repertoir extends Vue {
+  contactHeader: string = contactHeader;
+  mail: string = mail;
+  isSnackBarVisible = false;
+  copiedSuccessfully: boolean = false;
+
+  get snackbarInfo(): string {
+    return this.copiedSuccessfully
+      ? 'Skopiowano pomyślnie'
+      : 'Błąd w kopiowaniu';
+  }
+
+  onEmailClick(): void {
+    navigator.clipboard
+      .writeText(this.mail)
+      .then(() => {
+        this.copiedSuccessfully = true;
+        this.isSnackBarVisible = true;
+        setTimeout(() => {
+          this.isSnackBarVisible = false;
+        }, 5000);
+        this.copiedSuccessfully = true;
+      })
+      .catch(() => {
+        this.copiedSuccessfully = false;
+        this.isSnackBarVisible = true;
+        setTimeout(() => {
+          this.isSnackBarVisible = false;
+        }, 5000);
+      });
+  }
+
+  onClose(): void {
+    this.isSnackBarVisible = false;
+  }
+
   onSubmit(event: Event): void {
     event.preventDefault();
   }
@@ -67,10 +122,12 @@ export default class Repertoir extends Vue {
 
 .container {
   @include flex-centered;
+  flex-direction: column;
   font-family: $main-font;
 }
 
 .textContainer {
+  @include flex-column;
   margin-top: 25 * $spacing-unit;
   padding: 10 * $spacing-unit;
   width: 80%;
@@ -96,6 +153,17 @@ export default class Repertoir extends Vue {
   }
 }
 
+.subheader {
+  margin-bottom: 7 * $spacing-unit;
+  line-height: 36px;
+  font-size: $font-size-semi-medium;
+  text-align: justify;
+
+  @include screen-mobile {
+    font-size: $font-size-paragraph;
+  }
+}
+
 .form {
   @include flex-column-centered;
 }
@@ -118,6 +186,10 @@ export default class Repertoir extends Vue {
   color: $secondary-color;
   font-size: $font-size-medium;
   margin-bottom: $spacing-unit;
+
+  @include screen-mobile {
+    font-size: $font-size-semi-medium;
+  }
 }
 
 .formControl {
@@ -139,6 +211,10 @@ export default class Repertoir extends Vue {
     box-shadow: 0.5 * $spacing-unit $spacing-unit 2 * $spacing-unit
       $secondary-color;
   }
+
+  @include screen-mobile {
+    height: 40px;
+  }
 }
 
 .textarea {
@@ -157,5 +233,78 @@ export default class Repertoir extends Vue {
     color: $main-color;
     transition: 1s ease;
   }
+}
+
+.contactBox {
+  display: inline-flex;
+  margin: 15 * $spacing-unit auto 0;
+  border: 0.5 * $spacing-unit solid $secondary-color;
+  border-radius: 2 * $spacing-unit;
+  color: $secondary-color;
+  font-size: $font-size-paragraph;
+  padding: 2 * $spacing-unit;
+  width: fit-content;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $secondary-color;
+    opacity: 0.8;
+    color: $main-color;
+    transition: 1s ease;
+  }
+
+  @include screen-mobile {
+    width: 100%;
+  }
+}
+
+.mailIcon {
+  @include flex-align-centered;
+  margin-right: 3 * $spacing-unit;
+}
+
+.copyIcon {
+  @include flex-align-centered;
+  margin-left: 10 * $spacing-unit;
+
+  @include screen-mobile {
+    margin-left: 6 * $spacing-unit;
+  }
+}
+
+.boxInfo {
+  font-size: $font-size-paragraph;
+
+  @include screen-mobile {
+    font-size: $font-size-paragraph-small;
+  }
+}
+
+.snackbar {
+  display: inline-flex;
+  position: fixed;
+  top: 0;
+  border: none;
+  border-radius: 2 * $spacing-unit;
+  color: $secondary-color;
+  font-size: $font-size-paragraph;
+  padding: 2 * $spacing-unit 4 * $spacing-unit;
+  width: fit-content;
+  z-index: 999;
+  margin-top: 5 * $spacing-unit;
+}
+
+.snackbarPositive {
+  background-color: $positive-color;
+}
+
+.snackbarNegative {
+  background-color: $negative-color;
+}
+
+.closeIcon {
+  @include flex-align-centered;
+  margin-left: 3 * $spacing-unit;
+  cursor: pointer;
 }
 </style>
