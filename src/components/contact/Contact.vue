@@ -116,8 +116,7 @@ export default class Repertoir extends Vue {
         }, 5000);
         this.copiedSuccessfully = true;
       })
-      .catch((err) => {
-        alert(err);
+      .catch(() => {
         this.copiedSuccessfully = false;
         this.isSnackBarVisible = true;
         setTimeout(() => {
