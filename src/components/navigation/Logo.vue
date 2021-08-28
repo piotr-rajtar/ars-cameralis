@@ -33,7 +33,7 @@ export default class Logo extends Vue {}
   font-family: $logo-font;
   font-weight: 100;
 
-  @include screen-tablet {
+  @include header-breakpoint {
     font-size: $font-size-medium;
   }
 }

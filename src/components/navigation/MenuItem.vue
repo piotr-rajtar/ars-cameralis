@@ -31,7 +31,7 @@ export default class MenuItem extends Vue {
     margin-right: 0;
   }
 
-  @include screen-tablet {
+  @include header-breakpoint {
     margin: 3 * $spacing-unit 0 3 * $spacing-unit 5 * $spacing-unit;
   }
 }
