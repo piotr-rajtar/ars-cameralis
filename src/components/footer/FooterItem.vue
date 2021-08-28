@@ -48,7 +48,6 @@ export default class FooterItem extends Vue {
 @import '../../scss/mixins.scss';
 @import '../../scss/media.scss';
 
-$icon-box-size: 70px;
 $icon-box-size-mobile: 40px;
 
 .navLink {

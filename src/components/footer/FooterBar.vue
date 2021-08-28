@@ -1,6 +1,7 @@
 <template>
   <footer :class="style.container">
     <footer-item-list :footerItems="footerItems" />
+    <p :class="style.rights">Piotr Rajtar © 2021 All Rights Reserved.</p>
   </footer>
 </template>
 
@@ -22,15 +23,16 @@ export default class FooterBar extends Vue {
 @import '../../scss/media.scss';
 
 .container {
-  @include flex-justify-centered;
+  @include flex-column-centered;
   width: 100%;
-  margin-top: 10px;
   padding: 7 * $spacing-unit 5 * $spacing-unit;
   background-color: transparent;
+  color: $secondary-color;
+  font-size: $font-size-paragraph-small;
+  font-family: $main-font;
+}
 
-  @include desktop-big {
-    position: fixed;
-    bottom: 0;
-  }
+.rights {
+  margin-top: 2 * $spacing-unit;
 }
 </style>

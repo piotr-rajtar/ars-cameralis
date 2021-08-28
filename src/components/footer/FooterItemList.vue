@@ -25,9 +25,7 @@ export default class FooterItemList extends Vue {
 @import '../../scss/mixins.scss';
 
 .navLinksContainer {
-  @include flex-aligned-center-space-around;
+  display: flex;
   list-style-type: none;
-  color: $secondary-color;
-  font-size: $font-size-medium;
 }
 </style>
