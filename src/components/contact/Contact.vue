@@ -179,7 +179,7 @@ export default class Repertoir extends Vue {
   font-size: $font-size-semi-medium;
   text-align: justify;
 
-  @include screen-mobile {
+  @include screen-tablet {
     font-size: $font-size-paragraph;
   }
 }
