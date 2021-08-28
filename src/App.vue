@@ -4,7 +4,7 @@
     <main :class="style.mainContent">
       <router-view />
     </main>
-    <footer-bar :class="style.footer" />
+    <footer-bar :class="[style.footer, isFooterHidden ? style.hidden : '']" />
   </div>
 </template>
 
@@ -14,7 +14,11 @@ import NavBar from './components/navigation/NavBar.vue';
 import FooterBar from './components/footer/FooterBar.vue';
 
 @Component({ components: { NavBar, FooterBar } })
-export default class App extends Vue {}
+export default class App extends Vue {
+  get isFooterHidden(): boolean {
+    return this.$route.name === 'Homepage' ? true : false;
+  }
+}
 </script>
 
 <style lang="scss" module="style">
@@ -46,5 +50,9 @@ export default class App extends Vue {}
 
 .mainContent {
   flex-grow: 1;
+}
+
+.hidden {
+  display: none;
 }
 </style>
