@@ -1,10 +1,10 @@
 <template>
   <div id="app" :class="style.container">
-    <nav-bar />
-    <main>
+    <nav-bar :class="style.header" />
+    <main :class="style.mainContent">
       <router-view />
     </main>
-    <footer-bar />
+    <footer-bar :class="style.footer" />
   </div>
 </template>
 
@@ -29,11 +29,22 @@ export default class App extends Vue {}
   background-attachment: fixed;
   width: 100%;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   @include screen-mobile {
     background-size: contain;
     background-repeat: no-repeat;
     background-color: $main-color;
   }
+}
+
+.header,
+.footer {
+  flex-shrink: 0;
+}
+
+.mainContent {
+  flex-grow: 1;
 }
 </style>
