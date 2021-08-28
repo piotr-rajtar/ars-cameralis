@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import Homepage from '../components/homepage/Homepage.vue';
 import About from '../components/about/About.vue';
+import News from '../components/news/News.vue';
 import Conductor from '../components/conductor/Conductor.vue';
 import Members from '../components/members/Members.vue';
 import Repertoir from '../components/repertoir/Repertoir.vue';
@@ -21,6 +22,11 @@ const routes: Array<RouteConfig> = [
     path: '/about',
     name: 'About',
     component: About,
+  },
+  {
+    path: '/news',
+    name: 'News',
+    component: News,
   },
   {
     path: '/conductor',

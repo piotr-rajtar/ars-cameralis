@@ -6,6 +6,10 @@ export const menuItems: LinkListItemI[] = [
     link: '/about',
   },
   {
+    name: 'Aktualności',
+    link: '/news',
+  },
+  {
     name: 'Dyrygent',
     link: '/conductor',
   },
