@@ -57,7 +57,6 @@ export default class Members extends Vue {
       });
     }
     this.tabletBreakPoint.onchange = this.mediaQueryHandler;
-    console.log(process.env.VUE_APP_TEST);
   }
 
   mediaQueryHandler(): void {
