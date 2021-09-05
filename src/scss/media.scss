@@ -34,6 +34,12 @@
   }
 }
 
+@mixin table-breakpoint {
+  @media (max-width: 1370px) {
+    @content;
+  }
+}
+
 @mixin desktop-big {
   @media (min-width: 1600px) {
     @content;
