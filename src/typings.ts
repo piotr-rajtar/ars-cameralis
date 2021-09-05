@@ -14,3 +14,23 @@ export interface VoiceTableRow {
   tenor: Member;
   bas: Member;
 }
+
+export enum SnackbarVariant {
+  POSITIVE = 'positive',
+  NEGATIVE = 'negative',
+}
+
+export enum SnackbarStatus {
+  COPY_SUCCESS = 'copySuccess',
+  COPY_ERROR = 'copyError',
+  SEND_SUCCESS = 'sendSuccess',
+  SEND_ERROR = 'sendError',
+  INVALID_FORM_DATA = 'invalidFormData',
+}
+
+export enum FormField {
+  NAME = 'name',
+  SURNAME = 'surname',
+  EMAIL = 'email',
+  MESSAGE = 'message',
+}
