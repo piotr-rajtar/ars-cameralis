@@ -90,7 +90,8 @@
           </span>
         </div>
         <button type="submit" :class="[style.formControl, style.button]">
-          Wyślij
+          <send-icon :class="style.sendIcon" />
+          <span>Wyślij</span>
         </button>
       </form>
       <div :class="style.contactBox" @click="debouncedEmailClick">
@@ -123,6 +124,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import MailIcon from 'vue-material-design-icons/EmailOutline.vue';
 import CopyIcon from 'vue-material-design-icons/ContentCopy.vue';
+import SendIcon from 'vue-material-design-icons/EmailSend.vue';
 import Snackbar from './Snackbar.vue';
 import { contactHeader, mail, snackbarMessages } from './contactData';
 import { SnackbarVariant, SnackbarStatus, FormField } from '@/typings';
@@ -130,7 +132,7 @@ import { validateEmail } from '@/utils';
 import emailjs from 'emailjs-com';
 import debounce from 'lodash/debounce';
 
-@Component({ components: { MailIcon, CopyIcon, Snackbar } })
+@Component({ components: { MailIcon, CopyIcon, Snackbar, SendIcon } })
 export default class Contact extends Vue {
   contactHeader: string = contactHeader;
   mail: string = mail;
@@ -402,6 +404,7 @@ export default class Contact extends Vue {
 }
 
 .button {
+  @include flex-centered;
   margin-top: 5 * $spacing-unit;
   padding: 5 * $spacing-unit 15 * $spacing-unit;
   cursor: pointer;
@@ -465,5 +468,10 @@ export default class Contact extends Vue {
   @include screen-mobile {
     margin-left: 6 * $spacing-unit;
   }
+}
+
+.sendIcon {
+  display: flex;
+  margin-right: 2 * $spacing-unit;
 }
 </style>
