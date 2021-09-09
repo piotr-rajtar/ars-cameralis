@@ -412,6 +412,10 @@ export default class Contact extends Vue {
     color: $main-color;
     transition: 1s ease;
   }
+
+  @include screen-mobile {
+    width: 100%;
+  }
 }
 
 .contactBox {
