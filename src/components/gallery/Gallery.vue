@@ -58,6 +58,7 @@ export default class Offer extends Vue {
 
   @include screen-mobile {
     margin-bottom: 5 * $spacing-unit;
+    font-size: $font-size-medium;
   }
 }
 

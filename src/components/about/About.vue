@@ -52,6 +52,7 @@ export default class About extends Vue {
 
   @include screen-mobile {
     margin-bottom: 5 * $spacing-unit;
+    font-size: $font-size-medium;
   }
 }
 
@@ -60,5 +61,10 @@ export default class About extends Vue {
   font-size: $font-size-paragraph;
   line-height: 9 * $spacing-unit;
   text-align: justify;
+
+  @include screen-mobile {
+    font-size: $font-size-paragraph-small;
+    line-height: 1.5em;
+  }
 }
 </style>

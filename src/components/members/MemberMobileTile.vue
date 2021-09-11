@@ -39,12 +39,20 @@ export default class MemberMobileTile extends Vue {
   font-size: $font-size-semi-large;
   width: fit-content;
   border-bottom: 1px solid $secondary-color;
+
+  @include screen-mobile {
+    font-size: $font-size-semi-medium;
+  }
 }
 
 .list {
   list-style-type: none;
   font-size: $font-size-medium;
   margin-bottom: 5 * $spacing-unit;
+
+  @include screen-mobile {
+    font-size: $font-size-paragraph;
+  }
 }
 
 .listItem {
