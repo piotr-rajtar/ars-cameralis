@@ -2,7 +2,7 @@
   <div :class="style.container">
     <div :class="style.textContainer">
       <h1 :class="style.header">Kontakt</h1>
-      <h2 :class="style.subheader">{{ contactHeader }}</h2>
+      <h2 :class="style.description">{{ contactHeader }}</h2>
       <form :class="style.form" @submit="onSubmit">
         <div :class="style.formControlContainer">
           <label :class="style.label" for="name">Imię</label>
@@ -322,7 +322,7 @@ export default class Contact extends Vue {
   }
 }
 
-.subheader {
+.description {
   margin-bottom: 7 * $spacing-unit;
   line-height: 36px;
   font-size: $font-size-semi-medium;
@@ -330,6 +330,11 @@ export default class Contact extends Vue {
 
   @include screen-tablet {
     font-size: $font-size-paragraph;
+  }
+
+  @include screen-mobile {
+    font-size: $font-size-mobile-small;
+    line-height: 1.5em;
   }
 }
 
@@ -357,7 +362,7 @@ export default class Contact extends Vue {
   margin-bottom: $spacing-unit;
 
   @include screen-mobile {
-    font-size: $font-size-semi-medium;
+    font-size: $font-size-paragraph;
   }
 }
 
@@ -368,6 +373,10 @@ export default class Contact extends Vue {
   color: $secondary-color;
   font-size: $font-size-paragraph;
   font-family: $main-font;
+
+  @include screen-mobile {
+    font-size: $font-size-paragraph-small;
+  }
 }
 
 .input {
@@ -419,6 +428,7 @@ export default class Contact extends Vue {
 
   @include screen-mobile {
     width: 100%;
+    padding: 2 * $spacing-unit 0;
   }
 }
 
@@ -455,11 +465,19 @@ export default class Contact extends Vue {
   @include screen-mobile-small {
     font-size: $font-size-mobile-small;
   }
+
+  @include screen-mobile-extra-small {
+    margin-left: 3 * $spacing-unit;
+  }
 }
 
 .mailIcon {
   @include flex-align-centered;
   margin-right: 3 * $spacing-unit;
+
+  @include screen-mobile-extra-small {
+    display: none;
+  }
 }
 
 .copyIcon {
@@ -468,6 +486,10 @@ export default class Contact extends Vue {
 
   @include screen-mobile {
     margin-left: 6 * $spacing-unit;
+  }
+
+  @include screen-mobile-extra-small {
+    margin-left: 3 * $spacing-unit;
   }
 }
 
