@@ -1,0 +1,18 @@
+<template>
+  <single-repertoir :title="title" :items="centuryMusic" />
+</template>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import SingleRepertoir from './SingleRepertoir.vue';
+import { centuryMusic } from './repertoirContent';
+
+@Component({ components: { SingleRepertoir } })
+export default class CenturyMusic extends Vue {
+  centuryMusic = centuryMusic;
+
+  get title(): string {
+    return 'Muzyka XX-XXI wieku';
+  }
+}
+</script>

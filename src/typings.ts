@@ -3,6 +3,16 @@ export interface LinkListItemI {
   link: string;
 }
 
+export interface Breadcrumb {
+  title: string;
+  name?: string;
+}
+
+export interface RepertoirTile {
+  name: string;
+  title: string;
+}
+
 export interface Member {
   name: string;
   image?: string;

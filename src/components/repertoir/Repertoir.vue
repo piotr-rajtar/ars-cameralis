@@ -2,18 +2,27 @@
   <div :class="style.container">
     <div :class="style.textContainer">
       <h1 :class="style.header">Repertuar</h1>
-      <p :class="style.repertoir">{{ paragraph1 }}</p>
+      <div :class="style.tileContainer">
+        <router-link
+          v-for="(item, index) in repertoirTiles"
+          :key="index"
+          :to="{ name: item.name }"
+          :class="style.link"
+        >
+          <div :class="style.tile">{{ item.title }}</div>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { paragraph1 } from './repertoirContent';
+import { repertoirTiles } from './repertoirContent';
 
 @Component({})
 export default class Repertoir extends Vue {
-  paragraph1 = paragraph1;
+  repertoirTiles = repertoirTiles;
 }
 </script>
 
@@ -50,13 +59,44 @@ export default class Repertoir extends Vue {
 
   @include screen-mobile {
     margin-bottom: 5 * $spacing-unit;
+    font-size: $font-size-medium;
   }
 }
 
-.repertoir {
-  margin-top: 5 * $spacing-unit;
-  font-size: $font-size-paragraph;
-  line-height: 9 * $spacing-unit;
-  text-align: justify;
+.tileContainer {
+  @include flex-tile;
+}
+
+.link {
+  cursor: pointer;
+  text-decoration: none;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: inherit;
+  }
+}
+
+.tile {
+  @include flex-centered;
+  width: 200px;
+  height: 200px;
+  border-radius: 2 * $spacing-unit;
+  border: $spacing-unit solid $secondary-color;
+  font-size: $font-size-semi-medium;
+  margin: 5 * $spacing-unit;
+  padding: 2 * $spacing-unit;
+  text-align: center;
+
+  @include desktop {
+    &:hover {
+      background-color: $secondary-color;
+      opacity: 0.8;
+      color: $main-color;
+      transition: 1s ease;
+    }
+  }
 }
 </style>

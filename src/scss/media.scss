@@ -4,8 +4,20 @@
   }
 }
 
+@mixin header-breakpoint-small {
+  @media (max-width: 420px) {
+    @content;
+  }
+}
+
 @mixin screen-mobile {
   @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin breadcrumbs-breakpoint {
+  @media (max-width: 650px) {
     @content;
   }
 }
