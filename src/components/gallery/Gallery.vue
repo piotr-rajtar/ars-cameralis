@@ -4,24 +4,43 @@
       <h1 :class="style.header">Galeria</h1>
       <div :class="style.tileContainer">
         <div
-          v-for="(item, index) in galleryItems"
-          :key="index"
+          v-for="item in galleryItems"
+          :key="item.id"
           :class="style.tile"
+          @click="openGallery(item.id)"
         >
-          {{ item }}
+          <img :src="item.path" :alt="item.name" :class="style.photo" />
         </div>
       </div>
     </div>
+    <image-gallery
+      v-if="isGalleryOpen"
+      :gallery="galleryItems"
+      :startPhotoId="activePhotoId"
+      @close="toggleGallery"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import ImageGallery from './ImageGallery.vue';
 import { galleryItems } from './galleryContent';
 
-@Component({})
-export default class Offer extends Vue {
+@Component({ components: { ImageGallery } })
+export default class Gallery extends Vue {
   galleryItems = galleryItems;
+  isGalleryOpen: boolean = false;
+  activePhotoId: string = '';
+
+  openGallery(id: string): void {
+    this.activePhotoId = id;
+    this.toggleGallery();
+  }
+
+  toggleGallery(): void {
+    this.isGalleryOpen = !this.isGalleryOpen;
+  }
 }
 </script>
 
@@ -68,25 +87,24 @@ export default class Offer extends Vue {
 
 .tile {
   @include flex-centered;
-  width: 300px;
-  height: 300px;
-  border-radius: 2 * $spacing-unit;
-  border: $spacing-unit solid $secondary-color;
-  font-size: $font-size-large;
+  width: 200px;
+  height: 200px;
+  border-radius: 0.5 * $spacing-unit;
+  border: 0.5 * $spacing-unit solid $secondary-color;
   margin: 5 * $spacing-unit;
+  cursor: pointer;
 
-  @include screen-tablet-small {
-    height: 250px;
-    width: 250px;
-    border: $spacing-unit solid $secondary-color;
-    font-size: $font-size-medium;
-    margin: 5 * $spacing-unit;
+  @include desktop {
+    &:hover {
+      transform: scale(1.1);
+      transition: 1s ease;
+    }
   }
+}
 
-  @include screen-tablet-small {
-    height: 200px;
-    width: 200px;
-    border: $spacing-unit solid $secondary-color;
-  }
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>

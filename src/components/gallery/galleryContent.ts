@@ -1,12 +1,19 @@
-export const galleryItems: Array<string> = [
-  'Zdjęcie 1',
-  'Zdjęcie 2',
-  'Zdjęcie 3',
-  'Zdjęcie 4',
-  'Zdjęcie 5',
-  'Zdjęcie 6',
-  'Zdjęcie 7',
-  'Zdjęcie 8',
-  'Zdjęcie 9',
-  'Zdjęcie 10',
+import { Photo } from '@/typings';
+
+export const galleryItems: Array<Photo> = [
+  {
+    id: '0',
+    name: 'img1',
+    path: '/images/img1.jpg',
+  },
+  {
+    id: '1',
+    name: 'img2',
+    path: '/images/img2.jpg',
+  },
+  {
+    id: '2',
+    name: 'img3',
+    path: '/images/img3.jpg',
+  },
 ];

@@ -25,6 +25,12 @@ export interface VoiceTableRow {
   bas: Member;
 }
 
+export interface Photo {
+  id: string;
+  name: string;
+  path: string;
+}
+
 export enum SnackbarVariant {
   POSITIVE = 'positive',
   NEGATIVE = 'negative',
