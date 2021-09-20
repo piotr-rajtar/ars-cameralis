@@ -164,6 +164,7 @@ export default class ImageGallery extends Vue {
   width: 80%;
   top: 50%;
   transform: translateY(-50%);
+  user-select: none;
 
   @include screen-mobile {
     width: 100%;
