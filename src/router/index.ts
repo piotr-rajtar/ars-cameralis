@@ -29,26 +29,41 @@ const routes: Array<RouteConfig> = [
     path: '/',
     name: 'Homepage',
     component: Homepage,
+    meta: {
+      title: 'Ars Cameralis - Strona główna',
+    },
   },
   {
     path: '/about',
     name: 'About',
     component: About,
+    meta: {
+      title: 'Ars Cameralis - O nas',
+    },
   },
   {
     path: '/news',
     name: 'News',
     component: News,
+    meta: {
+      title: 'Ars Cameralis - Aktualności',
+    },
   },
   {
     path: '/conductor',
     name: 'Conductor',
     component: Conductor,
+    meta: {
+      title: 'Ars Cameralis - Dyrygent',
+    },
   },
   {
     path: '/members',
     name: 'Members',
     component: Members,
+    meta: {
+      title: 'Ars Cameralis - Skład',
+    },
   },
   {
     path: '/repertoir',
@@ -62,6 +77,9 @@ const routes: Array<RouteConfig> = [
         path: '',
         name: 'Repertoir',
         component: Repertoir,
+        meta: {
+          title: 'Ars Cameralis - Repertuar',
+        },
       },
       {
         path: 'vocal-instrumental',
@@ -77,6 +95,7 @@ const routes: Array<RouteConfig> = [
               title: 'Kompozycje wokalno-instrumentalne',
             },
           ],
+          title: 'Ars Cameralis - Repertuar',
         },
       },
       {
@@ -101,6 +120,7 @@ const routes: Array<RouteConfig> = [
                   title: 'Kompozycje a cappella',
                 },
               ],
+              title: 'Ars Cameralis - Repertuar',
             },
           },
           {
@@ -121,6 +141,7 @@ const routes: Array<RouteConfig> = [
                   title: 'Muzyka dawna',
                 },
               ],
+              title: 'Ars Cameralis - Repertuar',
             },
           },
           {
@@ -141,6 +162,7 @@ const routes: Array<RouteConfig> = [
                   title: 'Muzyka XX-XXI wieku',
                 },
               ],
+              title: 'Ars Cameralis - Repertuar',
             },
           },
           {
@@ -161,6 +183,7 @@ const routes: Array<RouteConfig> = [
                   title: 'Muzyka świata i muzyka ludowa',
                 },
               ],
+              title: 'Ars Cameralis - Repertuar',
             },
           },
           {
@@ -181,6 +204,7 @@ const routes: Array<RouteConfig> = [
                   title: 'Muzyka rozrywkowa',
                 },
               ],
+              title: 'Ars Cameralis - Repertuar',
             },
           },
           {
@@ -201,6 +225,7 @@ const routes: Array<RouteConfig> = [
                   title: 'Repertuar liturgiczny',
                 },
               ],
+              title: 'Ars Cameralis - Repertuar',
             },
           },
           {
@@ -221,6 +246,7 @@ const routes: Array<RouteConfig> = [
                   title: 'Utwory pasyjne',
                 },
               ],
+              title: 'Ars Cameralis - Repertuar',
             },
           },
           {
@@ -241,6 +267,7 @@ const routes: Array<RouteConfig> = [
                   title: 'Kolędy',
                 },
               ],
+              title: 'Ars Cameralis - Repertuar',
             },
           },
         ],
@@ -259,6 +286,9 @@ const routes: Array<RouteConfig> = [
         path: '',
         name: 'Collaboration',
         component: Collaboration,
+        meta: {
+          title: 'Ars Cameralis - Współpraca',
+        },
       },
       {
         path: 'auditions',
@@ -274,6 +304,7 @@ const routes: Array<RouteConfig> = [
               title: 'Przesłuchania do chóru',
             },
           ],
+          title: 'Ars Cameralis - Współpraca',
         },
       },
       {
@@ -290,6 +321,7 @@ const routes: Array<RouteConfig> = [
               title: 'Koncerty',
             },
           ],
+          title: 'Ars Cameralis - Współpraca',
         },
       },
       {
@@ -306,6 +338,7 @@ const routes: Array<RouteConfig> = [
               title: 'Śluby / Oprawa liturgii',
             },
           ],
+          title: 'Ars Cameralis - Współpraca',
         },
       },
     ],
@@ -314,11 +347,17 @@ const routes: Array<RouteConfig> = [
     path: '/gallery',
     name: 'Gallery',
     component: Gallery,
+    meta: {
+      title: 'Ars Cameralis - Galeria',
+    },
   },
   {
     path: '/contact',
     name: 'Contact',
     component: Contact,
+    meta: {
+      title: 'Ars Cameralis - Kontakt',
+    },
   },
 ];
 
@@ -329,6 +368,11 @@ const router = new VueRouter({
   scrollBehavior() {
     return { x: 0, y: 0 };
   },
+});
+
+router.beforeEach((to, _from, next) => {
+  document.title = to.meta.title || 'Ars Cameralis';
+  next();
 });
 
 export default router;
