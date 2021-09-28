@@ -1,6 +1,6 @@
-import { RepertoirTile } from '@/typings';
+import { RouterTile } from '@/typings';
 
-export const repertoirTiles: Array<RepertoirTile> = [
+export const repertoirTiles: Array<RouterTile> = [
   { name: 'VocalInstrumental', title: 'Kompozycje wokalno-instrumentalne' },
   { name: 'Acapella', title: 'Kompozycje a cappella' },
 ];
@@ -11,7 +11,7 @@ export const vocalInstrumentalMusic: Array<string> = [
   'G. G. Gorczycki – Laetatus sum',
   'J. K. Pawluśkiewicz – Nieszpory Ludźmierskie',
 ];
-export const acapellaTiles: Array<RepertoirTile> = [
+export const acapellaTiles: Array<RouterTile> = [
   { name: 'OldMusic', title: 'Muzyka dawna' },
   { name: 'CenturyMusic', title: 'Muzyka XX-XXI wieku' },
   { name: 'WorldAndFolkMusic', title: 'Muzyka świata i muzyka ludowa' },

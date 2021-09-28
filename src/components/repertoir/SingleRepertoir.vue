@@ -18,9 +18,9 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Breadcrumbs from './Breadcrumbs.vue';
-import { Breadcrumb } from '@/typings';
+import Breadcrumbs from '@/components/shared/Breadcrumbs.vue';
 import ArrowIcon from 'vue-material-design-icons/KeyboardBackspace.vue';
+import { Breadcrumb } from '@/typings';
 
 @Component({ components: { Breadcrumbs, ArrowIcon } })
 export default class SingleRepertoir extends Vue {

@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Breadcrumbs from './Breadcrumbs.vue';
+import Breadcrumbs from '@/components/shared/Breadcrumbs.vue';
 import ArrowIcon from 'vue-material-design-icons/KeyboardBackspace.vue';
 import { acapellaTiles } from './repertoirContent';
 import { Breadcrumb } from '@/typings';

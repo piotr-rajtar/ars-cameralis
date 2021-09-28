@@ -125,7 +125,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import MailIcon from 'vue-material-design-icons/EmailOutline.vue';
 import CopyIcon from 'vue-material-design-icons/ContentCopy.vue';
 import SendIcon from 'vue-material-design-icons/EmailSend.vue';
-import Snackbar from './Snackbar.vue';
+import Snackbar from '@/components/shared/Snackbar.vue';
 import { contactHeader, mail, snackbarMessages } from './contactData';
 import { SnackbarVariant, SnackbarStatus, FormField } from '@/typings';
 import { validateEmail } from '@/utils';
@@ -151,7 +151,6 @@ export default class Contact extends Vue {
   isMessageValid: boolean = true;
   isEmailValid: boolean = true;
   SnackbarVariant = SnackbarVariant;
-  SnackbarStatus = SnackbarStatus;
   FormField = FormField;
   debouncedEmailClick = debounce(this.onEmailClick, 500);
   debouncedFormSubmit = debounce(this.onSubmit, 500);
@@ -326,6 +325,7 @@ export default class Contact extends Vue {
   margin-bottom: 7 * $spacing-unit;
   line-height: 36px;
   font-size: $font-size-semi-medium;
+  font-weight: normal;
   text-align: justify;
 
   @include screen-tablet {
