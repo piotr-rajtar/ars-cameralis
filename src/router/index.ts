@@ -1,23 +1,26 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import Homepage from '../components/homepage/Homepage.vue';
-import About from '../components/about/About.vue';
-import News from '../components/news/News.vue';
-import Conductor from '../components/conductor/Conductor.vue';
-import Members from '../components/members/Members.vue';
-import Repertoir from '../components/repertoir/Repertoir.vue';
-import VocalInstrumental from '../components/repertoir/VocalInstrumental.vue';
-import AcapellaTiles from '../components/repertoir/AcapellaTiles.vue';
-import OldMusic from '../components/repertoir/OldMusic.vue';
-import CenturyMusic from '../components/repertoir/CenturyMusic.vue';
-import WorldAndFolkMusic from '../components/repertoir/WorldAndFolkMusic.vue';
-import EntertainmentMusic from '../components/repertoir/EntertainmentMusic.vue';
-import LiturgicalMusic from '../components/repertoir/LiturgicalMusic.vue';
-import PassionMusic from '../components/repertoir/PassionMusic.vue';
-import Carols from '../components/repertoir/Carols.vue';
-import Collaboration from '../components/collaboration/Collaboration.vue';
-import Gallery from '../components/gallery/Gallery.vue';
-import Contact from '../components/contact/Contact.vue';
+import Homepage from '@/components/homepage/Homepage.vue';
+import About from '@/components/about/About.vue';
+import News from '@/components/news/News.vue';
+import Conductor from '@/components/conductor/Conductor.vue';
+import Members from '@/components/members/Members.vue';
+import Repertoir from '@/components/repertoir/Repertoir.vue';
+import VocalInstrumental from '@/components/repertoir/VocalInstrumental.vue';
+import AcapellaTiles from '@/components/repertoir/AcapellaTiles.vue';
+import OldMusic from '@/components/repertoir/OldMusic.vue';
+import CenturyMusic from '@/components/repertoir/CenturyMusic.vue';
+import WorldAndFolkMusic from '@/components/repertoir/WorldAndFolkMusic.vue';
+import EntertainmentMusic from '@/components/repertoir/EntertainmentMusic.vue';
+import LiturgicalMusic from '@/components/repertoir/LiturgicalMusic.vue';
+import PassionMusic from '@/components/repertoir/PassionMusic.vue';
+import Carols from '@/components/repertoir/Carols.vue';
+import Collaboration from '@/components/collaboration/Collaboration.vue';
+import Auditions from '@/components/collaboration/Auditions.vue';
+import Concerts from '@/components/collaboration/Concerts.vue';
+import WeddingsAndLiturgy from '@/components/collaboration/WeddingsAndLiturgy.vue';
+import Gallery from '@/components/gallery/Gallery.vue';
+import Contact from '@/components/contact/Contact.vue';
 
 Vue.use(VueRouter);
 
@@ -246,8 +249,66 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/collaboration',
-    name: 'Collaboration',
-    component: Collaboration,
+    component: {
+      render(component) {
+        return component('router-view');
+      },
+    },
+    children: [
+      {
+        path: '',
+        name: 'Collaboration',
+        component: Collaboration,
+      },
+      {
+        path: 'auditions',
+        name: 'Auditions',
+        component: Auditions,
+        meta: {
+          breadcrumb: [
+            {
+              title: 'Współpraca',
+              name: 'Collaboration',
+            },
+            {
+              title: 'Przesłuchania do chóru',
+            },
+          ],
+        },
+      },
+      {
+        path: 'concerts',
+        name: 'Concerts',
+        component: Concerts,
+        meta: {
+          breadcrumb: [
+            {
+              title: 'Współpraca',
+              name: 'Collaboration',
+            },
+            {
+              title: 'Koncerty',
+            },
+          ],
+        },
+      },
+      {
+        path: 'weddings-and-liturgy',
+        name: 'WeddingsAndLiturgy',
+        component: WeddingsAndLiturgy,
+        meta: {
+          breadcrumb: [
+            {
+              title: 'Współpraca',
+              name: 'Collaboration',
+            },
+            {
+              title: 'Śluby / Oprawa liturgii',
+            },
+          ],
+        },
+      },
+    ],
   },
   {
     path: '/gallery',
@@ -265,7 +326,7 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes,
-  scrollBehavior(_to, _from, _savedPosition) {
+  scrollBehavior() {
     return { x: 0, y: 0 };
   },
 });

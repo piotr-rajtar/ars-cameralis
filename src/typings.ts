@@ -8,7 +8,7 @@ export interface Breadcrumb {
   name?: string;
 }
 
-export interface RepertoirTile {
+export interface RouterTile {
   name: string;
   title: string;
 }

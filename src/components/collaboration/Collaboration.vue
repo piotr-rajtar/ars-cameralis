@@ -3,13 +3,14 @@
     <div :class="style.textContainer">
       <h1 :class="style.header">Współpraca</h1>
       <div :class="style.tileContainer">
-        <div
-          v-for="(item, index) in offerItems"
+        <router-link
+          v-for="(item, index) in collaborationTiles"
           :key="index"
-          :class="style.tile"
+          :to="{ name: item.name }"
+          :class="style.link"
         >
-          {{ item }}
-        </div>
+          <div :class="style.tile">{{ item.title }}</div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -17,11 +18,11 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { offerItems } from './collaborationContent';
+import { collaborationTiles } from './collaborationContent';
 
 @Component({})
 export default class Collaboration extends Vue {
-  offerItems = offerItems;
+  collaborationTiles = collaborationTiles;
 }
 </script>
 
@@ -66,14 +67,27 @@ export default class Collaboration extends Vue {
   @include flex-tile;
 }
 
+.link {
+  cursor: pointer;
+  text-decoration: none;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: inherit;
+  }
+}
+
 .tile {
   @include flex-centered;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   border-radius: 2 * $spacing-unit;
   border: $spacing-unit solid $secondary-color;
-  font-size: $font-size-large;
+  font-size: $font-size-semi-medium;
   margin: 5 * $spacing-unit;
+  padding: 2 * $spacing-unit;
   text-align: center;
 
   @include desktop {
@@ -83,13 +97,6 @@ export default class Collaboration extends Vue {
       color: $main-color;
       transition: 1s ease;
     }
-  }
-
-  @include screen-mobile {
-    height: 150px;
-    border: $spacing-unit solid $secondary-color;
-    font-size: $font-size-medium;
-    margin: 5 * $spacing-unit;
   }
 }
 </style>
