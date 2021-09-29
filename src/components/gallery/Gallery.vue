@@ -9,7 +9,13 @@
           :class="style.tile"
           @click="openGallery(item.id)"
         >
-          <img :src="item.path" :alt="item.name" :class="style.photo" />
+          <img
+            :src="item.path"
+            :alt="item.name"
+            :class="style.photo"
+            width="200"
+            height="200"
+          />
         </div>
       </div>
     </div>
