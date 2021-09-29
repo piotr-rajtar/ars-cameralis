@@ -3,9 +3,14 @@
     <div :class="style.conductor">
       <h1 :class="style.header">Dyrygent</h1>
       <div :class="style.conductorItemContainer">
-        <div :class="[style.conductorPhotoContainer, style.tile]">
-          <!-- <img :class="style.image" src="../../assets/placeholder.jpg" /> -->
-          ZDJĘCIE
+        <div :class="style.conductorPhotoContainer">
+          <img
+            :class="style.image"
+            src="/images/conductor.jpg"
+            alt="Portret dyrygentki w czarnej sukni i batutą w dłoni"
+            :width="imageWidth"
+            :height="imageHeight"
+          />
         </div>
         <div :class="style.description">
           <p :class="style.firstParagraph">{{ paragraph1 }}</p>
@@ -26,6 +31,24 @@ export default class Conductor extends Vue {
   conductor: Member = conductor;
   paragraph1: string = paragraph1;
   paragraph2: string = paragraph2;
+  smallMobileBreakPoint = window.matchMedia('(max-width: 350px)');
+  isExtraSmallScreen: boolean = this.smallMobileBreakPoint.matches;
+
+  mounted(): void {
+    this.smallMobileBreakPoint.onchange = this.mediaQueryHandler;
+  }
+
+  mediaQueryHandler(): void {
+    this.isExtraSmallScreen = this.smallMobileBreakPoint.matches;
+  }
+
+  get imageWidth(): number {
+    return this.isExtraSmallScreen ? 250 : 300;
+  }
+
+  get imageHeight(): number {
+    return this.isExtraSmallScreen ? 369 : 438;
+  }
 }
 </script>
 
@@ -76,14 +99,22 @@ export default class Conductor extends Vue {
   }
 }
 
-//wyłączone na potrzeby demo
-// .conductorPhotoContainer {
-//   width: 300px;
-//   height: 300px;
-//   margin: 5 * $spacing-unit;
-//   border: none;
-//   display: inline-block;
-// }
+.conductorPhotoContainer {
+  @include flex-centered;
+  width: 300px;
+  height: fit-content;
+  border-radius: 0.5 * $spacing-unit;
+  margin: 5 * $spacing-unit;
+  border: 0.5 * $spacing-unit solid $secondary-color;
+
+  @include screen-tablet {
+    margin: 2 * $spacing-unit;
+  }
+
+  @include screen-mobile-extra-small {
+    width: 250px;
+  }
+}
 
 .description {
   flex: 50%;
@@ -104,24 +135,6 @@ export default class Conductor extends Vue {
 
 .image {
   width: 100%;
-  height: 100%;
-}
-
-//na potrzeby demo
-.tile {
-  @include flex-centered;
-  width: 300px;
-  height: 300px;
-  border-radius: 2 * $spacing-unit;
-  font-size: $font-size-large;
-  margin: 5 * $spacing-unit;
-  border: 2 * $spacing-unit solid $secondary-color;
-
-  @include screen-tablet {
-    margin: 2 * $spacing-unit;
-    border: 0.5 * $spacing-unit solid $secondary-color;
-    width: 250px;
-    height: 250px;
-  }
+  height: auto;
 }
 </style>
