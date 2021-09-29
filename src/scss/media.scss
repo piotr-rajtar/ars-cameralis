@@ -69,3 +69,9 @@
     @content;
   }
 }
+
+@mixin horizontal-phone-small {
+  @media (orientation: landscape) and (max-height: 350px) {
+    @content;
+  }
+}

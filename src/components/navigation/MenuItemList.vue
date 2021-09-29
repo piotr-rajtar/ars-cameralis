@@ -48,5 +48,14 @@ export default class MenuItemList extends Vue {
     padding-bottom: 5 * $spacing-unit;
     font-size: $font-size-semi-medium;
   }
+
+  @include horizontal-phone {
+    flex-wrap: wrap;
+    max-height: 350px;
+  }
+
+  @include horizontal-phone-small {
+    max-height: 300px;
+  }
 }
 </style>
