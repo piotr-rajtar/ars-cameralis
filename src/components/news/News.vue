@@ -2,7 +2,15 @@
   <div :class="style.container">
     <div :class="style.textContainer">
       <h1 :class="style.header">Aktualności</h1>
-      <p :class="style.news">Treść w przygotowaniu.</p>
+      <div :class="style.posterContainer">
+        <img
+          :class="style.image"
+          src="/images/poster.avif"
+          alt="Niebieski plakat z napisem chór zapraszający do dołączenia do zespołu. Informuje o datach przesłuchań które będą jedynastego i osiemnastego października o godzinie osiemnastej piętnaście w instytucie muzykologii uniwersytetu jagiellońskiego przy ulicy westerplatte dziesięć."
+          :width="400"
+          :height="500"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -51,10 +59,25 @@ export default class News extends Vue {}
   }
 }
 
-.news {
-  margin-top: 5 * $spacing-unit;
-  font-size: $font-size-paragraph;
-  line-height: 9 * $spacing-unit;
-  text-align: justify;
+.posterContainer {
+  display: flex;
+  width: 60%;
+  height: fit-content;
+  border-radius: 0.5 * $spacing-unit;
+  border: 0.5 * $spacing-unit solid $secondary-color;
+  margin: 0 auto;
+
+  @include screen-mobile {
+    width: 100%;
+  }
+
+  @include screen-mobile-extra-small {
+    width: 250px;
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
 }
 </style>
