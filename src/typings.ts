@@ -27,8 +27,8 @@ export interface VoiceTableRow {
 
 export interface Photo {
   id: string;
-  name: string;
   path: string;
+  alt: string;
 }
 
 export enum SnackbarVariant {

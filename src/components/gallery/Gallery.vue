@@ -4,14 +4,14 @@
       <h1 :class="style.header">Galeria</h1>
       <div :class="style.tileContainer">
         <div
-          v-for="item in galleryItems"
+          v-for="item in galleryMiniatures"
           :key="item.id"
           :class="style.tile"
           @click="openGallery(item.id)"
         >
           <img
             :src="item.path"
-            :alt="item.name"
+            :alt="item.alt"
             :class="style.photo"
             width="200"
             height="200"
@@ -21,7 +21,6 @@
     </div>
     <image-gallery
       v-if="isGalleryOpen"
-      :gallery="galleryItems"
       :startPhotoId="activePhotoId"
       @close="toggleGallery"
     />
@@ -31,11 +30,11 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import ImageGallery from './ImageGallery.vue';
-import { galleryItems } from './galleryContent';
+import { galleryMiniatures } from './galleryContent';
 
 @Component({ components: { ImageGallery } })
 export default class Gallery extends Vue {
-  galleryItems = galleryItems;
+  galleryMiniatures = galleryMiniatures;
   isGalleryOpen: boolean = false;
   activePhotoId: string = '';
 

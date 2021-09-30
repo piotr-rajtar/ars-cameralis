@@ -17,7 +17,7 @@
       <img
         v-if="activeImage"
         :src="activeImage.path"
-        :alt="activeImage.name"
+        :alt="activeImage.alt"
         :class="style.galleryPhoto"
         @touchstart="touchStart"
       />
@@ -35,8 +35,8 @@ import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import ArrowRight from 'vue-material-design-icons/ChevronRight.vue';
 import ArrowLeft from 'vue-material-design-icons/ChevronLeft.vue';
 import CloseIcon from 'vue-material-design-icons/Close.vue';
+import { galleryPhotos } from './galleryContent';
 import { Photo } from '@/typings';
-import cloneDeep from 'lodash/cloneDeep';
 
 @Component({ components: { ArrowRight, ArrowLeft, CloseIcon } })
 export default class ImageGallery extends Vue {
@@ -46,50 +46,49 @@ export default class ImageGallery extends Vue {
   @Emit('close') onGalleryClose(): void {
     return;
   }
+  galleryPhotos = galleryPhotos;
   activePhotoId: string = '1';
-  galleryItems: Photo[] = [];
 
   mounted(): void {
     this.activePhotoId = this.startPhotoId;
-    this.galleryItems = cloneDeep(this.gallery);
   }
 
   get activeImage(): Photo {
-    return this.galleryItems.find((item) => item.id === this.activePhotoId)!;
+    return this.galleryPhotos.find((photo) => photo.id === this.activePhotoId)!;
   }
 
   get counter(): string {
-    return `${this.imageIndex} / ${this.galleryItems.length}`;
+    return `${this.imageIndex} / ${this.galleryPhotos.length}`;
   }
 
   get imageIndex(): number {
-    const image = this.galleryItems.find(
-      (item) => item.id === this.activePhotoId
+    const image = this.galleryPhotos.find(
+      (photo) => photo.id === this.activePhotoId
     )!;
-    return this.galleryItems.indexOf(image) + 1;
+    return this.galleryPhotos.indexOf(image) + 1;
   }
 
   setNextImage(): void {
-    const activeImage = this.galleryItems.find(
-      (item) => item.id === this.activePhotoId
+    const activeImage = this.galleryPhotos.find(
+      (photo) => photo.id === this.activePhotoId
     )!;
-    const index = this.galleryItems.indexOf(activeImage);
-    if (index < this.galleryItems.length - 1) {
-      this.activePhotoId = this.galleryItems[index + 1].id;
+    const index = this.galleryPhotos.indexOf(activeImage);
+    if (index < this.galleryPhotos.length - 1) {
+      this.activePhotoId = this.galleryPhotos[index + 1].id;
     } else {
-      this.activePhotoId = this.galleryItems[0].id;
+      this.activePhotoId = this.galleryPhotos[0].id;
     }
   }
 
   setPreviousImage(): void {
-    const activeImage = this.galleryItems.find(
-      (item) => item.id === this.activePhotoId
+    const activeImage = this.galleryPhotos.find(
+      (photo) => photo.id === this.activePhotoId
     )!;
-    const index = this.galleryItems.indexOf(activeImage);
+    const index = this.galleryPhotos.indexOf(activeImage);
     if (index > 0) {
-      this.activePhotoId = this.galleryItems[index - 1].id;
+      this.activePhotoId = this.galleryPhotos[index - 1].id;
     } else {
-      this.activePhotoId = this.galleryItems[this.galleryItems.length - 1].id;
+      this.activePhotoId = this.galleryPhotos[this.galleryPhotos.length - 1].id;
     }
   }
 
