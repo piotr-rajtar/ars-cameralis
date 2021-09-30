@@ -39,6 +39,10 @@ export default class Homepage extends Vue {}
     font-size: $font-size-large;
     padding: 2 * $spacing-unit 3 * $spacing-unit;
   }
+
+  @include screen-mobile-extra-small {
+    font-size: $font-size-medium;
+  }
 }
 
 .choirName {

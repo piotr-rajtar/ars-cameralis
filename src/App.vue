@@ -27,7 +27,7 @@ export default class App extends Vue {
 @import './scss/media.scss';
 
 .container {
-  background-image: url('./assets/demo1.jpg');
+  background-image: url('/images/background.avif');
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
