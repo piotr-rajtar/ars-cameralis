@@ -1,9 +1,6 @@
 <template>
   <div :class="style.container">
-    <div :class="style.titleContainer">
-      <p>Chór kameralny</p>
-      <p :class="style.choirName">ars cameralis</p>
-    </div>
+    <p :class="style.title">Chór kameralny</p>
   </div>
 </template>
 
@@ -24,7 +21,7 @@ export default class Homepage extends Vue {}
   font-family: $main-font;
 }
 
-.titleContainer {
+.title {
   position: absolute;
   padding: 10 * $spacing-unit;
   bottom: 50 * $spacing-unit;
@@ -43,9 +40,5 @@ export default class Homepage extends Vue {}
   @include screen-mobile-extra-small {
     font-size: $font-size-medium;
   }
-}
-
-.choirName {
-  font-family: $logo-font;
 }
 </style>
