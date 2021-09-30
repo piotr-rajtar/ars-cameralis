@@ -19,8 +19,10 @@
         :src="activeImage.path"
         :alt="activeImage.name"
         :class="style.galleryPhoto"
-        @touchstart="touchStart"
+        @pointerdown="onPointerDown"
+        @pointermove="onPointerMove"
       />
+      <!-- @touchstart="touchStart" -->
     </div>
     <arrow-right
       :class="[style.icon, style.arrowIcon, style.arrowRightIcon]"
@@ -48,6 +50,7 @@ export default class ImageGallery extends Vue {
   }
   activePhotoId: string = '1';
   galleryItems: Photo[] = [];
+  eventCache: PointerEvent[] = [];
 
   mounted(): void {
     this.activePhotoId = this.startPhotoId;
@@ -90,6 +93,31 @@ export default class ImageGallery extends Vue {
       this.activePhotoId = this.galleryItems[index - 1].id;
     } else {
       this.activePhotoId = this.galleryItems[this.galleryItems.length - 1].id;
+    }
+  }
+
+  onPointerDown(pointerEvent: PointerEvent): void {
+    this.eventCache.push(pointerEvent);
+    console.log(this.eventCache);
+  }
+
+  onPointerMove(pointerEvent: PointerEvent): void {
+    let event = this.eventCache.find(
+      (event) => event.pointerId === pointerEvent.pointerId
+    );
+    if (event) {
+      event = pointerEvent;
+    }
+
+    if (this.eventCache.length === 2) {
+      this.eventCache = [];
+      return;
+    } else {
+      addEventListener(
+        'touchstart',
+        (pointerEvent) => this.touchStart(pointerEvent),
+        { once: true }
+      );
     }
   }
 
