@@ -21,6 +21,7 @@ import Concerts from '@/components/collaboration/Concerts.vue';
 import WeddingsAndLiturgy from '@/components/collaboration/WeddingsAndLiturgy.vue';
 import Gallery from '@/components/gallery/Gallery.vue';
 import Contact from '@/components/contact/Contact.vue';
+import NotFound from '@/components/notFound/NotFound.vue';
 
 Vue.use(VueRouter);
 
@@ -357,6 +358,14 @@ const routes: Array<RouteConfig> = [
     component: Contact,
     meta: {
       title: 'Ars Cameralis - Kontakt',
+    },
+  },
+  {
+    path: '*',
+    name: 'NotFound',
+    component: NotFound,
+    meta: {
+      title: 'Ars Cameralis',
     },
   },
 ];
