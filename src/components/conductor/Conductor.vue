@@ -6,7 +6,7 @@
         <div :class="style.conductorPhotoContainer">
           <img
             :class="style.image"
-            src="/images/conductor.webp"
+            src="/images/conductor.avif"
             alt="Portret dyrygentki w czarnej sukni i batutą w dłoni"
             :width="imageWidth"
             :height="imageHeight"
