@@ -246,25 +246,6 @@ export default class ImageGallery extends Vue {
   @include screen-mobile-extra-small {
     align-items: center;
   }
-
-  &:hover {
-    animation: colorChange 0.5s;
-  }
-
-  @keyframes colorChange {
-    0% {
-      background: $main-color;
-      color: $secondary-color;
-    }
-    50% {
-      background: $secondary-color;
-      color: $main-color;
-    }
-    100% {
-      background: $main-color;
-      color: $secondary-color;
-    }
-  }
 }
 
 .controllerLeft {
