@@ -19,7 +19,6 @@
         :src="activeImage.path"
         :alt="activeImage.alt"
         :class="style.galleryPhoto"
-        @touchstart="touchStart"
       />
     </div>
     <arrow-right
@@ -27,6 +26,28 @@
       :size="60"
       @click="setNextImage"
     />
+    <div :class="style.sliderController">
+      <div
+        :class="[style.controller, style.controllerLeft]"
+        @click="setPreviousImage"
+      >
+        <arrow-left
+          :class="[style.controllerIcon, style.controllerIconLeft]"
+          :size="30"
+        />
+        <p :class="style.controllerText">Poprzednie</p>
+      </div>
+      <div
+        :class="[style.controller, style.controllerRight]"
+        @click="setNextImage"
+      >
+        <p :class="style.controllerText">Następne</p>
+        <arrow-right
+          :class="[style.controllerIcon, style.controllerIconRight]"
+          :size="30"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -40,7 +61,6 @@ import { Photo } from '@/typings';
 
 @Component({ components: { ArrowRight, ArrowLeft, CloseIcon } })
 export default class ImageGallery extends Vue {
-  @Prop({ type: Array, required: true }) gallery!: Photo[];
   @Prop({ type: String, required: true }) startPhotoId!: string;
 
   @Emit('close') onGalleryClose(): void {
@@ -91,38 +111,13 @@ export default class ImageGallery extends Vue {
       this.activePhotoId = this.galleryPhotos[this.galleryPhotos.length - 1].id;
     }
   }
-
-  touchStart(touchEvent: TouchEvent): void {
-    if (touchEvent.changedTouches.length !== 1) {
-      // We only care if one finger is used
-      return;
-    }
-    const posXStart = touchEvent.changedTouches[0].clientX;
-    addEventListener(
-      'touchend',
-      (touchEvent) => this.touchEnd(touchEvent, posXStart),
-      { once: true }
-    );
-  }
-
-  touchEnd(touchEvent: TouchEvent, posXStart: number): void {
-    if (touchEvent.changedTouches.length !== 1) {
-      // We only care if one finger is used
-      return;
-    }
-    const posXEnd = touchEvent.changedTouches[0].clientX;
-    if (posXStart < posXEnd) {
-      this.setPreviousImage(); // swipe right
-    } else if (posXStart > posXEnd) {
-      this.setNextImage(); // swipe left
-    }
-  }
 }
 </script>
 
 <style lang="scss" module="style">
 @import '../../scss/variables.scss';
 @import '../../scss/media.scss';
+@import '../../scss/mixins.scss';
 
 .gallery {
   width: 100vw;
@@ -202,7 +197,7 @@ export default class ImageGallery extends Vue {
   }
 
   @include horizontal-phone {
-    display: none;
+    display: initial;
   }
 }
 
@@ -222,6 +217,70 @@ export default class ImageGallery extends Vue {
   @include horizontal-phone {
     right: 1%;
     top: 2%;
+  }
+}
+
+.sliderController {
+  width: 100%;
+  height: fit-content;
+  position: fixed;
+  bottom: 0;
+  display: none;
+  color: $secondary-color;
+
+  @include screen-mobile {
+    @include flex-space-between;
+  }
+
+  @include horizontal-phone {
+    display: none;
+  }
+}
+
+.controller {
+  display: flex;
+  border: 0.5 * $spacing-unit solid $secondary-color;
+  padding: 2 * $spacing-unit;
+  width: 48%;
+
+  @include screen-mobile-extra-small {
+    align-items: center;
+  }
+}
+
+.controllerLeft {
+  justify-content: flex-start;
+}
+
+.controllerRight {
+  justify-content: flex-end;
+}
+
+.controllerText {
+  font-size: $font-size-paragraph;
+
+  @include screen-mobile-extra-small {
+    font-size: $font-size-paragraph-small;
+  }
+}
+
+.controllerIcon {
+  display: flex;
+}
+
+.controllerIconLeft {
+  margin-right: 2 * $spacing-unit;
+
+  @include screen-mobile-extra-small {
+    margin-right: $spacing-unit;
+  }
+}
+
+.controllerIconRight {
+  margin-left: 2 * $spacing-unit;
+
+  @include screen-mobile-extra-small {
+    margin-left: $spacing-unit;
   }
 }
 </style>
