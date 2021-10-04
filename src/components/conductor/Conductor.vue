@@ -3,7 +3,8 @@
     <div :class="style.conductor">
       <h1 :class="style.header">Dyrygent</h1>
       <div :class="style.conductorItemContainer">
-        <div :class="style.conductorPhotoContainer">
+        <picture :class="style.conductorPhotoContainer">
+          <source srcset="/images/conductor_f.webp" type="image/webp" />
           <img
             :class="style.image"
             src="/images/conductor.avif"
@@ -11,7 +12,7 @@
             :width="imageWidth"
             :height="imageHeight"
           />
-        </div>
+        </picture>
         <div :class="style.description">
           <p :class="style.firstParagraph">{{ paragraph1 }}</p>
           <p>{{ paragraph2 }}</p>

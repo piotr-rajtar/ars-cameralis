@@ -13,14 +13,15 @@
       :size="60"
       @click="setPreviousImage"
     />
-    <div :class="style.imageContainer">
+    <picture :class="style.imageContainer">
+      <source :srcset="activeImage.path_f" :type="activeImage.type" />
       <img
         v-if="activeImage"
         :src="activeImage.path"
         :alt="activeImage.alt"
         :class="style.galleryPhoto"
       />
-    </div>
+    </picture>
     <arrow-right
       :class="[style.icon, style.arrowIcon, style.arrowRightIcon]"
       :size="60"

@@ -29,6 +29,8 @@ export interface Photo {
   id: string;
   path: string;
   alt: string;
+  path_f?: string;
+  type?: string;
 }
 
 export enum SnackbarVariant {

@@ -2,7 +2,8 @@
   <div :class="style.container">
     <div :class="style.textContainer">
       <h1 :class="style.header">Aktualności</h1>
-      <div :class="style.posterContainer">
+      <picture :class="style.posterContainer">
+        <source srcset="/images/poster_f.webp" type="image/webp" />
         <img
           :class="style.image"
           src="/images/poster.avif"
@@ -10,7 +11,7 @@
           :width="400"
           :height="500"
         />
-      </div>
+      </picture>
     </div>
   </div>
 </template>

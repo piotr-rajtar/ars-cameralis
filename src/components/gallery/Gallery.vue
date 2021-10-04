@@ -3,12 +3,13 @@
     <div :class="style.textContainer">
       <h1 :class="style.header">Galeria</h1>
       <div :class="style.tileContainer">
-        <div
+        <picture
           v-for="item in galleryMiniatures"
           :key="item.id"
           :class="style.tile"
           @click="openGallery(item.id)"
         >
+          <source :srcset="item.path_f" :type="item.type" />
           <img
             :src="item.path"
             :alt="item.alt"
@@ -16,7 +17,7 @@
             width="200"
             height="200"
           />
-        </div>
+        </picture>
       </div>
     </div>
     <image-gallery
