@@ -7,7 +7,7 @@
       { [style.youtube]: name === 'youtube' },
     ]"
   >
-    <a :href="link" target="_blank">
+    <a :href="link" target="_blank" rel="noreferrer">
       <component
         :is="iconType"
         :size="35"
