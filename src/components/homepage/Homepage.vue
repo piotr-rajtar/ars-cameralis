@@ -40,5 +40,9 @@ export default class Homepage extends Vue {}
   @include screen-mobile-extra-small {
     font-size: $font-size-medium;
   }
+
+  @include horizontal-phone {
+    bottom: 50px;
+  }
 }
 </style>
