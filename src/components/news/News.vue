@@ -3,11 +3,15 @@
     <div :class="style.textContainer">
       <h1 :class="style.header">Aktualności</h1>
       <picture :class="style.posterContainer">
-        <source srcset="/images/poster_f.webp" type="image/webp" />
+        <source :srcset="imageFallbackSource" type="image/webp" />
         <img
           :class="style.image"
-          src="/images/poster.avif"
-          alt="Niebieski plakat z napisem chór zapraszający do dołączenia do zespołu. Informuje o datach przesłuchań które będą jedynastego i osiemnastego października o godzinie osiemnastej piętnaście w instytucie muzykologii uniwersytetu jagiellońskiego przy ulicy westerplatte dziesięć."
+          :src="imageMainSource"
+          alt="Niebieski plakat z napisem chór zapraszający do dołączenia do
+            zespołu. Informuje o datach przesłuchań które będą jedynastego i
+            osiemnastego października o godzinie osiemnastej piętnaście w instytucie
+            muzykologii uniwersytetu jagiellońskiego przy ulicy westerplatte
+            dziesięć."
           :width="400"
           :height="500"
         />
@@ -20,7 +24,30 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
-export default class News extends Vue {}
+export default class News extends Vue {
+  mobileBreakPoint = window.matchMedia('(max-width: 600px)');
+  isScreenMobile = this.mobileBreakPoint.matches;
+
+  mounted(): void {
+    this.mobileBreakPoint.onchange = this.mediaQueryHandler;
+  }
+
+  mediaQueryHandler(): void {
+    this.isScreenMobile = this.mobileBreakPoint.matches;
+  }
+
+  get imageMainSource(): string {
+    return this.isScreenMobile
+      ? '/images/poster_mobile.avif'
+      : '/images/poster.avif';
+  }
+
+  get imageFallbackSource(): string {
+    return this.isScreenMobile
+      ? '/images/poster_mobile_f.webp'
+      : '/images/poster_f.webp';
+  }
+}
 </script>
 
 <style lang="scss" module="style">
