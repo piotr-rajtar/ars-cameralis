@@ -6,8 +6,17 @@
         <picture :class="style.conductorPhotoContainer">
           <source srcset="/images/conductor_f.webp" type="image/webp" />
           <img
+            v-if="isLoaded"
             :class="style.image"
             src="/images/conductor.avif"
+            alt="Portret dyrygentki w czarnej sukni i batutą w dłoni"
+            :width="imageWidth"
+            :height="imageHeight"
+          />
+          <img
+            v-else
+            :class="style.image"
+            src="/images/conductor_thumbnail.webp"
             alt="Portret dyrygentki w czarnej sukni i batutą w dłoni"
             :width="imageWidth"
             :height="imageHeight"
@@ -34,9 +43,13 @@ export default class Conductor extends Vue {
   paragraph2: string = paragraph2;
   smallMobileBreakPoint = window.matchMedia('(max-width: 350px)');
   isExtraSmallScreen: boolean = this.smallMobileBreakPoint.matches;
+  isLoaded: boolean = false;
 
   mounted(): void {
     this.smallMobileBreakPoint.onchange = this.mediaQueryHandler;
+    this.$nextTick(() => {
+      this.isLoaded = true;
+    });
   }
 
   mediaQueryHandler(): void {
