@@ -7,6 +7,7 @@
       :alt="alt"
       :width="imageWidth"
       :height="imageHeight"
+      loading="lazy"
     />
   </picture>
 </template>
