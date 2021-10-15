@@ -38,9 +38,11 @@ export default class App extends Vue {
   flex-direction: column;
 
   @include screen-mobile {
-    background-color: contain, no-repeat $main-color;
+    background-color: $main-color;
     background-image: url('/images/background_mobile.avif'),
       url('/images/background_mobile_f.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 
