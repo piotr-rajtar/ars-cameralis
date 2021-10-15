@@ -3,26 +3,29 @@
     <div :class="style.conductor">
       <h1 :class="style.header">Dyrygent</h1>
       <div :class="style.conductorItemContainer">
-        <div :class="style.conductorPhotoContainer" v-if="!isImageLoaded">
+        <div :class="style.conductorPhotoContainer">
           <img
+            v-if="!isImageLoaded"
             :class="style.image"
             src="/images/conductor_thumbnail.webp"
             alt="Portret dyrygentki w czarnej sukni i batutą w dłoni"
             :width="imageWidth"
             :height="imageHeight"
           />
+
+          <picture v-show="isImageLoaded">
+            <source srcset="/images/conductor_f.webp" type="image/webp" />
+            <img
+              :class="style.image"
+              src="/images/conductor.avif"
+              alt="Portret dyrygentki w czarnej sukni i batutą w dłoni"
+              :width="imageWidth"
+              :height="imageHeight"
+              @load="onImageLoad"
+            />
+          </picture>
         </div>
-        <image-container
-          v-show="isImageLoaded"
-          alt="Portret dyrygentki w czarnej sukni i batutą w dłoni"
-          src="/images/conductor.avif"
-          srcset="/images/conductor_f.webp"
-          type="image/webp"
-          :class="style.conductorPhotoContainer"
-          :image-width="imageWidth"
-          :image-height="imageHeight"
-          @image-loaded="onImageLoad"
-        />
+
         <div :class="style.description">
           <p :class="style.firstParagraph">{{ paragraph1 }}</p>
           <p>{{ paragraph2 }}</p>
@@ -36,9 +39,8 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { conductor, paragraph1, paragraph2 } from './conductorData';
 import { Member } from '../../typings';
-import ImageContainer from './ImageContainer.vue';
 
-@Component({ components: { ImageContainer } })
+@Component({})
 export default class Conductor extends Vue {
   conductor: Member = conductor;
   paragraph1: string = paragraph1;
@@ -51,6 +53,10 @@ export default class Conductor extends Vue {
     this.smallMobileBreakPoint.onchange = this.mediaQueryHandler;
   }
 
+  onImageLoad(): void {
+    this.isImageLoaded = true;
+  }
+
   mediaQueryHandler(): void {
     this.isExtraSmallScreen = this.smallMobileBreakPoint.matches;
   }
@@ -61,10 +67,6 @@ export default class Conductor extends Vue {
 
   get imageHeight(): number {
     return this.isExtraSmallScreen ? 369 : 438;
-  }
-
-  onImageLoad(): void {
-    this.isImageLoaded = true;
   }
 }
 </script>
