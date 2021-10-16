@@ -7,13 +7,12 @@
           <img
             v-if="!isImageLoaded"
             :class="style.image"
-            src="/images/conductor_thumbnail.webp"
+            src="/images/thumbs/conductor_thumb.webp"
             alt="Portret dyrygentki w czarnej sukni i batutą w dłoni"
             :width="imageWidth"
             :height="imageHeight"
           />
-
-          <picture v-show="isImageLoaded">
+          <picture v-show="isImageLoaded" :class="style.finalImageContainer">
             <source srcset="/images/conductor_f.webp" type="image/webp" />
             <img
               :class="style.image"
@@ -119,7 +118,6 @@ export default class Conductor extends Vue {
 }
 
 .conductorPhotoContainer {
-  @include flex-centered;
   width: 300px;
   height: fit-content;
   border-radius: 0.5 * $spacing-unit;
@@ -133,6 +131,10 @@ export default class Conductor extends Vue {
   @include screen-mobile-extra-small {
     width: 250px;
   }
+}
+
+.finalImageContainer {
+  display: flex;
 }
 
 .description {
