@@ -2,11 +2,11 @@
   <div :class="style.container">
     <div :class="style.textContainer">
       <h1 :class="style.header">Aktualności</h1>
-      <picture :class="style.posterContainer">
-        <source :srcset="imageFallbackSource" type="image/webp" />
+      <div :class="style.posterContainer">
         <img
+          v-if="!isImageLoaded"
           :class="style.image"
-          :src="imageMainSource"
+          src="/images/thumbs/poster_thumb.webp"
           alt="Niebieski plakat z napisem chór zapraszający do dołączenia do
             zespołu. Informuje o datach przesłuchań które będą jedynastego i
             osiemnastego października o godzinie osiemnastej piętnaście w instytucie
@@ -15,7 +15,22 @@
           :width="400"
           :height="500"
         />
-      </picture>
+        <picture v-show="isImageLoaded" :class="style.finalImageContainer">
+          <source :srcset="imageFallbackSource" type="image/webp" />
+          <img
+            :class="style.image"
+            :src="imageMainSource"
+            alt="Niebieski plakat z napisem chór zapraszający do dołączenia do
+            zespołu. Informuje o datach przesłuchań które będą jedynastego i
+            osiemnastego października o godzinie osiemnastej piętnaście w instytucie
+            muzykologii uniwersytetu jagiellońskiego przy ulicy westerplatte
+            dziesięć."
+            :width="400"
+            :height="500"
+            @load="onImageLoad"
+          />
+        </picture>
+      </div>
     </div>
   </div>
 </template>
@@ -27,9 +42,14 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class News extends Vue {
   mobileBreakPoint = window.matchMedia('(max-width: 600px)');
   isScreenMobile = this.mobileBreakPoint.matches;
+  isImageLoaded: boolean = false;
 
   mounted(): void {
     this.mobileBreakPoint.onchange = this.mediaQueryHandler;
+  }
+
+  onImageLoad(): void {
+    this.isImageLoaded = true;
   }
 
   mediaQueryHandler(): void {
@@ -88,9 +108,7 @@ export default class News extends Vue {
 }
 
 .posterContainer {
-  display: flex;
   width: 60%;
-  height: fit-content;
   border-radius: 0.5 * $spacing-unit;
   border: 0.5 * $spacing-unit solid $secondary-color;
   margin: 0 auto;
@@ -102,6 +120,10 @@ export default class News extends Vue {
   @include screen-mobile-extra-small {
     width: 250px;
   }
+}
+
+.finalImageContainer {
+  display: flex;
 }
 
 .image {
