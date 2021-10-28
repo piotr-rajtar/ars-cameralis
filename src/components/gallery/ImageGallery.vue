@@ -13,15 +13,19 @@
       :size="60"
       @click="setPreviousImage"
     />
-    <picture :class="style.imageContainer">
-      <source :srcset="activeImage.path_f" :type="activeImage.type" />
-      <img
-        v-if="activeImage"
-        :src="activeImage.path"
-        :alt="activeImage.alt"
-        :class="style.galleryPhoto"
-      />
-    </picture>
+    <div :class="style.imageContainer">
+      <loader v-if="!isImageLoaded" />
+      <picture v-show="isImageLoaded" :class="style.picture">
+        <source :srcset="activeImage.path_f" :type="activeImage.type" />
+        <img
+          v-if="activeImage"
+          :src="activeImage.path"
+          :alt="activeImage.alt"
+          :class="style.galleryPhoto"
+          @load="onImageLoad"
+        />
+      </picture>
+    </div>
     <arrow-right
       :class="[style.icon, style.arrowIcon, style.arrowRightIcon]"
       :size="60"
@@ -57,10 +61,11 @@ import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import ArrowRight from 'vue-material-design-icons/ChevronRight.vue';
 import ArrowLeft from 'vue-material-design-icons/ChevronLeft.vue';
 import CloseIcon from 'vue-material-design-icons/Close.vue';
+import Loader from './Loader.vue';
 import { galleryPhotos } from './galleryContent';
 import { Photo } from '@/typings';
 
-@Component({ components: { ArrowRight, ArrowLeft, CloseIcon } })
+@Component({ components: { ArrowRight, ArrowLeft, CloseIcon, Loader } })
 export default class ImageGallery extends Vue {
   @Prop({ type: String, required: true }) startPhotoId!: string;
 
@@ -69,6 +74,7 @@ export default class ImageGallery extends Vue {
   }
   galleryPhotos = galleryPhotos;
   activePhotoId: string = '1';
+  isImageLoaded: boolean = false;
 
   mounted(): void {
     this.activePhotoId = this.startPhotoId;
@@ -89,7 +95,12 @@ export default class ImageGallery extends Vue {
     return this.galleryPhotos.indexOf(image) + 1;
   }
 
+  onImageLoad(): void {
+    this.isImageLoaded = true;
+  }
+
   setNextImage(): void {
+    this.isImageLoaded = false;
     const activeImage = this.galleryPhotos.find(
       (photo) => photo.id === this.activePhotoId
     )!;
@@ -102,6 +113,7 @@ export default class ImageGallery extends Vue {
   }
 
   setPreviousImage(): void {
+    this.isImageLoaded = false;
     const activeImage = this.galleryPhotos.find(
       (photo) => photo.id === this.activePhotoId
     )!;
@@ -170,6 +182,11 @@ export default class ImageGallery extends Vue {
     height: 90%;
     margin: 0 auto;
   }
+}
+
+.picture {
+  width: 100%;
+  height: 100%;
 }
 
 .galleryPhoto {

@@ -30,6 +30,7 @@ export interface Photo {
   path: string;
   alt: string;
   path_f?: string;
+  path_thumb?: string;
   type?: string;
 }
 

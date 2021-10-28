@@ -3,21 +3,12 @@
     <div :class="style.textContainer">
       <h1 :class="style.header">Galeria</h1>
       <div :class="style.tileContainer">
-        <picture
+        <gallery-tile
           v-for="item in galleryMiniatures"
           :key="item.id"
-          :class="style.tile"
-          @click="openGallery(item.id)"
-        >
-          <source :srcset="item.path_f" :type="item.type" />
-          <img
-            :src="item.path"
-            :alt="item.alt"
-            :class="style.photo"
-            width="200"
-            height="200"
-          />
-        </picture>
+          :item="item"
+          @click.native="openGallery(item.id)"
+        />
       </div>
     </div>
     <image-gallery
@@ -31,9 +22,10 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import ImageGallery from './ImageGallery.vue';
+import GalleryTile from './GalleryTile.vue';
 import { galleryMiniatures } from './galleryContent';
 
-@Component({ components: { ImageGallery } })
+@Component({ components: { ImageGallery, GalleryTile } })
 export default class Gallery extends Vue {
   galleryMiniatures = galleryMiniatures;
   isGalleryOpen: boolean = false;
@@ -89,28 +81,5 @@ export default class Gallery extends Vue {
 
 .tileContainer {
   @include flex-tile;
-}
-
-.tile {
-  @include flex-centered;
-  width: 200px;
-  height: 200px;
-  border-radius: 0.5 * $spacing-unit;
-  border: 0.5 * $spacing-unit solid $secondary-color;
-  margin: 5 * $spacing-unit;
-  cursor: pointer;
-
-  @include desktop {
-    &:hover {
-      transform: scale(1.1);
-      transition: 1s ease;
-    }
-  }
-}
-
-.photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 </style>
