@@ -4,6 +4,7 @@
       <h1 :class="style.header">Galeria</h1>
       <div :class="style.tileContainer">
         <gallery-tile
+          v-lazyload
           v-for="item in galleryMiniatures"
           :key="item.id"
           :item="item"

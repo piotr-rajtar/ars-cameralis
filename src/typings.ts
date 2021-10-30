@@ -32,6 +32,7 @@ export interface Photo {
   path_f?: string;
   path_thumb?: string;
   type?: string;
+  type_f?: string;
 }
 
 export enum SnackbarVariant {

@@ -3,15 +3,16 @@
     <img
       v-if="!isImageLoaded"
       :class="style.photo"
-      :src="item.path_thumb"
+      :data-src="item.path_thumb"
       :alt="item.alt"
       width="200"
       height="200"
     />
     <picture v-show="isImageLoaded" :class="style.picture">
-      <source :srcset="item.path_f" :type="item.type" />
+      <source :data-srcset="item.path" :type="item.type" />
+      <source :data-srcset="item.path_f" :type="item.type_f" />
       <img
-        :src="item.path"
+        :data-src="item.path"
         :alt="item.alt"
         :class="style.photo"
         width="200"

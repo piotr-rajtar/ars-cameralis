@@ -16,7 +16,8 @@
     <div :class="style.imageContainer">
       <loader v-if="!isImageLoaded" />
       <picture v-show="isImageLoaded" :class="style.picture">
-        <source :srcset="activeImage.path_f" :type="activeImage.type" />
+        <source :srcset="activeImage.path" :type="activeImage.type" />
+        <source :srcset="activeImage.path_f" :type="activeImage.type_f" />
         <img
           v-if="activeImage"
           :src="activeImage.path"

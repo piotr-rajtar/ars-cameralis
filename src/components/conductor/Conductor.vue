@@ -13,6 +13,7 @@
             :height="imageHeight"
           />
           <picture v-show="isImageLoaded" :class="style.finalImageContainer">
+            <source srcset="/images/conductor.avif" type="image/avif" />
             <source srcset="/images/conductor_f.webp" type="image/webp" />
             <img
               :class="style.image"

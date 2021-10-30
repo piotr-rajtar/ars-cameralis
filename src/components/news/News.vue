@@ -16,6 +16,7 @@
           :height="500"
         />
         <picture v-show="isImageLoaded" :class="style.finalImageContainer">
+          <source :srcset="imageMainSource" type="image/avif" />
           <source :srcset="imageFallbackSource" type="image/webp" />
           <img
             :class="style.image"
