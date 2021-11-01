@@ -2,72 +2,20 @@
   <div :class="style.container">
     <div :class="style.textContainer">
       <h1 :class="style.header">Aktualności</h1>
-      <div :class="style.posterContainer">
-        <img
-          v-if="!isImageLoaded"
-          :class="style.image"
-          src="/images/thumbs/poster_thumb.webp"
-          alt="Niebieski plakat z napisem chór zapraszający do dołączenia do
-            zespołu. Informuje o datach przesłuchań które będą jedynastego i
-            osiemnastego października o godzinie osiemnastej piętnaście w instytucie
-            muzykologii uniwersytetu jagiellońskiego przy ulicy westerplatte
-            dziesięć."
-          :width="400"
-          :height="500"
-        />
-        <picture v-show="isImageLoaded" :class="style.finalImageContainer">
-          <source :srcset="imageMainSource" type="image/avif" />
-          <source :srcset="imageFallbackSource" type="image/webp" />
-          <img
-            :class="style.image"
-            :src="imageMainSource"
-            alt="Niebieski plakat z napisem chór zapraszający do dołączenia do
-            zespołu. Informuje o datach przesłuchań które będą jedynastego i
-            osiemnastego października o godzinie osiemnastej piętnaście w instytucie
-            muzykologii uniwersytetu jagiellońskiego przy ulicy westerplatte
-            dziesięć."
-            :width="400"
-            :height="500"
-            @load="onImageLoad"
-          />
-        </picture>
-      </div>
+      <single-post v-for="post in posts" :key="post.id" :post="post" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import SinglePost from './SinglePost.vue';
+import { posts } from './newsContent';
+import { Post } from '@/typings';
 
-@Component({})
+@Component({ components: { SinglePost } })
 export default class News extends Vue {
-  mobileBreakPoint = window.matchMedia('(max-width: 600px)');
-  isScreenMobile = this.mobileBreakPoint.matches;
-  isImageLoaded: boolean = false;
-
-  mounted(): void {
-    this.mobileBreakPoint.onchange = this.mediaQueryHandler;
-  }
-
-  onImageLoad(): void {
-    this.isImageLoaded = true;
-  }
-
-  mediaQueryHandler(): void {
-    this.isScreenMobile = this.mobileBreakPoint.matches;
-  }
-
-  get imageMainSource(): string {
-    return this.isScreenMobile
-      ? '/images/poster_mobile.avif'
-      : '/images/poster.avif';
-  }
-
-  get imageFallbackSource(): string {
-    return this.isScreenMobile
-      ? '/images/poster_mobile_f.webp'
-      : '/images/poster_f.webp';
-  }
+  posts: Post[] = posts;
 }
 </script>
 
@@ -106,29 +54,5 @@ export default class News extends Vue {
     margin-bottom: 5 * $spacing-unit;
     font-size: $font-size-medium;
   }
-}
-
-.posterContainer {
-  width: 60%;
-  border-radius: 0.5 * $spacing-unit;
-  border: 0.5 * $spacing-unit solid $secondary-color;
-  margin: 0 auto;
-
-  @include screen-mobile {
-    width: 100%;
-  }
-
-  @include screen-mobile-extra-small {
-    width: 250px;
-  }
-}
-
-.finalImageContainer {
-  display: flex;
-}
-
-.image {
-  width: 100%;
-  height: auto;
 }
 </style>

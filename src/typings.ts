@@ -35,6 +35,25 @@ export interface Photo {
   type_f?: string;
 }
 
+export interface Post {
+  id: string;
+  title: string;
+  description: string;
+  image?: string;
+  image_f?: string;
+  image_thumb?: string;
+  image_type?: string;
+  image_type_f?: string;
+  image_alt?: string;
+  image_ratio?: Ratio;
+  date: string;
+}
+
+export interface Ratio {
+  width: number;
+  height: number;
+}
+
 export enum SnackbarVariant {
   POSITIVE = 'positive',
   NEGATIVE = 'negative',
