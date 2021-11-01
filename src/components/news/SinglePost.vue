@@ -13,11 +13,11 @@
         :height="post.image_ratio.height"
       />
       <picture v-show="isImageLoaded">
-        <source :data-srcset="post.image" :type="post.image_type" />
-        <source :data-srcset="post.image_f" :type="post.image_type_f" />
+        <source :data-srcset="mainImageSource" :type="post.image_type" />
+        <source :data-srcset="fallbackImageSource" :type="post.image_type_f" />
         <img
           :class="style.image"
-          :data-src="post.image"
+          :data-src="mainImageSource"
           :alt="post.image_alt"
           :width="post.image_ratio.width"
           :height="post.image_ratio.height"
@@ -37,8 +37,31 @@ export default class SinglePost extends Vue {
   @Prop({ type: Object, required: true }) post!: Post;
   isImageLoaded: boolean = false;
 
+  mobileBreakPoint = window.matchMedia('(max-width: 600px)');
+  isScreenMobile = this.mobileBreakPoint.matches;
+
+  mounted(): void {
+    this.mobileBreakPoint.onchange = this.mediaQueryHandler;
+  }
+
   onImageLoad(): void {
     this.isImageLoaded = true;
+  }
+
+  mediaQueryHandler(): void {
+    this.isScreenMobile = this.mobileBreakPoint.matches;
+  }
+
+  get mainImageSource(): string | null {
+    const desktopPath = this.post.image ?? null;
+    const mobilePath = this.post.image_mobile ?? null;
+    return this.isScreenMobile ? mobilePath : desktopPath;
+  }
+
+  get fallbackImageSource(): string | null {
+    const desktopPath = this.post.image_f ?? null;
+    const mobilePath = this.post.image_mobile_f ?? null;
+    return this.isScreenMobile ? mobilePath : desktopPath;
   }
 }
 </script>

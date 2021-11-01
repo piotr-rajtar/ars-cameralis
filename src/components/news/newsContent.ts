@@ -7,7 +7,9 @@ export const posts: Array<Post> = [
     description:
       'Tegoroczny nabór bardzo nam się udał, spójrzcie sami! I do tego nie wszyscy załapali się na zdjęcie, więc jest nas jeszcze więcej! Same utalentowane, wspaniałe i przesympatyczne osoby dołączyły w tym roku do naszego zespołu. Życzymy im dużo satysfakcji i wielu artystycznych wrażeń!',
     image: '/images/rekrutacja.avif',
-    image_f: '/images/rekrutacja_f.avif',
+    image_mobile: '/images/mobiles/rekrutacja_mobile.avif',
+    image_f: '/images/rekrutacja_f.webp',
+    image_mobile_f: '/images/mobiles/rekrutacja_mobile_f.webp',
     image_thumb: '/images/thumbs/rekrutacja_thumb.webp',
     image_type: 'image/avif',
     image_type_f: 'image/webp',
@@ -25,7 +27,9 @@ export const posts: Array<Post> = [
     description:
       'Poszukujemy wszystkich głosów do naszego zespołu (sopran, mezzosopran, alt, tenor, baryton, bas). Gwarantujemy przyjacielską atmosferę podczas prób, rozwój głosu i słuchu, satysfakcję ze wspólnego śpiewania, a także udział w ciekawych projektach. Umiejętność czytania nut nie jest konieczna. Czekamy na osoby muzykalne, wesołe, sumienne, chętne do nauki i wspólnego śpiewania różnorodnego repertuaru.',
     image: '/images/poster.avif',
+    image_mobile: '/images/mobiles/poster_mobile.avif',
     image_f: '/images/poster_f.webp',
+    image_mobile_f: '/images/mobiles/poster_mobile_f.webp',
     image_thumb: '/images/thumbs/poster_thumb.webp',
     image_type: 'image/avif',
     image_type_f: 'image/webp',

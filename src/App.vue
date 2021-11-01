@@ -39,8 +39,8 @@ export default class App extends Vue {
 
   @include screen-mobile {
     background-color: $main-color;
-    background-image: url('/images/background_mobile.avif'),
-      url('/images/background_mobile_f.webp');
+    background-image: url('/images/mobiles/background_mobile.avif'),
+      url('/images/mobiles/background_mobile_f.webp');
     background-size: contain;
     background-repeat: no-repeat;
   }

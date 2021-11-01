@@ -40,7 +40,9 @@ export interface Post {
   title: string;
   description: string;
   image?: string;
+  image_mobile?: string;
   image_f?: string;
+  image_mobile_f?: string;
   image_thumb?: string;
   image_type?: string;
   image_type_f?: string;
