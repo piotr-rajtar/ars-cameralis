@@ -45,7 +45,6 @@ export default class SinglePost extends Vue {
 
 <style lang="scss" module="style">
 @import '../../scss/variables.scss';
-@import '../../scss/mixins.scss';
 @import '../../scss/media.scss';
 
 .container {
@@ -55,6 +54,11 @@ export default class SinglePost extends Vue {
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @include screen-mobile {
+    padding: 5 * $spacing-unit 0 0;
+    margin-bottom: 5 * $spacing-unit;
   }
 }
 
@@ -90,6 +94,10 @@ export default class SinglePost extends Vue {
 
   @include screen-mobile {
     font-size: $font-size-paragraph-small;
+  }
+
+  @include screen-mobile {
+    margin-bottom: 5 * $spacing-unit;
   }
 }
 
