@@ -52,18 +52,6 @@
   }
 }
 
-@mixin table-breakpoint {
-  @media (max-width: 1370px) {
-    @content;
-  }
-}
-
-@mixin desktop-big {
-  @media (min-width: 1600px) {
-    @content;
-  }
-}
-
 @mixin horizontal-phone {
   @media (orientation: landscape) and (max-height: 430px) {
     @content;

@@ -14,7 +14,7 @@ export const posts: Array<Post> = [
     image_type: 'image/avif',
     image_type_f: 'image/webp',
     image_alt:
-      'Przedstawienie nowo przyjętcyh członków chóru w śmiesznych pozach',
+      'Przedstawienie nowo przyjętych członków chóru w śmiesznych pozach',
     image_ratio: {
       width: 4,
       height: 3,

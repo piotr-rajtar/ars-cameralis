@@ -2,75 +2,108 @@ import { Member } from '../../typings';
 
 export const altMembers: Member[] = [
   {
-    name: 'Anna Bernat',
+    name: 'Bernat Anna',
   },
   {
-    name: 'Barbara Gumułka',
+    name: 'Guja Joanna',
   },
   {
-    name: 'Joanna Guja',
+    name: 'Jawańska Monika',
   },
   {
-    name: 'Justyna Tuchowska',
+    name: 'Kijowska Paulina',
   },
   {
-    name: 'Karolina Filiks',
+    name: 'Komorek Aleksandra',
   },
   {
-    name: 'Monika Jawańska',
+    name: 'Krochmal Joanna',
   },
   {
-    name: 'Urszula Rusnak',
+    name: 'Łacny Barbara',
+  },
+  {
+    name: 'Rusnak Urszula',
+  },
+  {
+    name: 'Świętochowska Angelika',
+  },
+  {
+    name: 'Trybus Karolina',
+  },
+  {
+    name: 'Tuchowska Justyna',
+  },
+  {
+    name: 'Urbaniak Patrycja',
+  },
+  {
+    name: 'Zarosa Karolina',
   },
 ];
 
 export const bassMembers: Member[] = [
   {
-    name: 'Andrzej Galiński',
+    name: 'Kowalik Bartosz',
   },
   {
-    name: 'Bartosz Kowalik',
+    name: 'Olszowski Aleksander',
   },
   {
-    name: 'Piotr Rajtar',
+    name: 'Orzech Mateusz',
   },
   {
-    name: 'Piotr Ślęczka',
+    name: 'Rajtar Piotr',
+  },
+  {
+    name: 'Skulicz Jacek',
+  },
+  {
+    name: 'Ślęczka Piotr',
+  },
+  {
+    name: 'Wójcik Maciej',
   },
 ];
 
 export const sopranoMembers: Member[] = [
   {
-    name: 'Anna Frey',
+    name: 'Biega Elżbieta',
   },
   {
-    name: 'Daria Stawiarska',
+    name: 'Frey Anna',
   },
   {
-    name: 'Elżbieta Biega',
+    name: 'Kulczycka Weronika',
   },
   {
-    name: 'Judyta Pawlak',
+    name: 'Panas Sylwia',
   },
   {
-    name: 'Paulina Woźniczka',
+    name: 'Pawlak Judyta',
   },
   {
-    name: 'Sylwia Odroń',
+    name: 'Stawiarska Daria',
   },
   {
-    name: 'Sylwia Panas',
+    name: 'Stypuła Karolina',
   },
   {
-    name: 'Wanda Sordoń',
+    name: 'Szendzielarz Dominika',
+  },
+  {
+    name: 'Woźniczka Paulina',
   },
 ];
 
 export const tenorMembers: Member[] = [
   {
-    name: 'Bartłomiej Waśko',
+    name: 'Bebak Marek',
   },
   {
-    name: 'Marek Bebak',
+    name: 'Ciemięga Grzegorz',
+  },
+  {
+    name: 'Waśko Bartłomiej',
   },
 ];
