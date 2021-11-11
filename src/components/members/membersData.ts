@@ -17,12 +17,6 @@ export const altMembers: Member[] = [
     name: 'Komorek Aleksandra',
   },
   {
-    name: 'Krochmal Joanna',
-  },
-  {
-    name: 'Łacny Barbara',
-  },
-  {
     name: 'Rusnak Urszula',
   },
   {
@@ -74,7 +68,13 @@ export const sopranoMembers: Member[] = [
     name: 'Frey Anna',
   },
   {
+    name: 'Krochmal Joanna',
+  },
+  {
     name: 'Kulczycka Weronika',
+  },
+  {
+    name: 'Łacny Barbara',
   },
   {
     name: 'Panas Sylwia',
