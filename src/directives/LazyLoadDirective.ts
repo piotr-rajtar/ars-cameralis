@@ -16,23 +16,29 @@ export default {
       const imageElement = Array.from(pictureElement.children).find(
         (el) => el.nodeName === 'IMG'
       ) as HTMLImageElement;
-      if (imageElement && thumbElement && sourceElement && sourceElement2) {
-        thumbElement.addEventListener('error', () =>
-          console.log(`Error: ${thumbElement.dataset.src} failed to load`)
-        );
-        sourceElement.addEventListener('error', () =>
-          console.log(`Error: ${sourceElement.dataset.srcset} failed to load`)
-        );
-        sourceElement2.addEventListener('error', () =>
-          console.log(`Error: ${sourceElement2.dataset.srcset} failed to load`)
-        );
+      if (imageElement) {
         imageElement.addEventListener('error', () =>
           console.log(`Error: ${imageElement.dataset.src} failed to load`)
         );
-        thumbElement.src = thumbElement.dataset.src!;
-        sourceElement.srcset = sourceElement.dataset.srcset!;
-        sourceElement2.srcset = sourceElement2.dataset.srcset!;
         imageElement.src = imageElement.dataset.src!;
+      }
+      if (thumbElement) {
+        thumbElement.addEventListener('error', () =>
+          console.log(`Error: ${thumbElement.dataset.src} failed to load`)
+        );
+        thumbElement.src = thumbElement.dataset.src!;
+      }
+      if (sourceElement) {
+        sourceElement.addEventListener('error', () =>
+          console.log(`Error: ${sourceElement.dataset.srcset} failed to load`)
+        );
+        sourceElement.srcset = sourceElement.dataset.srcset!;
+      }
+      if (sourceElement2) {
+        sourceElement2.addEventListener('error', () =>
+          console.log(`Error: ${sourceElement2.dataset.srcset} failed to load`)
+        );
+        sourceElement2.srcset = sourceElement2.dataset.srcset!;
       }
     }
 

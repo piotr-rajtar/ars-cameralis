@@ -3,6 +3,20 @@ import { Post } from '@/typings';
 export const posts: Array<Post> = [
   {
     id: '0',
+    title: 'Rozpoczęliśmy cykl warsztatów',
+    description:
+      'Trwa cykl warsztatów chóralnych, które przeprowadzamy w ramach nowego projektu, współfinansowanego przez Województwo Małopolskie w ramach programu "Małopolskie Chóry - Małopolska Rozśpiewana". Do końca roku zaprezentujemy Wam efekty naszej pracy. Stay tuned!<br /><br />Projekt zrealizowano przy wsparciu finansowym Województwa Małopolskiego.',
+    image: '/images/logo_malopolska.png',
+    image_type: 'image/png',
+    image_alt: 'Różnobarwna litera M, będąca logiem województwa Małopolskiego',
+    image_ratio: {
+      width: 3,
+      height: 2,
+    },
+    date: '09.11.2021',
+  },
+  {
+    id: '1',
     title: 'Akcja rekrutacja!',
     description:
       'Tegoroczny nabór bardzo nam się udał, spójrzcie sami! I do tego nie wszyscy załapali się na zdjęcie, więc jest nas jeszcze więcej! Same utalentowane, wspaniałe i przesympatyczne osoby dołączyły w tym roku do naszego zespołu. Życzymy im dużo satysfakcji i wielu artystycznych wrażeń!',
@@ -22,7 +36,7 @@ export const posts: Array<Post> = [
     date: '26.10.2021',
   },
   {
-    id: '1',
+    id: '2',
     title: 'Chodźże do nas! Nabór do chóru Ars Cameralis',
     description:
       'Poszukujemy wszystkich głosów do naszego zespołu (sopran, mezzosopran, alt, tenor, baryton, bas). Gwarantujemy przyjacielską atmosferę podczas prób, rozwój głosu i słuchu, satysfakcję ze wspólnego śpiewania, a także udział w ciekawych projektach. Umiejętność czytania nut nie jest konieczna. Czekamy na osoby muzykalne, wesołe, sumienne, chętne do nauki i wspólnego śpiewania różnorodnego repertuaru.',

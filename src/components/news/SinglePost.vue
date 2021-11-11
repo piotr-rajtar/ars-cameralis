@@ -2,19 +2,23 @@
   <div :class="style.container">
     <p :class="style.date">{{ post.date }}</p>
     <h2 :class="style.title">{{ post.title }}</h2>
-    <p :class="style.description">{{ post.description }}</p>
+    <p :class="style.description" v-html="post.description" />
     <div v-lazyload v-if="post.image" :class="style.imageContainer">
       <img
-        v-if="!isImageLoaded"
+        v-if="!isImageLoaded && post.image_thumb"
         :class="style.image"
         :data-src="post.image_thumb"
         :alt="post.image_alt"
         :width="post.image_ratio.width"
         :height="post.image_ratio.height"
       />
-      <picture v-show="isImageLoaded">
+      <picture v-show="isImageLoaded" :class="style.picture">
         <source :data-srcset="mainImageSource" :type="post.image_type" />
-        <source :data-srcset="fallbackImageSource" :type="post.image_type_f" />
+        <source
+          v-if="fallbackImageSource"
+          :data-srcset="fallbackImageSource"
+          :type="post.image_type_f"
+        />
         <img
           :class="style.image"
           :data-src="mainImageSource"
@@ -137,5 +141,11 @@ export default class SinglePost extends Vue {
   @include screen-mobile {
     width: 100%;
   }
+}
+
+.picture {
+  display: flex;
+  width: 100%;
+  background-color: $secondary-color;
 }
 </style>
