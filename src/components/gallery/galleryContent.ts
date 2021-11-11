@@ -111,6 +111,36 @@ export const galleryPhotos: Array<Photo> = [
     type: 'image/avif',
     type_f: 'image/webp',
   },
+  {
+    id: '13',
+    alt:
+      'Zdjęcie z warsztatów realizowanych w ramach programu "Małopolskie Chóry - Małopolska Rozśpiewana"',
+    path: '/images/gallery/img14.avif',
+    path_f: '/images/gallery/img14_f.webp',
+    path_thumb: '/images/thumbs/img14_thumb.webp',
+    type: 'image/avif',
+    type_f: 'image/webp',
+  },
+  {
+    id: '14',
+    alt:
+      'Zdjęcie z warsztatów realizowanych w ramach programu "Małopolskie Chóry - Małopolska Rozśpiewana"',
+    path: '/images/gallery/img15.avif',
+    path_f: '/images/gallery/img15_f.webp',
+    path_thumb: '/images/thumbs/img15_thumb.webp',
+    type: 'image/avif',
+    type_f: 'image/webp',
+  },
+  {
+    id: '15',
+    alt:
+      'Zdjęcie z warsztatów realizowanych w ramach programu "Małopolskie Chóry - Małopolska Rozśpiewana"',
+    path: '/images/gallery/img16.avif',
+    path_f: '/images/gallery/img16_f.webp',
+    path_thumb: '/images/thumbs/img16_thumb.webp',
+    type: 'image/avif',
+    type_f: 'image/webp',
+  },
 ];
 
 export const galleryMiniatures: Array<Photo> = [
@@ -234,6 +264,36 @@ export const galleryMiniatures: Array<Photo> = [
     path: '/images/miniatures/img13.avif',
     path_f: '/images/miniatures/img13_f.webp',
     path_thumb: '/images/thumbs/img13_thumb.webp',
+    type: 'image/avif',
+    type_f: 'image/webp',
+  },
+  {
+    id: '13',
+    alt:
+      'Zdjęcie z warsztatów realizowanych w ramach programu "Małopolskie Chóry - Małopolska Rozśpiewana"',
+    path: '/images/miniatures/img14.avif',
+    path_f: '/images/miniatures/img14_f.webp',
+    path_thumb: '/images/thumbs/img14_thumb.webp',
+    type: 'image/avif',
+    type_f: 'image/webp',
+  },
+  {
+    id: '14',
+    alt:
+      'Zdjęcie z warsztatów realizowanych w ramach programu "Małopolskie Chóry - Małopolska Rozśpiewana"',
+    path: '/images/miniatures/img15.avif',
+    path_f: '/images/miniatures/img15_f.webp',
+    path_thumb: '/images/thumbs/img15_thumb.webp',
+    type: 'image/avif',
+    type_f: 'image/webp',
+  },
+  {
+    id: '15',
+    alt:
+      'Zdjęcie z warsztatów realizowanych w ramach programu "Małopolskie Chóry - Małopolska Rozśpiewana"',
+    path: '/images/miniatures/img16.avif',
+    path_f: '/images/miniatures/img16_f.webp',
+    path_thumb: '/images/thumbs/img16_thumb.webp',
     type: 'image/avif',
     type_f: 'image/webp',
   },
