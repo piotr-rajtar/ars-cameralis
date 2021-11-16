@@ -16,7 +16,7 @@ module.exports = {
   },
   configureWebpack: {
     plugins: [
-      new SitemapPlugin({ base: 'https://ars-cameralis.netlify.app', paths }),
+      new SitemapPlugin({ base: 'https://chorarscameralis.pl', paths }),
     ],
   },
 };
