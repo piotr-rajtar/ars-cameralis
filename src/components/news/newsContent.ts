@@ -7,6 +7,7 @@ export const posts: Array<Post> = [
     description:
       'Trwa cykl warsztatów chóralnych, które przeprowadzamy w ramach nowego projektu, współfinansowanego przez Województwo Małopolskie w ramach programu "Małopolskie Chóry - Małopolska Rozśpiewana". Do końca roku zaprezentujemy Wam efekty naszej pracy. Stay tuned!<br /><br />Projekt zrealizowano przy wsparciu finansowym Województwa Małopolskiego.',
     image: '/images/logo_malopolska.png',
+    image_thumb: '/images/thumbs/logo_malopolska_thumb.webp',
     image_type: 'image/png',
     image_alt: 'Różnobarwna litera M, będąca logiem województwa Małopolskiego',
     image_ratio: {
