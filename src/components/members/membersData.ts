@@ -2,108 +2,108 @@ import { Member } from '../../typings';
 
 export const altMembers: Member[] = [
   {
-    name: 'Bernat Anna',
+    name: 'Aleksandra Komorek',
   },
   {
-    name: 'Guja Joanna',
+    name: 'Angelika Świętochowska',
   },
   {
-    name: 'Jawańska Monika',
+    name: 'Anna Bernat',
   },
   {
-    name: 'Kijowska Paulina',
+    name: 'Joanna Guja',
   },
   {
-    name: 'Komorek Aleksandra',
+    name: 'Justyna Tuchowska',
   },
   {
-    name: 'Rusnak Urszula',
+    name: 'Karolina Trybus',
   },
   {
-    name: 'Świętochowska Angelika',
+    name: 'Karolina Zarosa',
   },
   {
-    name: 'Trybus Karolina',
+    name: 'Monika Jawańska',
   },
   {
-    name: 'Tuchowska Justyna',
+    name: 'Patrycja Urbaniak',
   },
   {
-    name: 'Urbaniak Patrycja',
+    name: 'Paulina Kijowska',
   },
   {
-    name: 'Zarosa Karolina',
+    name: 'Urszula Rusnak',
   },
 ];
 
 export const bassMembers: Member[] = [
   {
-    name: 'Kowalik Bartosz',
+    name: 'Aleksander Olszowski',
   },
   {
-    name: 'Olszowski Aleksander',
+    name: 'Bartosz Kowalik',
   },
   {
-    name: 'Orzech Mateusz',
+    name: 'Maciej Wójcik',
   },
   {
-    name: 'Rajtar Piotr',
+    name: 'Mateusz Orzech',
   },
   {
-    name: 'Skulicz Jacek',
+    name: 'Piotr Rajtar',
   },
   {
-    name: 'Ślęczka Piotr',
-  },
-  {
-    name: 'Wójcik Maciej',
+    name: 'Piotr Ślęczka',
   },
 ];
 
 export const sopranoMembers: Member[] = [
   {
-    name: 'Biega Elżbieta',
+    name: 'Anna Frey',
   },
   {
-    name: 'Frey Anna',
+    name: 'Barbara Łacny',
   },
   {
-    name: 'Krochmal Joanna',
+    name: 'Daria Stawiarska',
   },
   {
-    name: 'Kulczycka Weronika',
+    name: 'Dominika Szendzielarz',
   },
   {
-    name: 'Łacny Barbara',
+    name: 'Elżbieta Biega',
   },
   {
-    name: 'Panas Sylwia',
+    name: 'Joanna Krochmal',
   },
   {
-    name: 'Pawlak Judyta',
+    name: 'Judyta Pawlak',
   },
   {
-    name: 'Stawiarska Daria',
+    name: 'Karolina Stypuła',
   },
   {
-    name: 'Stypuła Karolina',
+    name: 'Paulina Woźniczka',
   },
   {
-    name: 'Szendzielarz Dominika',
+    name: 'Sylwia Panas',
   },
   {
-    name: 'Woźniczka Paulina',
+    name: 'Weronika Kulczycka',
   },
 ];
 
 export const tenorMembers: Member[] = [
   {
-    name: 'Bebak Marek',
+    name: 'Bartłomiej Waśko',
   },
   {
-    name: 'Ciemięga Grzegorz',
+    name: 'Grzegorz Ciemięga',
   },
   {
-    name: 'Waśko Bartłomiej',
+    name: 'Jacek Skulicz',
+  },
+  {
+    name: 'Marek Bebak',
   },
 ];
