@@ -15,7 +15,6 @@ export interface RouterTile {
 
 export interface Member {
   name: string;
-  image?: string;
 }
 
 export interface VoiceTableRow {

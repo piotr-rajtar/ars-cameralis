@@ -1,7 +1,13 @@
-import { Member } from '@/typings';
+import { Photo } from '@/typings';
 
-export const conductor: Member = {
-  name: 'Dyrygent',
+export const conductorPhoto: Photo = {
+  id: '1',
+  path: '/images/conductor.avif',
+  alt: 'Portret dyrygentki w czarnej sukni i batutą w dłoni',
+  path_f: '/images/conductor_f.webp',
+  path_thumb: '/images/thumbs/conductor_thumb.webp',
+  type: 'image/avif',
+  type_f: 'image/webp',
 };
 
 export const paragraph1: string = `Anna Sułkowska-Migoń urodziła się w Krakowie. Swoją przygodę z muzyką rozpoczęła w szkole podstawowej grając na skrzypcach. Jako instrumentalistka ukończyła studia magisterskie, specjalność altówka, na Uniwersytecie Muzycznym Fryderyka Chopina w klasie prof. dr. hab. Piotra Reicherta i dr hab. Katarzyny Budnik (2019). W trakcie studiów była uczestniczką stypendium zespołu kameralnego w Arkansas State University w Jonesboro (USA) oraz laureatką, wraz z sekstetem, pierwszego miejsca na III Ogólnopolskim Turnieju Kameralnym organizowanym w Bydgoszczy. W 2019 roku ukończyła studia licencjackie na kierunku dyrygentura symfoniczno-operowa w klasie dr. hab. Piotra Sułkowskiego w Akademii Muzycznej w Bydgoszczy. Obecnie jest studentką studiów magisterskich Akademii Muzycznej im. Krzysztofa Pendereckiego w Krakowie na dwóch kierunkach: dyrygentura symfoniczna w klasie dr. hab. Łukasza Borowicza oraz edukacja artystyczna w zakresie sztuki muzycznej, specjalność dyrygentura chóralna w klasie prof. dr hab. Lidii Matynian i dr. Andrzeja Korzeniowskiego.`;

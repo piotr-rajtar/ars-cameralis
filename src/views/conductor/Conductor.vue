@@ -7,18 +7,21 @@
           <img
             v-if="!isImageLoaded"
             :class="style.image"
-            src="/images/thumbs/conductor_thumb.webp"
-            alt="Portret dyrygentki w czarnej sukni i batutą w dłoni"
+            :src="conductorPhoto.path_thumb"
+            :alt="conductorPhoto.alt"
             :width="imageWidth"
             :height="imageHeight"
           />
           <picture v-show="isImageLoaded" :class="style.finalImageContainer">
-            <source srcset="/images/conductor.avif" type="image/avif" />
-            <source srcset="/images/conductor_f.webp" type="image/webp" />
+            <source :srcset="conductorPhoto.path" :type="conductorPhoto.type" />
+            <source
+              :srcset="conductorPhoto.path_f"
+              :type="conductorPhoto.type_f"
+            />
             <img
               :class="style.image"
-              src="/images/conductor.avif"
-              alt="Portret dyrygentki w czarnej sukni i batutą w dłoni"
+              :src="conductorPhoto.path"
+              :alt="conductorPhoto.alt"
               :width="imageWidth"
               :height="imageHeight"
               @load="onImageLoad"
@@ -37,12 +40,12 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { conductor, paragraph1, paragraph2 } from './conductorData';
-import { Member } from '@/typings';
+import { conductorPhoto, paragraph1, paragraph2 } from './conductorData';
+import { Photo } from '@/typings';
 
 @Component({})
 export default class Conductor extends Vue {
-  conductor: Member = conductor;
+  conductorPhoto: Photo = conductorPhoto;
   paragraph1: string = paragraph1;
   paragraph2: string = paragraph2;
   smallMobileBreakPoint: MediaQueryList = window.matchMedia(
