@@ -55,11 +55,14 @@ export default {
     }
 
     function createObserver() {
-      const options = {
+      const options: IntersectionObserverInit = {
         root: null,
         threshold: 0,
       };
-      const observer = new IntersectionObserver(handleIntersect, options);
+      const observer: IntersectionObserver = new IntersectionObserver(
+        handleIntersect,
+        options
+      );
       observer.observe(el);
     }
     if (window['IntersectionObserver']) {

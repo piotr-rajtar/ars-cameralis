@@ -25,8 +25,8 @@ export default class Breadcrumbs extends Vue {
 </script>
 
 <style lang="scss" module="style">
-@import '../../scss/variables.scss';
-@import '../../scss/media.scss';
+@import '@/scss/variables.scss';
+@import '@/scss/media.scss';
 
 .breadcrumbs {
   list-style-type: none;

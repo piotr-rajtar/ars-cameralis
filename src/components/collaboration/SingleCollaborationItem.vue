@@ -21,8 +21,8 @@ import { Breadcrumb } from '@/typings';
 
 @Component({ components: { ArrowIcon, Breadcrumbs } })
 export default class SingleCollaborationItem extends Vue {
-  mobileBreakPoint = window.matchMedia('(max-width: 600px)');
-  isScreenMobile = this.mobileBreakPoint.matches;
+  mobileBreakPoint: MediaQueryList = window.matchMedia('(max-width: 600px)');
+  isScreenMobile: boolean = this.mobileBreakPoint.matches;
 
   get breadcrumbs(): Array<Breadcrumb> {
     return this.$route.meta.breadcrumb;
@@ -43,9 +43,9 @@ export default class SingleCollaborationItem extends Vue {
 </script>
 
 <style lang="scss" module="style">
-@import '../../scss/variables.scss';
-@import '../../scss/mixins.scss';
-@import '../../scss/media.scss';
+@import '@/scss/variables.scss';
+@import '@/scss/mixins.scss';
+@import '@/scss/media.scss';
 
 .container {
   @include flex-centered;

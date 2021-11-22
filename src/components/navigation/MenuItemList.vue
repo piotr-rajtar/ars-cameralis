@@ -14,7 +14,7 @@
 <script lang="ts">
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import MenuItem from './MenuItem.vue';
-import { LinkListItemI } from '../../typings';
+import { LinkListItemI } from '@/typings';
 
 @Component({ components: { MenuItem } })
 export default class MenuItemList extends Vue {
@@ -27,9 +27,9 @@ export default class MenuItemList extends Vue {
 </script>
 
 <style lang="scss" module="style">
-@import '../../scss/variables.scss';
-@import '../../scss/mixins.scss';
-@import '../../scss/media.scss';
+@import '@/scss/variables.scss';
+@import '@/scss/mixins.scss';
+@import '@/scss/media.scss';
 
 .navLinksContainer {
   @include flex-aligned-center-space-around;

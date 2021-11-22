@@ -9,14 +9,14 @@
         @click="toggleMobileMenu"
       />
       <menu-item-list
-        :menuItems="menuItems"
+        :menu-items="menuItems"
         :class="style.menuItems"
         @itemClick="onDesktopNavItemClick"
       />
     </nav>
     <menu-item-list
       v-if="isMobileMenuVisible"
-      :menuItems="menuItems"
+      :menu-items="menuItems"
       :class="style.menuItemsMobile"
       @itemClick="toggleMobileMenu"
     />
@@ -28,7 +28,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import Logo from './Logo.vue';
 import MenuItemList from './MenuItemList.vue';
 import { menuItems } from './menuData';
-import { LinkListItemI } from '../../typings';
+import { LinkListItemI } from '@/typings';
 import MenuIcon from 'vue-material-design-icons/Menu.vue';
 
 @Component({ components: { Logo, MenuItemList, MenuIcon } })
@@ -53,9 +53,9 @@ export default class NavBar extends Vue {
 </script>
 
 <style lang="scss" module="style">
-@import '../../scss/variables.scss';
-@import '../../scss/mixins.scss';
-@import '../../scss/media.scss';
+@import '@/scss/variables.scss';
+@import '@/scss/mixins.scss';
+@import '@/scss/media.scss';
 
 .container {
   position: fixed;

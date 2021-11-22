@@ -2,12 +2,8 @@
   <div :class="style.container">
     <div :class="style.textContainer">
       <breadcrumbs v-if="!isScreenMobile" :breadcrumbs="breadcrumbs" />
-      <h1 :class="style.header">{{ title }}</h1>
-      <ul :class="style.list">
-        <li v-for="(item, index) in items" :key="index" :class="style.listItem">
-          <p :class="style.itemText">{{ item }}</p>
-        </li>
-      </ul>
+      <h1 :class="style.header">Kompozycje a cappella</h1>
+      <tile-list :tile-list="acapellaTiles" />
       <button v-if="isScreenMobile" @click="onBackClick" :class="style.button">
         <arrow-icon :class="style.icon" />
         <span>Powrót</span>
@@ -17,17 +13,18 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import Breadcrumbs from '@/components/shared/Breadcrumbs.vue';
 import ArrowIcon from 'vue-material-design-icons/KeyboardBackspace.vue';
-import { Breadcrumb } from '@/typings';
+import TileList from '@/components/shared/TileList.vue';
+import { acapellaTiles } from './repertoirContent';
+import { Breadcrumb, RouterTile } from '@/typings';
 
-@Component({ components: { Breadcrumbs, ArrowIcon } })
-export default class SingleRepertoir extends Vue {
-  @Prop({ type: String, required: true }) title!: string;
-  @Prop({ type: Array, required: true }) items!: Array<string>;
+@Component({ components: { Breadcrumbs, ArrowIcon, TileList } })
+export default class AcapellaTiles extends Vue {
   mobileBreakPoint: MediaQueryList = window.matchMedia('(max-width: 600px)');
   isScreenMobile: boolean = this.mobileBreakPoint.matches;
+  acapellaTiles: RouterTile[] = acapellaTiles;
 
   get breadcrumbs(): Array<Breadcrumb> {
     return this.$route.meta.breadcrumb;
@@ -77,28 +74,17 @@ export default class SingleRepertoir extends Vue {
   margin: 5 * $spacing-unit auto 10 * $spacing-unit;
   padding-bottom: 2 * $spacing-unit;
   font-size: $font-size-semi-large;
-  width: fit-content;
   border-bottom: 1px solid $secondary-color;
   text-align: center;
+  width: fit-content;
 
   @include screen-mobile {
-    font-size: $font-size-semi-medium;
+    font-size: $font-size-medium;
   }
-}
 
-.list {
-  list-style-type: none;
-  font-size: $font-size-paragraph;
-  margin-bottom: 5 * $spacing-unit;
-
-  @include screen-mobile {
-    font-size: $font-size-paragraph-small;
+  @include header-breakpoint-small {
+    width: min-content;
   }
-}
-
-.listItem {
-  margin: 5 * $spacing-unit 0;
-  text-align: center;
 }
 
 .button {
@@ -109,7 +95,7 @@ export default class SingleRepertoir extends Vue {
   color: $secondary-color;
   font-size: $font-size-paragraph-small;
   font-family: $main-font;
-  margin-top: 10 * $spacing-unit;
+  margin-top: 5 * $spacing-unit;
   padding: 2 * $spacing-unit 0;
   cursor: pointer;
   width: 100%;

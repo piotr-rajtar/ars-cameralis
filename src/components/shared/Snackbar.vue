@@ -32,7 +32,7 @@ export default class Snackbar extends Vue {
     return;
   }
 
-  SnackbarVariant = SnackbarVariant;
+  SnackbarVariant: typeof SnackbarVariant = SnackbarVariant;
 }
 </script>
 

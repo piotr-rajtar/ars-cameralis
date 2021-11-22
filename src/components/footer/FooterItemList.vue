@@ -12,7 +12,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import FooterItem from './FooterItem.vue';
-import { LinkListItemI } from '../../typings';
+import { LinkListItemI } from '@/typings';
 
 @Component({ components: { FooterItem } })
 export default class FooterItemList extends Vue {
@@ -21,8 +21,8 @@ export default class FooterItemList extends Vue {
 </script>
 
 <style lang="scss" module="style">
-@import '../../scss/variables.scss';
-@import '../../scss/mixins.scss';
+@import '@/scss/variables.scss';
+@import '@/scss/mixins.scss';
 
 .navLinksContainer {
   display: flex;

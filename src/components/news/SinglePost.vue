@@ -41,8 +41,8 @@ export default class SinglePost extends Vue {
   @Prop({ type: Object, required: true }) post!: Post;
   isImageLoaded: boolean = false;
 
-  mobileBreakPoint = window.matchMedia('(max-width: 600px)');
-  isScreenMobile = this.mobileBreakPoint.matches;
+  mobileBreakPoint: MediaQueryList = window.matchMedia('(max-width: 600px)');
+  isScreenMobile: boolean = this.mobileBreakPoint.matches;
 
   mounted(): void {
     this.mobileBreakPoint.onchange = this.mediaQueryHandler;
@@ -57,22 +57,22 @@ export default class SinglePost extends Vue {
   }
 
   get mainImageSource(): string | null {
-    const desktopPath = this.post.image ?? null;
-    const mobilePath = this.post.image_mobile ?? null;
+    const desktopPath: string | null = this.post.image ?? null;
+    const mobilePath: string | null = this.post.image_mobile ?? null;
     return this.isScreenMobile && mobilePath ? mobilePath : desktopPath;
   }
 
   get fallbackImageSource(): string | null {
-    const desktopPath = this.post.image_f ?? null;
-    const mobilePath = this.post.image_mobile_f ?? null;
+    const desktopPath: string | null = this.post.image_f ?? null;
+    const mobilePath: string | null = this.post.image_mobile_f ?? null;
     return this.isScreenMobile ? mobilePath : desktopPath;
   }
 }
 </script>
 
 <style lang="scss" module="style">
-@import '../../scss/variables.scss';
-@import '../../scss/media.scss';
+@import '@/scss/variables.scss';
+@import '@/scss/media.scss';
 
 .container {
   padding: 5 * $spacing-unit;

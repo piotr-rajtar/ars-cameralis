@@ -44,9 +44,9 @@ export default class FooterItem extends Vue {
 </script>
 
 <style lang="scss" module="style">
-@import '../../scss/variables.scss';
-@import '../../scss/mixins.scss';
-@import '../../scss/media.scss';
+@import '@/scss/variables.scss';
+@import '@/scss/mixins.scss';
+@import '@/scss/media.scss';
 
 $icon-box-size-mobile: 40px;
 

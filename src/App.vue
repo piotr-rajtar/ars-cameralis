@@ -10,8 +10,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import NavBar from './components/navigation/NavBar.vue';
-import FooterBar from './components/footer/FooterBar.vue';
+import NavBar from '@/components/navigation/NavBar.vue';
+import FooterBar from '@/components/footer/FooterBar.vue';
 
 @Component({ components: { NavBar, FooterBar } })
 export default class App extends Vue {
@@ -22,9 +22,9 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss" module="style">
-@import './scss/globals.scss';
-@import './scss/variables.scss';
-@import './scss/media.scss';
+@import '@/scss/globals.scss';
+@import '@/scss/variables.scss';
+@import '@/scss/media.scss';
 
 .container {
   background-image: url('/images/background.avif'),

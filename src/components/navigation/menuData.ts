@@ -1,4 +1,4 @@
-import { LinkListItemI } from '../../typings';
+import { LinkListItemI } from '@/typings';
 
 export const menuItems: LinkListItemI[] = [
   {

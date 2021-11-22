@@ -29,7 +29,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { VoiceTableRow } from '../../typings';
+import { VoiceTableRow } from '@/typings';
 
 @Component({})
 export default class VoiceTable extends Vue {
@@ -38,9 +38,9 @@ export default class VoiceTable extends Vue {
 </script>
 
 <style lang="scss" module="style">
-@import '../../scss/variables.scss';
-@import '../../scss/mixins.scss';
-@import '../../scss/media.scss';
+@import '@/scss/variables.scss';
+@import '@/scss/mixins.scss';
+@import '@/scss/media.scss';
 
 .table {
   text-align: center;

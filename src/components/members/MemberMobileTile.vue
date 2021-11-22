@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { Member } from '../../typings';
+import { Member } from '@/typings';
 
 @Component({})
 export default class MemberMobileTile extends Vue {
@@ -24,9 +24,9 @@ export default class MemberMobileTile extends Vue {
 </script>
 
 <style lang="scss" module="style">
-@import '../../scss/variables.scss';
-@import '../../scss/mixins.scss';
-@import '../../scss/media.scss';
+@import '@/scss/variables.scss';
+@import '@/scss/mixins.scss';
+@import '@/scss/media.scss';
 
 .tile {
   text-align: center;

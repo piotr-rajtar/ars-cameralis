@@ -62,18 +62,17 @@ import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import ArrowRight from 'vue-material-design-icons/ChevronRight.vue';
 import ArrowLeft from 'vue-material-design-icons/ChevronLeft.vue';
 import CloseIcon from 'vue-material-design-icons/Close.vue';
-import Loader from './Loader.vue';
-import { galleryPhotos } from './galleryContent';
+import Loader from '@/components/shared/Loader.vue';
 import { Photo } from '@/typings';
 
 @Component({ components: { ArrowRight, ArrowLeft, CloseIcon, Loader } })
 export default class ImageGallery extends Vue {
   @Prop({ type: String, required: true }) startPhotoId!: string;
+  @Prop({ type: Array, required: true }) galleryPhotos!: Photo[];
 
   @Emit('close') onGalleryClose(): void {
     return;
   }
-  galleryPhotos = galleryPhotos;
   activePhotoId: string = '1';
   isImageLoaded: boolean = false;
 
@@ -90,7 +89,7 @@ export default class ImageGallery extends Vue {
   }
 
   get imageIndex(): number {
-    const image = this.galleryPhotos.find(
+    const image: Photo = this.galleryPhotos.find(
       (photo) => photo.id === this.activePhotoId
     )!;
     return this.galleryPhotos.indexOf(image) + 1;
@@ -102,10 +101,10 @@ export default class ImageGallery extends Vue {
 
   setNextImage(): void {
     this.isImageLoaded = false;
-    const activeImage = this.galleryPhotos.find(
+    const activeImage: Photo = this.galleryPhotos.find(
       (photo) => photo.id === this.activePhotoId
     )!;
-    const index = this.galleryPhotos.indexOf(activeImage);
+    const index: number = this.galleryPhotos.indexOf(activeImage);
     if (index < this.galleryPhotos.length - 1) {
       this.activePhotoId = this.galleryPhotos[index + 1].id;
     } else {
@@ -115,10 +114,10 @@ export default class ImageGallery extends Vue {
 
   setPreviousImage(): void {
     this.isImageLoaded = false;
-    const activeImage = this.galleryPhotos.find(
+    const activeImage: Photo = this.galleryPhotos.find(
       (photo) => photo.id === this.activePhotoId
     )!;
-    const index = this.galleryPhotos.indexOf(activeImage);
+    const index: number = this.galleryPhotos.indexOf(activeImage);
     if (index > 0) {
       this.activePhotoId = this.galleryPhotos[index - 1].id;
     } else {
@@ -129,9 +128,9 @@ export default class ImageGallery extends Vue {
 </script>
 
 <style lang="scss" module="style">
-@import '../../scss/variables.scss';
-@import '../../scss/media.scss';
-@import '../../scss/mixins.scss';
+@import '@/scss/variables.scss';
+@import '@/scss/media.scss';
+@import '@/scss/mixins.scss';
 
 .gallery {
   width: 100vw;
