@@ -33,7 +33,7 @@ import { VoiceTableRow } from '@/typings';
 
 @Component({})
 export default class VoiceTable extends Vue {
-  @Prop({ type: Array, default: [] }) membersData!: Array<VoiceTableRow>;
+  @Prop({ type: Array, default: [] }) membersData!: VoiceTableRow[];
 }
 </script>
 

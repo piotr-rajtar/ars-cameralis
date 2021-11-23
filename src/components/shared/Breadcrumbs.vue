@@ -20,7 +20,7 @@ import ArrowIcon from 'vue-material-design-icons/ChevronRight.vue';
 
 @Component({ components: { ArrowIcon } })
 export default class Breadcrumbs extends Vue {
-  @Prop({ type: Array, required: true }) breadcrumbs!: Array<Breadcrumb>;
+  @Prop({ type: Array, required: true }) breadcrumbs!: Breadcrumb[];
 }
 </script>
 

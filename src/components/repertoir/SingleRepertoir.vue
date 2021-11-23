@@ -25,11 +25,11 @@ import { Breadcrumb } from '@/typings';
 @Component({ components: { Breadcrumbs, ArrowIcon } })
 export default class SingleRepertoir extends Vue {
   @Prop({ type: String, required: true }) title!: string;
-  @Prop({ type: Array, required: true }) items!: Array<string>;
+  @Prop({ type: Array, required: true }) items!: string[];
   mobileBreakPoint: MediaQueryList = window.matchMedia('(max-width: 600px)');
   isScreenMobile: boolean = this.mobileBreakPoint.matches;
 
-  get breadcrumbs(): Array<Breadcrumb> {
+  get breadcrumbs(): Breadcrumb[] {
     return this.$route.meta.breadcrumb;
   }
 

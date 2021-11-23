@@ -1,6 +1,6 @@
 import { Post } from '@/typings';
 
-export const posts: Array<Post> = [
+export const posts: Post[] = [
   {
     id: '0',
     title: 'Rozpoczęliśmy cykl warsztatów',

@@ -18,7 +18,7 @@ import { LinkListItemI } from '@/typings';
 
 @Component({ components: { MenuItem } })
 export default class MenuItemList extends Vue {
-  @Prop({ type: Array }) menuItems!: LinkListItemI;
+  @Prop({ type: Array }) menuItems!: LinkListItemI[];
   @Emit('itemClick')
   onItemClick(): void {
     return;

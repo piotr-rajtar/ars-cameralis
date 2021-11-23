@@ -24,7 +24,7 @@ export default class SingleCollaborationItem extends Vue {
   mobileBreakPoint: MediaQueryList = window.matchMedia('(max-width: 600px)');
   isScreenMobile: boolean = this.mobileBreakPoint.matches;
 
-  get breadcrumbs(): Array<Breadcrumb> {
+  get breadcrumbs(): Breadcrumb[] {
     return this.$route.meta.breadcrumb;
   }
 

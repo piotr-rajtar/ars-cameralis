@@ -25,7 +25,7 @@ import NotFound from '@/views/notFound/NotFound.vue';
 
 Vue.use(VueRouter);
 
-const routes: Array<RouteConfig> = [
+const routes: RouteConfig[] = [
   {
     path: '/',
     name: 'Homepage',

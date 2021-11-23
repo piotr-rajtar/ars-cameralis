@@ -36,7 +36,7 @@ export default class Members extends Vue {
   bassMembers: Member[] = bassMembers;
   sopranoMembers: Member[] = sopranoMembers;
   tenorMembers: Member[] = tenorMembers;
-  membersData: Array<VoiceTableRow> = [];
+  membersData: VoiceTableRow[] = [];
   tabletBreakPoint: MediaQueryList = window.matchMedia('(max-width: 900px)');
   isTablet: boolean = this.tabletBreakPoint.matches;
 

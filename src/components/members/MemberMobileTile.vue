@@ -19,7 +19,7 @@ import { Member } from '@/typings';
 
 @Component({})
 export default class MemberMobileTile extends Vue {
-  @Prop({ type: Array, default: [] }) membersData!: Array<Member>;
+  @Prop({ type: Array, default: [] }) membersData!: Member[];
 }
 </script>
 

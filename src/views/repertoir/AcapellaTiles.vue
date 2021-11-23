@@ -26,7 +26,7 @@ export default class AcapellaTiles extends Vue {
   isScreenMobile: boolean = this.mobileBreakPoint.matches;
   acapellaTiles: RouterTile[] = acapellaTiles;
 
-  get breadcrumbs(): Array<Breadcrumb> {
+  get breadcrumbs(): Breadcrumb[] {
     return this.$route.meta.breadcrumb;
   }
 

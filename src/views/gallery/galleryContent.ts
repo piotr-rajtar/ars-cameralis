@@ -1,6 +1,6 @@
 import { Photo } from '@/typings';
 
-export const galleryPhotos: Array<Photo> = [
+export const galleryPhotos: Photo[] = [
   {
     id: '0',
     alt:
@@ -143,7 +143,7 @@ export const galleryPhotos: Array<Photo> = [
   },
 ];
 
-export const galleryMiniatures: Array<Photo> = [
+export const galleryMiniatures: Photo[] = [
   {
     id: '0',
     alt:

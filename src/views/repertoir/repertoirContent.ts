@@ -1,17 +1,17 @@
 import { RouterTile } from '@/typings';
 
-export const repertoirTiles: Array<RouterTile> = [
+export const repertoirTiles: RouterTile[] = [
   { name: 'VocalInstrumental', title: 'Kompozycje wokalno-instrumentalne' },
   { name: 'Acapella', title: 'Kompozycje a cappella' },
 ];
-export const vocalInstrumentalMusic: Array<string> = [
+export const vocalInstrumentalMusic: string[] = [
   'M. Zieleński – Magnificat',
   'A. Vivaldi – Magnificat',
   'G. F. Handel – Alleluja',
   'G. G. Gorczycki – Laetatus sum',
   'J. K. Pawluśkiewicz – Nieszpory Ludźmierskie',
 ];
-export const acapellaTiles: Array<RouterTile> = [
+export const acapellaTiles: RouterTile[] = [
   { name: 'OldMusic', title: 'Muzyka dawna' },
   { name: 'CenturyMusic', title: 'Muzyka XX-XXI wieku' },
   { name: 'WorldAndFolkMusic', title: 'Muzyka świata i muzyka ludowa' },
@@ -20,7 +20,7 @@ export const acapellaTiles: Array<RouterTile> = [
   { name: 'PassionMusic', title: 'Utwory pasyjne' },
   { name: 'Carols', title: 'Kolędy' },
 ];
-export const oldMusic: Array<string> = [
+export const oldMusic: string[] = [
   'Bądź wiesioła Panno czysta',
   'Th. Tallis – If ye love me',
   'F. Lilius – Confitebor tibi Domine',
@@ -28,14 +28,14 @@ export const oldMusic: Array<string> = [
   'F. Lilius – Missa brevissima',
   'G. G. Gorczycki – Omni die dic Mariae',
 ];
-export const centuryMusic: Array<string> = [
+export const centuryMusic: string[] = [
   'T. Paciorkiewicz – Ave Regina Caelorum',
   'A. Koszewski – Zdrowaś Królewno Wyborna',
   'O. Gjeilo – Ubi caritas',
   'J. Maklakiewicz – Kołysanka (Kochanie moje kochanie)',
 ];
 
-export const worldAndFolkMusic: Array<string> = [
+export const worldAndFolkMusic: string[] = [
   'J. E. Moore – An Irish Blessing',
   'A. Perez Moya – El Rossinyol (pieśń katalońska)',
   'Opr. F. Rybicki – Hajze ino… (pieśń krakowska) ',
@@ -52,7 +52,7 @@ export const worldAndFolkMusic: Array<string> = [
   'Swing low sweet chariet (spiritual)',
 ];
 
-export const entertainmentMusic: Array<string> = [
+export const entertainmentMusic: string[] = [
   'C. Carter, J. Hudson – Goodnight, sweetheart',
   'J. Horner / arr. K. Shaw – My Heart Will Go On',
   'M. Masser / arr. J. Fischer – Nothing’s gonna change my love for you',
@@ -62,7 +62,7 @@ export const entertainmentMusic: Array<string> = [
   'J. Wasowski / arr. A. Borzym – Stacyjka Zdrój',
 ];
 
-export const liturgicalMusic: Array<string> = [
+export const liturgicalMusic: string[] = [
   'Bonum est praestolari',
   'Taize – Bój jest miłością',
   'Opr. J. Sykulski – Czego chcesz od nas, Panie',
@@ -80,7 +80,7 @@ export const liturgicalMusic: Array<string> = [
   'Opr. H. Kowalski – Miłosierna Matko Boża',
 ];
 
-export const passionMusic: Array<string> = [
+export const passionMusic: string[] = [
   'Anonim – Jezusa Judasz przedał',
   'G. G. Gorczycki – Stabat Mater',
   'Opr. P. Bębenek – Dobranoc głowo święta',
@@ -95,7 +95,7 @@ export const passionMusic: Array<string> = [
   'J. Gałuszka – Zawitaj, Ukrzyżowany',
 ];
 
-export const carols: Array<string> = [
+export const carols: string[] = [
   'Puer natus in Betleem (chorał)',
   'Opr. S. Niewiadomski – Gdy się Chrystus rodzi',
   'Opr. W. Sołtysik – W żłobie leży',
