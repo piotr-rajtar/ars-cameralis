@@ -1,6 +1,6 @@
 <template>
   <li :class="style.navLink" @click="onItemClick">
-    <router-link :to="link" :class="style.link" :active-class="style.active">
+    <router-link :to="link" :active-class="style.active" :class="style.link">
       <slot />
     </router-link>
   </li>

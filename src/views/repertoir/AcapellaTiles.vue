@@ -4,7 +4,7 @@
       <breadcrumbs v-if="!isScreenMobile" :breadcrumbs="breadcrumbs" />
       <h1 :class="style.header">Kompozycje a cappella</h1>
       <tile-list :tile-list="acapellaTiles" />
-      <button v-if="isScreenMobile" @click="onBackClick" :class="style.button">
+      <button v-if="isScreenMobile" :class="style.button" @click="onBackClick">
         <arrow-icon :class="style.icon" />
         <span>Powrót</span>
       </button>

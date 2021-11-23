@@ -6,11 +6,11 @@
     <div v-lazyload v-if="post.image" :class="style.imageContainer">
       <img
         v-if="!isImageLoaded && post.image_thumb"
+        :alt="post.image_alt"
         :class="style.image"
         :data-src="post.image_thumb"
-        :alt="post.image_alt"
-        :width="post.image_ratio.width"
         :height="post.image_ratio.height"
+        :width="post.image_ratio.width"
       />
       <picture v-show="isImageLoaded" :class="style.picture">
         <source :data-srcset="mainImageSource" :type="post.image_type" />
@@ -20,11 +20,11 @@
           :type="post.image_type_f"
         />
         <img
+          :alt="post.image_alt"
           :class="style.image"
           :data-src="mainImageSource"
-          :alt="post.image_alt"
-          :width="post.image_ratio.width"
           :height="post.image_ratio.height"
+          :width="post.image_ratio.width"
           @load="onImageLoad"
         />
       </picture>

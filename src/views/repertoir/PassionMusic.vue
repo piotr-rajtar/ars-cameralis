@@ -1,5 +1,5 @@
 <template>
-  <single-repertoir :title="title" :items="passionMusic" />
+  <single-repertoir :items="passionMusic" :title="title" />
 </template>
 
 <script lang="ts">

@@ -1,5 +1,5 @@
 <template>
-  <single-repertoir :title="title" :items="vocalInstrumentalMusic" />
+  <single-repertoir :items="vocalInstrumentalMusic" :title="title" />
 </template>
 
 <script lang="ts">

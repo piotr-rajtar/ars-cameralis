@@ -16,7 +16,7 @@ import { LinkListItemI } from '@/typings';
 
 @Component({ components: { FooterItem } })
 export default class FooterItemList extends Vue {
-  @Prop({ type: Array }) footerItems!: LinkListItemI;
+  @Prop({ type: Array }) footerItems!: LinkListItemI[];
 }
 </script>
 

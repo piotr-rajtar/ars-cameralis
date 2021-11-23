@@ -6,11 +6,11 @@
         <div :class="style.conductorPhotoContainer">
           <img
             v-if="!isImageLoaded"
-            :class="style.image"
-            :src="conductorPhoto.path_thumb"
             :alt="conductorPhoto.alt"
-            :width="imageWidth"
+            :class="style.image"
             :height="imageHeight"
+            :src="conductorPhoto.path_thumb"
+            :width="imageWidth"
           />
           <picture v-show="isImageLoaded" :class="style.finalImageContainer">
             <source :srcset="conductorPhoto.path" :type="conductorPhoto.type" />
@@ -19,11 +19,11 @@
               :type="conductorPhoto.type_f"
             />
             <img
-              :class="style.image"
-              :src="conductorPhoto.path"
               :alt="conductorPhoto.alt"
-              :width="imageWidth"
+              :class="style.image"
               :height="imageHeight"
+              :src="conductorPhoto.path"
+              :width="imageWidth"
               @load="onImageLoad"
             />
           </picture>

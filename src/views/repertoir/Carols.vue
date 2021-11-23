@@ -1,5 +1,5 @@
 <template>
-  <single-repertoir :title="title" :items="carols" />
+  <single-repertoir :items="carols" :title="title" />
 </template>
 
 <script lang="ts">

@@ -20,9 +20,9 @@
         <source :srcset="activeImage.path_f" :type="activeImage.type_f" />
         <img
           v-if="activeImage"
-          :src="activeImage.path"
           :alt="activeImage.alt"
           :class="style.galleryPhoto"
+          :src="activeImage.path"
           @load="onImageLoad"
         />
       </picture>

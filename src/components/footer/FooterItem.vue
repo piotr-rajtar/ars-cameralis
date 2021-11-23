@@ -10,9 +10,9 @@
     <a :href="link" target="_blank" rel="noreferrer">
       <component
         :is="iconType"
-        :size="35"
         :class="style.icon"
-        fill-color="#ffffff"
+        :fill-color="fillColor"
+        :size="35"
       />
     </a>
   </li>
@@ -39,6 +39,10 @@ export default class FooterItem extends Vue {
     };
 
     return icons[this.name];
+  }
+
+  get fillColor(): string {
+    return '#ffffff';
   }
 }
 </script>

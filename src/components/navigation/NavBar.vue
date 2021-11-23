@@ -3,21 +3,21 @@
     <nav :class="style.navigation">
       <logo @click.native="onDesktopNavItemClick" />
       <menu-icon
+        :class="style.menuIcon"
         :fill-color="iconFillColor"
         :size="35"
-        :class="style.menuIcon"
         @click="toggleMobileMenu"
       />
       <menu-item-list
-        :menu-items="menuItems"
         :class="style.menuItems"
+        :menu-items="menuItems"
         @itemClick="onDesktopNavItemClick"
       />
     </nav>
     <menu-item-list
       v-if="isMobileMenuVisible"
-      :menu-items="menuItems"
       :class="style.menuItemsMobile"
+      :menu-items="menuItems"
       @itemClick="toggleMobileMenu"
     />
   </header>

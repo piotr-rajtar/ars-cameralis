@@ -14,8 +14,8 @@
     </div>
     <image-gallery
       v-if="isGalleryOpen"
-      :start-photo-id="activePhotoId"
       :gallery-photos="galleryPhotos"
+      :start-photo-id="activePhotoId"
       @close="toggleGallery"
     />
   </div>

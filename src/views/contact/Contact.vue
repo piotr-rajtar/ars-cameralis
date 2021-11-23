@@ -8,16 +8,16 @@
           <label :class="style.label" for="name">Imię</label>
           <input
             v-model="formName"
+            id="name"
             :class="[
               style.formControl,
               style.input,
               !isNameValid ? style.invalidInput : null,
             ]"
-            type="text"
-            id="name"
-            name="name"
-            :minlength="3"
             :maxlength="20"
+            :minlength="3"
+            name="name"
+            type="text"
             required
             @change="validation(FormField.NAME)"
           />
@@ -29,16 +29,16 @@
           <label :class="style.label" for="surname">Nazwisko</label>
           <input
             v-model="formSurname"
+            id="surname"
             :class="[
               style.formControl,
               style.input,
               !isSurnameValid ? style.invalidInput : null,
             ]"
-            type="text"
-            id="surname"
-            name="surname"
-            :minlength="3"
             :maxlength="30"
+            :minlength="3"
+            name="surname"
+            type="text"
             required
             @change="validation(FormField.SURNAME)"
           />
@@ -50,14 +50,14 @@
           <label :class="style.label" for="email">Email</label>
           <input
             v-model="formEmail"
+            id="email"
             :class="[
               style.formControl,
               style.input,
               !isEmailValid ? style.invalidInput : null,
             ]"
-            type="email"
-            id="email"
             name="email"
+            type="email"
             required
             @change="validation(FormField.EMAIL)"
           />
@@ -69,19 +69,19 @@
           <label :class="style.label" for="message">Wiadomość</label>
           <textarea
             v-model="formMessage"
+            id="message"
             :class="[
               style.formControl,
               style.input,
               style.textarea,
               !isMessageValid ? style.invalidInput : null,
             ]"
-            type="text"
-            id="message"
-            name="message"
-            :rows="2"
             :cols="20"
-            :minlength="20"
             :maxLength="500"
+            :minlength="20"
+            :rows="2"
+            name="message"
+            type="text"
             required
             @change="validation(FormField.MESSAGE)"
           />
@@ -89,7 +89,7 @@
             Wiadomość powinna zawierać od 20 do 500 znaków.
           </span>
         </div>
-        <button type="submit" :class="[style.formControl, style.button]">
+        <button :class="[style.formControl, style.button]" type="submit">
           <send-icon :class="style.sendIcon" />
           <span>Wyślij</span>
         </button>

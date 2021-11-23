@@ -2,9 +2,9 @@
   <div :class="style.tile">
     <img
       v-if="!isImageLoaded"
+      :alt="item.alt"
       :class="style.photo"
       :data-src="item.path_thumb"
-      :alt="item.alt"
       width="200"
       height="200"
     />
@@ -12,9 +12,9 @@
       <source :data-srcset="item.path" :type="item.type" />
       <source :data-srcset="item.path_f" :type="item.type_f" />
       <img
-        :data-src="item.path"
         :alt="item.alt"
         :class="style.photo"
+        :data-src="item.path"
         width="200"
         height="200"
         @load="onImageLoad"

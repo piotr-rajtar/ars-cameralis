@@ -8,7 +8,7 @@
           <p :class="style.itemText">{{ item }}</p>
         </li>
       </ul>
-      <button v-if="isScreenMobile" @click="onBackClick" :class="style.button">
+      <button v-if="isScreenMobile" :class="style.button" @click="onBackClick">
         <arrow-icon :class="style.icon" />
         <span>Powrót</span>
       </button>
