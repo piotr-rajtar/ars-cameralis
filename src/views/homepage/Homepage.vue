@@ -31,6 +31,17 @@ export default class Homepage extends Vue {}
   font-size: $font-size-title;
   text-align: right;
 
+  @include laptop-max {
+    padding: 3 * $spacing-unit 10 * $spacing-unit;
+    bottom: 25 * $spacing-unit;
+  }
+
+  @include screen-tablet {
+    bottom: 30%;
+    font-size: $font-size-large;
+    padding: 2 * $spacing-unit 3 * $spacing-unit;
+  }
+
   @include screen-mobile {
     bottom: 38%;
     font-size: $font-size-large;

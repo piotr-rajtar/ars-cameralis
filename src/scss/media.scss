@@ -46,6 +46,12 @@
   }
 }
 
+@mixin laptop-max {
+  @media (max-width: 1600px) {
+    @content;
+  }
+}
+
 @mixin header-breakpoint {
   @media (max-width: 1215px) {
     @content;

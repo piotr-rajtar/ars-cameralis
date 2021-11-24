@@ -37,7 +37,7 @@ export default class App extends Vue {
   display: flex;
   flex-direction: column;
 
-  @include screen-mobile {
+  @include screen-tablet {
     background-color: $main-color;
     background-image: url('/images/mobiles/background_mobile.avif'),
       url('/images/mobiles/background_mobile_f.webp');
