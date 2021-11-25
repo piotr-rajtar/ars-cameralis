@@ -25,6 +25,9 @@ export default class App extends Vue {
 @import '@/scss/globals.scss';
 @import '@/scss/variables.scss';
 @import '@/scss/media.scss';
+@import '@/scss/mixins.scss';
+
+@include scrollbar;
 
 .container {
   background-image: url('/images/background.avif'),

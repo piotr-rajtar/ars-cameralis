@@ -83,7 +83,7 @@ export const sopranoMembers: Member[] = [
     name: 'Karolina Stypuła',
   },
   {
-    name: 'Paulina Woźniczka',
+    name: 'Paulina Woźniczka-Głąbień',
   },
   {
     name: 'Sylwia Panas',

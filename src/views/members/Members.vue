@@ -83,7 +83,6 @@ export default class Members extends Vue {
   color: $secondary-color;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
 
   @include screen-tablet {
     margin-top: 20 * $spacing-unit;

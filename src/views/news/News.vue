@@ -35,7 +35,6 @@ export default class News extends Vue {
   width: 80%;
   background: $overlay;
   color: $secondary-color;
-  overflow-y: auto;
 
   @include screen-tablet {
     margin-top: 20 * $spacing-unit;

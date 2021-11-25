@@ -47,3 +47,17 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+@mixin scrollbar {
+  ::-webkit-scrollbar {
+    width: 3 * $spacing-unit;
+    background-color: $main-color;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 3 * $spacing-unit;
+    box-shadow: inset 0 0 2 * $spacing-unit $overlay;
+    -webkit-box-shadow: inset 0 0 2 * $spacing-unit $overlay;
+    background-color: $scrollbar-color;
+  }
+}
