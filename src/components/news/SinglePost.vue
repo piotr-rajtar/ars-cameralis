@@ -65,7 +65,7 @@ export default class SinglePost extends Vue {
   get fallbackImageSource(): string | null {
     const desktopPath: string | null = this.post.image_f ?? null;
     const mobilePath: string | null = this.post.image_mobile_f ?? null;
-    return this.isScreenMobile ? mobilePath : desktopPath;
+    return this.isScreenMobile && mobilePath ? mobilePath : desktopPath;
   }
 }
 </script>

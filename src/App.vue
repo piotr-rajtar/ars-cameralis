@@ -40,12 +40,15 @@ export default class App extends Vue {
   display: flex;
   flex-direction: column;
 
-  @include screen-tablet {
+  @include laptop-max {
     background-color: $main-color;
-    background-image: url('/images/mobiles/background_mobile.avif'),
-      url('/images/mobiles/background_mobile_f.webp');
     background-size: contain;
     background-repeat: no-repeat;
+  }
+
+  @include screen-tablet {
+    background-image: url('/images/mobiles/background_mobile.avif'),
+      url('/images/mobiles/background_mobile_f.webp');
   }
 }
 
