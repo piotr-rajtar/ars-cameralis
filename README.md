@@ -1,15 +1,14 @@
-# Ars Cameralis
+# Ars Cameralis Website
 
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Projecy setup](#setup)
+* [Project setup](#setup)
 
 ## General info
-```
 This project is a website of Ars Cameralis choir.
 The version with live changes can be found [here](https://ars-cameralis.netlify.app).
-```
+
 ## Technologies
 Project is created with:
 * Vue: 2.6.11
@@ -23,8 +22,9 @@ Project is created with:
 * sitemap-webpack-plugin: 1.1.1
 
 ## Project setup
-```
+### Project install
 To run this project, install it locally using npm:
+```
 npm install
 ```
 
