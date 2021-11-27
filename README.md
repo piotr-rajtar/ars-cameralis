@@ -3,7 +3,7 @@
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Project setup](#setup)
+* [Project setup](#project-setup)
 
 ## General info
 This project is a website of Ars Cameralis choir.
