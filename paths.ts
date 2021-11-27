@@ -98,8 +98,8 @@ const paths = [
   },
   {
     path: '/gallery',
-    lastmod: '2021-11-25',
-    changefreq: 'weekly',
+    lastmod: '2021-11-27',
+    changefreq: 'monthly',
   },
   {
     path: '/contact',
