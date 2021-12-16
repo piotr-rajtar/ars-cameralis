@@ -2,6 +2,24 @@ import { Post } from '@/typings';
 
 export const posts: Post[] = [
   {
+    id: '5',
+    title: 'Kolędowanie z krakowskimi chórami',
+    description:
+      'W najbliższą niedzielę, 19 grudnia, serdecznie zapraszamy Was na krakowski Rynek! Od godz. 18:00 na scenie kolędować będą wspaniałe krakowskie chóry, a nas usłyszycie o godz. 20:30. Bądźcie z nami!',
+    image: '/images/posts/post_5.avif',
+    image_f: '/images/posts/post_5_f.webp',
+    image_thumb: '/images/thumbs/post_5_thumb.webp',
+    image_type: 'image/avif',
+    image_type_f: 'image/webp',
+    image_alt:
+      'Plakat akcji "Śpiewaj z nami! Kolędowanie z krakowskimi chórami" przedstawiający zielony wieniec z żółtym dzwonkiem pośrodku.',
+    image_ratio: {
+      width: 3,
+      height: 4,
+    },
+    date: '16.12.2021',
+  },
+  {
     id: '4',
     title: 'Warsztaty, warsztaty',
     description:
