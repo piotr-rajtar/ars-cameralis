@@ -7,7 +7,9 @@ export const posts: Post[] = [
     description:
       'W najbliższą niedzielę, 19 grudnia, serdecznie zapraszamy Was na krakowski Rynek! Od godz. 18:00 na scenie kolędować będą wspaniałe krakowskie chóry, a nas usłyszycie o godz. 20:30. Bądźcie z nami!',
     image: '/images/posts/post_5.avif',
+    image_mobile: '/images/mobiles/post_5_mobile.avif',
     image_f: '/images/posts/post_5_f.webp',
+    image_mobile_f: '/images/mobiles/post_5_mobile_f.webp',
     image_thumb: '/images/thumbs/post_5_thumb.webp',
     image_type: 'image/avif',
     image_type_f: 'image/webp',
@@ -25,7 +27,9 @@ export const posts: Post[] = [
     description:
       'Weekend (19-21 listopada 2021) upłynął nam na bardzo intensywnej pracy nad nowym repertuarem i emisją głosu podczas warsztatów chóralnych w Węglówce. Zajęcia poprowadzili Anna Sułkowska-Migoń, Olga Trzebicka i Marek Bebak. Bardzo dziękujemy Gościńcowi pod Lubomirem za ciepłe przyjęcie, instruktorom za pracę nad naszymi głosami, a województwu małopolskiemu za wsparcie finansowe! Niedługo podzielimy się z Wami efektami naszej pracy!<br /><br />Projekt zrealizowano przy wsparciu finansowym Województwa Małopolskiego.',
     image: '/images/posts/post_4.avif',
+    image_mobile: '/images/mobiles/post_4_mobile.avif',
     image_f: '/images/posts/post_4_f.webp',
+    image_mobile_f: '/images/mobiles/post_4_mobile_f.webp',
     image_thumb: '/images/thumbs/post_4_thumb.webp',
     image_type: 'image/avif',
     image_type_f: 'image/webp',
