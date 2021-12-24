@@ -2,6 +2,13 @@ import { Post } from '@/typings';
 
 export const posts: Post[] = [
   {
+    id: '6',
+    title: 'Wesołych świąt!',
+    description:
+      'Kochani!<br />Na zbliżające się święta Bożego Narodzenia życzymy Wam zdrowia, radości i spokoju, czasu spędzonego w gronie najbliższych, a w Nowym Roku byście śpiewali razem z nami!<br />Specjalnie dla Was, nagraliśmy nasze <a href="https://youtu.be/Imem81a_d4Q" target="_blank" rel="noreferrer">świąteczne życzenia!</a>',
+    date: '24.12.2021',
+  },
+  {
     id: '5',
     title: 'Kolędowanie z krakowskimi chórami',
     description:

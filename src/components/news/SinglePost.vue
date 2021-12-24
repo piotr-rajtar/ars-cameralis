@@ -2,7 +2,13 @@
   <div :class="style.container">
     <p :class="style.date">{{ post.date }}</p>
     <h2 :class="style.title">{{ post.title }}</h2>
-    <p :class="style.description" v-html="post.description" />
+    <p
+      :class="[
+        style.description,
+        !isPhotoIncluded ? style.noBottomMargin : null,
+      ]"
+      v-html="post.description"
+    />
     <div v-lazyload v-if="post.image" :class="style.imageContainer">
       <img
         v-if="!isImageLoaded && post.image_thumb"
@@ -67,6 +73,10 @@ export default class SinglePost extends Vue {
     const mobilePath: string | null = this.post.image_mobile_f ?? null;
     return this.isScreenMobile && mobilePath ? mobilePath : desktopPath;
   }
+
+  get isPhotoIncluded(): boolean {
+    return !!this.post.image;
+  }
 }
 </script>
 
@@ -119,6 +129,20 @@ export default class SinglePost extends Vue {
   line-height: 1.5em;
   font-size: $font-size-paragraph;
 
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 1px solid $secondary-color;
+    display: inline-block;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: inherit;
+    }
+  }
+
   @include screen-mobile {
     font-size: $font-size-paragraph-small;
   }
@@ -147,5 +171,9 @@ export default class SinglePost extends Vue {
   display: flex;
   width: 100%;
   background-color: $secondary-color;
+}
+
+.noBottomMargin {
+  margin-bottom: 0;
 }
 </style>
