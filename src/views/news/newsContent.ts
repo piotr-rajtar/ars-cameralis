@@ -2,6 +2,13 @@ import { Post } from '@/typings';
 
 export const posts: Post[] = [
   {
+    id: '7',
+    title: 'Warsztaty i nagrania naszego chóru',
+    description:
+      'Przy wsparciu finansowym Województwa Małopolskiego w 2021 roku zrealizowaliśmy projekt pn. “Cykl warsztatów i nagranie teledysku przez chór kameralny Ars Cameralis z Krakowa”. W ramach zaplanowanych działań odbyły się warsztaty, które poprowadzili: Anna Sułkowska-Migoń (dyrygentka; zbiorowa emisja głosu, praca nad repertuarem), Olga Trzebicka (indywidualna i zbiorowa emisja głosu), Witold Kozłowski (śpiew biały) i Marek Bebak (podstawy muzyki). Przygotowaliśmy kilka nowych kompozycji, które wprowadziliśmy do repertuaru, nagraliśmy również utwór “Jaki śmieszny” z repertuaru Ewy Demarczyk w aranżacji Stanisława Rzepieli. Nagranie to wkrótce dostępne będzie w serwisie <a href="https://www.youtube.com/channel/UCalCJcqBtt66lsN4p-jCfLA" target="_blank" rel="noreferrer">YouTube!</a>',
+    date: '30.12.2021',
+  },
+  {
     id: '6',
     title: 'Wesołych świąt!',
     description:
