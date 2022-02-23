@@ -1,7 +1,7 @@
 <template>
   <div :class="style.container">
     <p :class="style.date">{{ post.date }}</p>
-    <h2 :class="style.title">{{ post.title }}</h2>
+    <h3 :class="style.title">{{ post.title }}</h3>
     <p
       :class="[
         style.description,

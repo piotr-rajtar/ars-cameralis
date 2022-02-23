@@ -2,7 +2,7 @@
   <div :class="style.container">
     <div :class="style.textContainer">
       <breadcrumbs v-if="!isScreenMobile" :breadcrumbs="breadcrumbs" />
-      <h1 :class="style.header">Kompozycje a cappella</h1>
+      <h2 :class="style.header">Kompozycje a cappella</h2>
       <tile-list :tile-list="acapellaTiles" />
       <button v-if="isScreenMobile" :class="style.button" @click="onBackClick">
         <arrow-icon :class="style.icon" />

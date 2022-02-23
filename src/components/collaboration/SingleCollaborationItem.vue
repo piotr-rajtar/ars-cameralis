@@ -2,7 +2,7 @@
   <div :class="style.container">
     <div :class="style.textContainer">
       <breadcrumbs v-if="!isScreenMobile" :breadcrumbs="breadcrumbs" />
-      <h1 :class="style.header"><slot name="header" /></h1>
+      <h2 :class="style.header"><slot name="header" /></h2>
       <p :class="style.content"><slot name="content" /></p>
       <div :class="style.content"><slot name="contact" /></div>
       <button v-if="isScreenMobile" @click="onBackClick" :class="style.button">

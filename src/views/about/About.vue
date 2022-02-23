@@ -1,7 +1,7 @@
 <template>
   <div :class="style.container">
     <div :class="style.textContainer">
-      <h1 :class="style.header">O nas</h1>
+      <h2 :class="style.header">O nas</h2>
       <p :class="style.paragraph">{{ paragraph1 }}</p>
       <p :class="style.paragraph">{{ paragraph2 }}</p>
     </div>

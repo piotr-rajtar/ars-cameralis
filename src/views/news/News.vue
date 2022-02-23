@@ -1,7 +1,7 @@
 <template>
   <div :class="style.container">
     <div :class="style.textContainer">
-      <h1 :class="style.header">Aktualności</h1>
+      <h2 :class="style.header">Aktualności</h2>
       <single-post v-for="post in posts" :key="post.id" :post="post" />
     </div>
   </div>

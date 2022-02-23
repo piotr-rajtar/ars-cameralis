@@ -1,8 +1,8 @@
 <template>
   <div :class="style.container">
     <div :class="style.textContainer">
-      <h1 :class="style.header">Kontakt</h1>
-      <h2 :class="style.description">{{ contactHeader }}</h2>
+      <h2 :class="style.header">Kontakt</h2>
+      <p :class="style.description">{{ contactHeader }}</p>
       <form :class="style.form" @submit="debouncedFormSubmit">
         <div :class="style.formControlContainer">
           <label :class="style.label" for="name">Imię</label>

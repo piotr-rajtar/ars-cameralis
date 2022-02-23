@@ -1,7 +1,7 @@
 <template>
   <div :class="style.container">
     <div :class="style.conductor">
-      <h1 :class="style.header">Dyrygent</h1>
+      <h2 :class="style.header">Dyrygent</h2>
       <div :class="style.conductorItemContainer">
         <div :class="style.conductorPhotoContainer">
           <img

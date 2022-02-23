@@ -2,7 +2,7 @@
   <div :class="style.container">
     <div :class="style.textContainer">
       <breadcrumbs v-if="!isScreenMobile" :breadcrumbs="breadcrumbs" />
-      <h1 :class="style.header">{{ title }}</h1>
+      <h2 :class="style.header">{{ title }}</h2>
       <ul :class="style.list">
         <li v-for="(item, index) in items" :key="index" :class="style.listItem">
           <p :class="style.itemText">{{ item }}</p>

@@ -1,7 +1,7 @@
 <template>
   <div :class="style.container">
     <div :class="style.textContainer">
-      <h1 :class="style.header">Repertuar</h1>
+      <h2 :class="style.header">Repertuar</h2>
       <tile-list :tile-list="repertoirTiles" />
     </div>
   </div>

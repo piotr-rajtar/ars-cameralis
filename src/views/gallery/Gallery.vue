@@ -1,7 +1,7 @@
 <template>
   <div :class="style.container">
     <div :class="style.textContainer">
-      <h1 :class="style.header">Galeria</h1>
+      <h2 :class="style.header">Galeria</h2>
       <div :class="style.tileContainer">
         <gallery-tile
           v-lazyload

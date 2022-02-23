@@ -1,7 +1,7 @@
 <template>
   <div :class="style.container">
     <div :class="style.members">
-      <h1 :class="style.header">Skład</h1>
+      <h2 :class="style.header">Skład</h2>
       <voice-table v-if="!isTablet" :members-data="membersData" />
       <div v-else>
         <member-mobile-tile :members-data="sopranoMembers">
