@@ -118,7 +118,7 @@ export const posts: Post[] = [
     image_type: 'image/avif',
     image_type_f: 'image/webp',
     image_alt:
-      'Plakat informujący o przesłuchaniach do zespołu. Przesłuchania w terminie 11-ego i 18-ego października o godzinie 18:15 w instytucie muzykologii uniwersytetu jagiellońskiego przy ulicy westerplatte 10',
+      'Plakat informujący o przesłuchaniach do zespołu w październiku 2021 roku',
     image_ratio: {
       width: 2,
       height: 3,

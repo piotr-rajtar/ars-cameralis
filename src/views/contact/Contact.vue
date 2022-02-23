@@ -334,7 +334,6 @@ export default class Contact extends Vue {
   line-height: 36px;
   font-size: $font-size-semi-medium;
   font-weight: normal;
-  text-align: justify;
 
   @include screen-tablet {
     font-size: $font-size-paragraph;

@@ -60,7 +60,7 @@ export default class Snackbar extends Vue {
 }
 
 .snackbarNegative {
-  background-color: $negative-color;
+  background-color: $snackbar-negative-color;
 }
 
 .boxInfo {

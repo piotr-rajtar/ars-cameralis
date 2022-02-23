@@ -33,6 +33,7 @@ export default class FooterBar extends Vue {
 }
 
 .rights {
+  background: $overlay;
   margin-top: 2 * $spacing-unit;
 }
 </style>

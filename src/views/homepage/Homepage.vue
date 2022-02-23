@@ -1,6 +1,6 @@
 <template>
   <div :class="style.container">
-    <p :class="style.title">Chór kameralny</p>
+    <h2 :class="style.title">Chór kameralny</h2>
   </div>
 </template>
 
@@ -30,6 +30,7 @@ export default class Homepage extends Vue {}
   background: $overlay;
   font-size: $font-size-title;
   text-align: right;
+  font-weight: normal;
 
   @include laptop-max {
     padding: 3 * $spacing-unit 10 * $spacing-unit;

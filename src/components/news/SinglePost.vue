@@ -125,7 +125,6 @@ export default class SinglePost extends Vue {
 
 .description {
   margin-bottom: 10 * $spacing-unit;
-  text-align: justify;
   line-height: 1.5em;
   font-size: $font-size-paragraph;
 
