@@ -28,7 +28,7 @@ export const posts: Post[] = [
     image_type: 'image/avif',
     image_type_f: 'image/webp',
     image_alt:
-      'Plakat akcji "Śpiewaj z nami! Kolędowanie z krakowskimi chórami" przedstawiający zielony wieniec z żółtym dzwonkiem pośrodku.',
+      'Plakat akcji "Śpiewaj z nami! Kolędowanie z krakowskimi chórami"',
     image_ratio: {
       width: 3,
       height: 4,
@@ -47,8 +47,7 @@ export const posts: Post[] = [
     image_thumb: '/images/thumbs/post_4_thumb.webp',
     image_type: 'image/avif',
     image_type_f: 'image/webp',
-    image_alt:
-      'Machający chórzyści ubrani w białe i czarne koszulki z nazwą chóru',
+    image_alt: 'Warsztaty w Węglówce pod Lubomirem',
     image_ratio: {
       width: 3,
       height: 2,
@@ -65,8 +64,7 @@ export const posts: Post[] = [
     image_thumb: '/images/thumbs/post_3_thumb.webp',
     image_type: 'image/avif',
     image_type_f: 'image/webp',
-    image_alt:
-      'Plakat koncertu przedstawiający małą dziewczynkę wąchającą czerwony kwiat',
+    image_alt: 'Plakat promujący koncert "Zapach życia"',
     image_ratio: {
       width: 3,
       height: 3,
@@ -81,7 +79,7 @@ export const posts: Post[] = [
     image: '/images/posts/post_2.png',
     image_thumb: '/images/thumbs/post_2_thumb.webp',
     image_type: 'image/png',
-    image_alt: 'Różnobarwna litera M, będąca logiem województwa Małopolskiego',
+    image_alt: 'Logo województwa małopolskiego',
     image_ratio: {
       width: 3,
       height: 2,
@@ -100,8 +98,7 @@ export const posts: Post[] = [
     image_thumb: '/images/thumbs/post_1_thumb.webp',
     image_type: 'image/avif',
     image_type_f: 'image/webp',
-    image_alt:
-      'Przedstawienie nowo przyjętych członków chóru w śmiesznych pozach',
+    image_alt: 'Nowo przyjęci członkowie chóru',
     image_ratio: {
       width: 4,
       height: 3,
@@ -121,7 +118,7 @@ export const posts: Post[] = [
     image_type: 'image/avif',
     image_type_f: 'image/webp',
     image_alt:
-      'Niebieski plakat z napisem chór zapraszający do dołączenia do zespołu. Informuje o datach przesłuchań które będą jedynastego i osiemnastego października o godzinie osiemnastej piętnaście w instytucie muzykologii uniwersytetu jagiellońskiego przy ulicy westerplatte dziesięć',
+      'Plakat informujący o przesłuchaniach do zespołu. Przesłuchania w terminie 11-ego i 18-ego października o godzinie 18:15 w instytucie muzykologii uniwersytetu jagiellońskiego przy ulicy westerplatte 10',
     image_ratio: {
       width: 2,
       height: 3,

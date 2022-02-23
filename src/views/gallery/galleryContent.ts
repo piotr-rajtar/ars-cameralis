@@ -3,8 +3,7 @@ import { Photo } from '@/typings';
 export const galleryPhotos: Photo[] = [
   {
     id: '1',
-    alt:
-      'Koncert w kościele. Zespół ubrany na czarno, kobiety z czerwonymi koralami.',
+    alt: 'Koncert w kościele',
     path: '/images/gallery/img1.avif',
     path_f: '/images/gallery/img1_f.webp',
     type: 'image/avif',
@@ -12,8 +11,7 @@ export const galleryPhotos: Photo[] = [
   },
   {
     id: '2',
-    alt:
-      'Zespół stoi ustawiony na kształt litery V. Jedna polowa ma czarne a druga białe koszulki.',
+    alt: 'Warsztaty chóralne',
     path: '/images/gallery/img2.avif',
     path_f: '/images/gallery/img2_f.webp',
     type: 'image/avif',
@@ -21,8 +19,7 @@ export const galleryPhotos: Photo[] = [
   },
   {
     id: '3',
-    alt:
-      'Zespół przed koncertem. Chórzyści cali na czarno, chórzystki na czarnych sukniach mają kolorowe kokardy.',
+    alt: 'Zespół przed koncertem',
     path: '/images/gallery/img3.avif',
     path_f: '/images/gallery/img3_f.webp',
     type: 'image/avif',
@@ -30,7 +27,7 @@ export const galleryPhotos: Photo[] = [
   },
   {
     id: '4',
-    alt: 'Zespół w trakcie wiosennych warsztatów w Lanckoronie.',
+    alt: 'Wiosenne warsztaty w Lanckoronie',
     path: '/images/gallery/img4.avif',
     path_f: '/images/gallery/img4_f.webp',
     type: 'image/avif',
@@ -38,8 +35,7 @@ export const galleryPhotos: Photo[] = [
   },
   {
     id: '5',
-    alt:
-      'Zespół przed koncertem w Rzeszowie. Całe czarne stroje, kobiety z czerwonymi koralami.',
+    alt: 'Zespół przed koncertem w Rzeszowie',
     path: '/images/gallery/img5.avif',
     path_f: '/images/gallery/img5_f.webp',
     type: 'image/avif',
@@ -47,7 +43,7 @@ export const galleryPhotos: Photo[] = [
   },
   {
     id: '6',
-    alt: 'Koncert bożonarodzeniowy w kościele.',
+    alt: 'Koncert bożonarodzeniowy w kościele',
     path: '/images/gallery/img6.avif',
     path_f: '/images/gallery/img6_f.webp',
     type: 'image/avif',
@@ -55,8 +51,7 @@ export const galleryPhotos: Photo[] = [
   },
   {
     id: '7',
-    alt:
-      'Zespół przed jednym z koncertów, ubrany na czarno, stojący na zielonej trawie',
+    alt: 'Zespół przed koncertem',
     path: '/images/gallery/img7.avif',
     path_f: '/images/gallery/img7_f.webp',
     type: 'image/avif',
@@ -72,7 +67,7 @@ export const galleryPhotos: Photo[] = [
   },
   {
     id: '9',
-    alt: 'Zespół mający za sobą bazylikę archikatedralną we Fromborku.',
+    alt: 'Zespół z bazyliką archikatedralną we Fromborku w tle',
     path: '/images/gallery/img9.avif',
     path_f: '/images/gallery/img9_f.webp',
     type: 'image/avif',
@@ -90,7 +85,7 @@ export const galleryPhotos: Photo[] = [
   {
     id: '11',
     alt:
-      'Zdjęcie z warsztatów realizowanych w ramach programu "Małopolskie Chóry - Małopolska Rozśpiewana". Uczestnicy warsztatów ubrani na czarno i biało, machają do obiektywu.',
+      'Warsztaty realizowane w ramach programu "Małopolskie Chóry - Małopolska Rozśpiewana"',
     path: '/images/gallery/img11.avif',
     path_f: '/images/gallery/img11_f.webp',
     type: 'image/avif',
@@ -98,8 +93,7 @@ export const galleryPhotos: Photo[] = [
   },
   {
     id: '12',
-    alt:
-      'Chórzyści po zakończonych warsztatach siedzą na schodach Gościńca pod Lubomirem.',
+    alt: 'Chór po zakończonych warsztatach na schodach Gościńca pod Lubomirem.',
     path: '/images/gallery/img12.avif',
     path_f: '/images/gallery/img12_f.webp',
     type: 'image/avif',
@@ -110,8 +104,7 @@ export const galleryPhotos: Photo[] = [
 export const galleryMiniatures: Photo[] = [
   {
     id: '1',
-    alt:
-      'Koncert w kościele. Zespół ubrany na czarno, kobiety z czerwonymi koralami.',
+    alt: 'Koncert w kościele',
     path: '/images/gallery/img1.avif',
     path_f: '/images/gallery/img1_f.webp',
     path_thumb: '/images/thumbs/img1_thumb.webp',
@@ -120,8 +113,7 @@ export const galleryMiniatures: Photo[] = [
   },
   {
     id: '2',
-    alt:
-      'Zespół stoi ustawiony na kształt litery V. Jedna polowa ma czarne a druga białe koszulki.',
+    alt: 'Warsztaty chóralne',
     path: '/images/gallery/img2.avif',
     path_f: '/images/gallery/img2_f.webp',
     path_thumb: '/images/thumbs/img2_thumb.webp',
@@ -130,8 +122,7 @@ export const galleryMiniatures: Photo[] = [
   },
   {
     id: '3',
-    alt:
-      'Zespół przed koncertem. Chórzyści cali na czarno, chórzystki na czarnych sukniach mają kolorowe kokardy.',
+    alt: 'Zespół przed koncertem',
     path: '/images/gallery/img3.avif',
     path_f: '/images/gallery/img3_f.webp',
     path_thumb: '/images/thumbs/img3_thumb.webp',
@@ -140,7 +131,7 @@ export const galleryMiniatures: Photo[] = [
   },
   {
     id: '4',
-    alt: 'Zespół w trakcie wiosennych warsztatów w Lanckoronie.',
+    alt: 'Wiosenne warsztaty w Lanckoronie',
     path: '/images/gallery/img4.avif',
     path_f: '/images/gallery/img4_f.webp',
     path_thumb: '/images/thumbs/img4_thumb.webp',
@@ -149,8 +140,7 @@ export const galleryMiniatures: Photo[] = [
   },
   {
     id: '5',
-    alt:
-      'Zespół przed koncertem w Rzeszowie. Całe czarne stroje, kobiety z czerwonymi koralami.',
+    alt: 'Zespół przed koncertem w Rzeszowie',
     path: '/images/gallery/img5.avif',
     path_f: '/images/gallery/img5_f.webp',
     path_thumb: '/images/thumbs/img5_thumb.webp',
@@ -159,7 +149,7 @@ export const galleryMiniatures: Photo[] = [
   },
   {
     id: '6',
-    alt: 'Koncert bożonarodzeniowy w kościele.',
+    alt: 'Koncert bożonarodzeniowy w kościele',
     path: '/images/gallery/img6.avif',
     path_f: '/images/gallery/img6_f.webp',
     path_thumb: '/images/thumbs/img6_thumb.webp',
@@ -168,8 +158,7 @@ export const galleryMiniatures: Photo[] = [
   },
   {
     id: '7',
-    alt:
-      'Zespół przed jednym z koncertów, ubrany na czarno, stojący na zielonej trawie',
+    alt: 'Zespół przed koncertem',
     path: '/images/gallery/img7.avif',
     path_f: '/images/gallery/img7_f.webp',
     path_thumb: '/images/thumbs/img7_thumb.webp',
@@ -187,7 +176,7 @@ export const galleryMiniatures: Photo[] = [
   },
   {
     id: '9',
-    alt: 'Zespół mający za sobą bazylikę archikatedralną we Fromborku.',
+    alt: 'Zespół z bazyliką archikatedralną we Fromborku w tle',
     path: '/images/gallery/img9.avif',
     path_f: '/images/gallery/img9_f.webp',
     path_thumb: '/images/thumbs/img9_thumb.webp',
@@ -207,7 +196,7 @@ export const galleryMiniatures: Photo[] = [
   {
     id: '11',
     alt:
-      'Zdjęcie z warsztatów realizowanych w ramach programu "Małopolskie Chóry - Małopolska Rozśpiewana". Uczestnicy warsztatów ubrani na czarno i biało, machają do obiektywu.',
+      'Warsztaty realizowane w ramach programu "Małopolskie Chóry - Małopolska Rozśpiewana"',
     path: '/images/gallery/img11.avif',
     path_f: '/images/gallery/img11_f.webp',
     path_thumb: '/images/thumbs/img11_thumb.webp',
@@ -216,8 +205,7 @@ export const galleryMiniatures: Photo[] = [
   },
   {
     id: '12',
-    alt:
-      'Chórzyści po zakończonych warsztatach siedzą na schodach Gościńca pod Lubomirem.',
+    alt: 'Chór po zakończonych warsztatach na schodach Gościńca pod Lubomirem.',
     path: '/images/gallery/img12.avif',
     path_f: '/images/gallery/img12_f.webp',
     path_thumb: '/images/thumbs/img12_thumb.webp',
