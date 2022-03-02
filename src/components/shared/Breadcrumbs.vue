@@ -27,6 +27,7 @@ export default class Breadcrumbs extends Vue {
 <style lang="scss" module="style">
 @import '@/scss/variables.scss';
 @import '@/scss/media.scss';
+@import '@/scss/mixins.scss';
 
 .breadcrumbs {
   list-style-type: none;
@@ -51,6 +52,7 @@ export default class Breadcrumbs extends Vue {
 }
 
 .link {
+  @include text-paragraph;
   cursor: pointer;
   text-decoration: none;
 

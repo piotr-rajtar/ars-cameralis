@@ -45,6 +45,7 @@ export default class About extends Vue {
 }
 
 .header {
+  @include text-paragraph;
   text-align: center;
   font-size: $font-size-large;
   margin-bottom: 7 * $spacing-unit;
@@ -56,13 +57,15 @@ export default class About extends Vue {
 }
 
 .paragraph {
-  margin-top: 5 * $spacing-unit;
+  @include text-paragraph;
   font-size: $font-size-paragraph;
-  line-height: 9 * $spacing-unit;
+
+  &:first-of-type {
+    margin-bottom: 2em;
+  }
 
   @include screen-mobile {
     font-size: $font-size-paragraph-small;
-    line-height: 1.5em;
   }
 }
 </style>

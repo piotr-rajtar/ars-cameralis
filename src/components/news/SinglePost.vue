@@ -83,6 +83,7 @@ export default class SinglePost extends Vue {
 <style lang="scss" module="style">
 @import '@/scss/variables.scss';
 @import '@/scss/media.scss';
+@import '@/scss/mixins.scss';
 
 .container {
   padding: 5 * $spacing-unit;
@@ -110,11 +111,14 @@ export default class SinglePost extends Vue {
 }
 
 .date {
+  @include text-paragraph;
+  @include text-paragraph;
   font-size: $font-size-paragraph-small;
   margin-bottom: 2 * $spacing-unit;
 }
 
 .title {
+  @include text-paragraph;
   font-size: $font-size-medium;
   margin-bottom: 5 * $spacing-unit;
 
@@ -124,8 +128,8 @@ export default class SinglePost extends Vue {
 }
 
 .description {
+  @include text-paragraph;
   margin-bottom: 10 * $spacing-unit;
-  line-height: 1.5em;
   font-size: $font-size-paragraph;
 
   a {

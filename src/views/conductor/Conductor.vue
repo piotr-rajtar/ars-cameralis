@@ -30,7 +30,7 @@
         </div>
 
         <div :class="style.description">
-          <p :class="style.firstParagraph">{{ paragraph1 }}</p>
+          <p :class="style.paragraph">{{ paragraph1 }}</p>
           <p>{{ paragraph2 }}</p>
         </div>
       </div>
@@ -102,6 +102,7 @@ export default class Conductor extends Vue {
 }
 
 .header {
+  @include text-paragraph;
   text-align: center;
   font-size: $font-size-large;
   margin-bottom: 7 * $spacing-unit;
@@ -126,7 +127,7 @@ export default class Conductor extends Vue {
   width: 300px;
   height: fit-content;
   border-radius: 0.5 * $spacing-unit;
-  margin: 5 * $spacing-unit;
+  margin: 0 5 * $spacing-unit 5 * $spacing-unit;
   border: 0.5 * $spacing-unit solid $secondary-color;
 
   @include screen-tablet {
@@ -143,19 +144,17 @@ export default class Conductor extends Vue {
 }
 
 .description {
+  @include text-paragraph;
   flex: 50%;
-  margin-top: 5 * $spacing-unit;
   font-size: $font-size-paragraph;
-  line-height: 9 * $spacing-unit;
 
   @include screen-mobile {
     font-size: $font-size-paragraph-small;
-    line-height: 1.5em;
   }
 }
 
-.firstParagraph {
-  margin-bottom: 5 * $spacing-unit;
+.paragraph {
+  margin-bottom: 2em;
 }
 
 .image {

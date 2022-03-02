@@ -61,3 +61,9 @@
     background-color: $scrollbar-color;
   }
 }
+
+@mixin text-paragraph {
+  line-height: 1.5em;
+  letter-spacing: 0.12em;
+  word-spacing: 0.16em;
+}
