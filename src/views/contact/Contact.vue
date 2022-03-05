@@ -17,6 +17,7 @@
             :maxlength="20"
             :minlength="3"
             name="name"
+            placeholder="Wpisz imię"
             type="text"
             required
             @change="validation(FormField.NAME)"
@@ -38,6 +39,7 @@
             :maxlength="30"
             :minlength="3"
             name="surname"
+            placeholder="Wpisz nazwisko"
             type="text"
             required
             @change="validation(FormField.SURNAME)"
@@ -57,6 +59,7 @@
               !isEmailValid ? style.invalidInput : null,
             ]"
             name="email"
+            placeholder="Wpisz adres email"
             type="email"
             required
             @change="validation(FormField.EMAIL)"
@@ -81,6 +84,7 @@
             :minlength="20"
             :rows="2"
             name="message"
+            placeholder="Wpisz wiadomość"
             type="text"
             required
             @change="validation(FormField.MESSAGE)"
@@ -398,6 +402,10 @@ export default class Contact extends Vue {
       $secondary-color;
   }
 
+  &::placeholder {
+    color: $placeholder-color;
+  }
+
   @include screen-mobile {
     height: 40px;
   }
@@ -414,6 +422,10 @@ export default class Contact extends Vue {
 .textarea {
   resize: none;
   height: 200px;
+
+  &::placeholder {
+    color: $placeholder-color;
+  }
 }
 
 .validationMessage {
