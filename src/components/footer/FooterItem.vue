@@ -7,7 +7,7 @@
       { [style.youtube]: name === 'youtube' },
     ]"
   >
-    <a :href="link" target="_blank" rel="noreferrer">
+    <a :href="link" target="_blank" rel="noreferrer" :aria-label="ariaLabel">
       <component
         :is="iconType"
         :class="style.icon"
@@ -28,6 +28,10 @@ import YoutubeIcon from 'vue-material-design-icons/Youtube.vue';
 export default class FooterItem extends Vue {
   @Prop({ type: String }) link!: string;
   @Prop({ type: String }) name!: string;
+
+  get ariaLabel(): string {
+    return `Oficjalny ${this.name} chóru (link otwiera nowe okno)`;
+  }
 
   get iconType(): string {
     const icons: {
