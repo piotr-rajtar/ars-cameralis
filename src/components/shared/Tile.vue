@@ -1,5 +1,9 @@
 <template>
-  <router-link :to="{ name: tile.name }" :class="style.link">
+  <router-link
+    :to="{ name: tile.name }"
+    :class="style.link"
+    :aria-label="ariaLabel"
+  >
     <div :class="style.tile">{{ tile.title }}</div>
   </router-link>
 </template>
@@ -11,6 +15,10 @@ import { RouterTile } from '@/typings';
 @Component({})
 export default class Tile extends Vue {
   @Prop({ type: Object, required: true }) tile!: RouterTile;
+
+  get ariaLabel(): string {
+    return `Otwórz ${this.tile.title} (link przechodzi do podstrony w tym samym oknie)`;
+  }
 }
 </script>
 
