@@ -72,7 +72,6 @@ export default class Gallery extends Vue {
 }
 
 .header {
-  @include text-paragraph;
   text-align: center;
   font-size: $font-size-large;
   margin-bottom: 7 * $spacing-unit;

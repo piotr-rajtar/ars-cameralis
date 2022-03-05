@@ -52,7 +52,6 @@ export default class Breadcrumbs extends Vue {
 }
 
 .link {
-  @include text-paragraph;
   cursor: pointer;
   text-decoration: none;
 

@@ -323,7 +323,6 @@ export default class Contact extends Vue {
 }
 
 .header {
-  @include text-paragraph;
   text-align: center;
   font-size: $font-size-large;
   margin-bottom: 7 * $spacing-unit;
@@ -368,7 +367,6 @@ export default class Contact extends Vue {
 }
 
 .label {
-  @include text-paragraph;
   color: $secondary-color;
   font-size: $font-size-medium;
   margin-bottom: $spacing-unit;
@@ -435,7 +433,6 @@ export default class Contact extends Vue {
 
 .button {
   @include flex-centered;
-  @include text-paragraph;
   margin-top: 5 * $spacing-unit;
   padding: 5 * $spacing-unit 15 * $spacing-unit;
   cursor: pointer;

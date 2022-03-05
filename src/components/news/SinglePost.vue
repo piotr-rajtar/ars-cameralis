@@ -111,14 +111,11 @@ export default class SinglePost extends Vue {
 }
 
 .date {
-  @include text-paragraph;
-  @include text-paragraph;
   font-size: $font-size-paragraph-small;
   margin-bottom: 2 * $spacing-unit;
 }
 
 .title {
-  @include text-paragraph;
   font-size: $font-size-medium;
   margin-bottom: 5 * $spacing-unit;
 

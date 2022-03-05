@@ -140,6 +140,7 @@ export default class Auditions extends Vue {
 
 .contactBox {
   @include flex-aligned-center-space-between;
+  letter-spacing: initial;
   margin: 15 * $spacing-unit auto 0;
   border: 0.5 * $spacing-unit solid $secondary-color;
   border-radius: 2 * $spacing-unit;

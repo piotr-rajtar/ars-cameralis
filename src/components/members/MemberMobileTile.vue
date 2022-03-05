@@ -34,7 +34,6 @@ export default class MemberMobileTile extends Vue {
 }
 
 .tileHeader {
-  @include text-paragraph;
   margin: 0 auto;
   padding-bottom: 2 * $spacing-unit;
   font-size: $font-size-semi-large;
@@ -57,7 +56,6 @@ export default class MemberMobileTile extends Vue {
 }
 
 .listItem {
-  @include text-paragraph;
   margin: 5 * $spacing-unit 0;
 }
 </style>

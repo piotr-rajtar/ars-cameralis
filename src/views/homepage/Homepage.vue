@@ -22,7 +22,6 @@ export default class Homepage extends Vue {}
 }
 
 .title {
-  @include text-paragraph;
   position: absolute;
   padding: 10 * $spacing-unit;
   bottom: 50 * $spacing-unit;

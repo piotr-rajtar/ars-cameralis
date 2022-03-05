@@ -68,7 +68,6 @@ export default class SingleCollaborationItem extends Vue {
 }
 
 .header {
-  @include text-paragraph;
   margin: 5 * $spacing-unit auto 10 * $spacing-unit;
   padding-bottom: 2 * $spacing-unit;
   font-size: $font-size-semi-large;
@@ -93,7 +92,6 @@ export default class SingleCollaborationItem extends Vue {
 
 .button {
   @include flex-centered;
-  @include text-paragraph;
   background-color: inherit;
   border: 0.5 * $spacing-unit solid $secondary-color;
   border-radius: 2 * $spacing-unit;
