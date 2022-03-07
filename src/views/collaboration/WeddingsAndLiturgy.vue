@@ -4,7 +4,11 @@
       <template #header>Śluby / Oprawa liturgii</template>
       <template #content>
         Chór Ars Cameralis chętnie włącza się w oprawę muzyczną liturgii. Mamy w
-        <router-link :to="{ name: 'Repertoir' }" :class="style.contactLink">
+        <router-link
+          :to="{ name: 'Repertoir' }"
+          :class="style.contactLink"
+          aria-label="Repertuar (link przechodzi do sekcji repertuar w tym samym oknie)"
+        >
           repertuarze
         </router-link>
         wiele utworów liturgicznych. Z przyjemnością zadbamy o piękną oprawę
@@ -13,7 +17,11 @@
       <template #contact>
         <p>
           Jeśli chcecie zaprosić nas do siebie, prosimy o
-          <router-link :to="{ name: 'Contact' }" :class="style.contactLink">
+          <router-link
+            :to="{ name: 'Contact' }"
+            :class="style.contactLink"
+            aria-label="Kontakt (link przechodzi do sekcji kontakt w tym samym oknie)"
+          >
             kontakt.
           </router-link>
         </p>

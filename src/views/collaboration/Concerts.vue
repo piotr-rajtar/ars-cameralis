@@ -7,7 +7,11 @@
         przygotujemy odpowiedni program i zaprezentujemy nasze umiejętności
         podczas koncertów we wnętrzach sakralnych, salach koncertowych i podczas
         imprez plenerowych. Nasz
-        <router-link :to="{ name: 'Repertoir' }" :class="style.contactLink">
+        <router-link
+          :to="{ name: 'Repertoir' }"
+          :class="style.contactLink"
+          aria-label="Program (link przechodzi do sekcji repertuar w tym samym oknie)"
+        >
           program
         </router-link>
         jest bardzo szeroki, z pewnością każdy znajdzie w nim coś dla siebie.
@@ -15,7 +19,11 @@
         wokalnych oraz wokalno-instrumentalnych.
       </template>
       <template #contact>
-        <router-link :to="{ name: 'Contact' }" :class="style.contactLink">
+        <router-link
+          :to="{ name: 'Contact' }"
+          :class="style.contactLink"
+          aria-label="Skontaktuj się z nami! (link przechodzi do sekcji kontakt w tym samym oknie)"
+        >
           Skontaktuj się z nami!
         </router-link>
       </template>

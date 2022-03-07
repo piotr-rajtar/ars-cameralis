@@ -13,21 +13,33 @@
       <template #contact>
         <p>
           Zainteresowanych prosimy o
-          <router-link :to="{ name: 'Contact' }" :class="style.contactLink">
+          <router-link
+            :to="{ name: 'Contact' }"
+            :class="style.contactLink"
+            aria-label="Wiadomość email (link przechodzi do sekcji kontakt w tym samym oknie)"
+          >
             wiadomość e-mail
           </router-link>
           lub kontakt telefoniczny z dyrygentką – Anną Sułkowską-Migoń (numer
           poniżej).
         </p>
-        <div :class="style.contactBox" @click="debouncedPhoneClick">
+        <div
+          :class="style.contactBox"
+          @click="debouncedPhoneClick"
+          :tabindex="0"
+          aria-label="Skopiuj numer telefonu"
+          role="button"
+        >
           <phone-icon
             :class="style.phoneIcon"
             :size="isExtraSmallScreen ? 20 : 25"
+            aria-hidden="true"
           />
           <p :class="style.contactInfo">{{ phone }}</p>
           <copy-icon
             :class="style.copyIcon"
             :size="isExtraSmallScreen ? 15 : 20"
+            aria-hidden="true"
           />
         </div>
       </template>
@@ -155,6 +167,10 @@ export default class Auditions extends Vue {
     opacity: 0.8;
     color: $main-color;
     transition: 1s ease;
+  }
+
+  &:focus {
+    @include focus-shadow;
   }
 
   @include screen-mobile {

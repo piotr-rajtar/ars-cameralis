@@ -5,8 +5,13 @@
       <h2 :class="style.header"><slot name="header" /></h2>
       <p :class="style.content"><slot name="content" /></p>
       <div :class="style.content"><slot name="contact" /></div>
-      <button v-if="isScreenMobile" @click="onBackClick" :class="style.button">
-        <arrow-icon :class="style.icon" />
+      <button
+        v-if="isScreenMobile"
+        @click="onBackClick"
+        :class="style.button"
+        aria-label="Powrót do podstrony Współpraca"
+      >
+        <arrow-icon :class="style.icon" aria-hidden="true" />
         <span>Powrót</span>
       </button>
     </div>
@@ -108,6 +113,10 @@ export default class SingleCollaborationItem extends Vue {
     opacity: 0.8;
     color: $main-color;
     transition: 1s ease;
+  }
+
+  &:focus {
+    @include focus-shadow;
   }
 }
 
