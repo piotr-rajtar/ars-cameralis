@@ -7,11 +7,13 @@
         ? style.snackbarPositive
         : style.snackbarNegative,
     ]"
+    role="alert"
   >
     <p :class="style.boxInfo"><slot /></p>
     <close-icon
       :class="style.closeIcon"
       :size="isExtraSmallScreen ? 20 : 25"
+      aria-hidden="true"
       @click="onClose"
     />
   </div>
