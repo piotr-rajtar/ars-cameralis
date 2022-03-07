@@ -5,10 +5,20 @@
       :key="index"
       :class="style.linkItem"
     >
-      <router-link :to="{ name: breadcrumb.name }" :class="style.link">
+      <router-link
+        :to="{ name: breadcrumb.name }"
+        :class="style.link"
+        :aria-hidden="shouldItemBeAriaHidden(index)"
+        :aria-label="getAriaLabel(breadcrumb.title)"
+        :tabindex="shouldItemBeFocusable(index)"
+      >
         {{ breadcrumb.title }}
       </router-link>
-      <arrow-icon v-if="breadcrumb.name" :class="style.icon" />
+      <arrow-icon
+        v-if="breadcrumb.name"
+        :class="style.icon"
+        aria-hidden="true"
+      />
     </li>
   </ol>
 </template>
@@ -21,6 +31,18 @@ import ArrowIcon from 'vue-material-design-icons/ChevronRight.vue';
 @Component({ components: { ArrowIcon } })
 export default class Breadcrumbs extends Vue {
   @Prop({ type: Array, required: true }) breadcrumbs!: Breadcrumb[];
+
+  getAriaLabel(title: string): string {
+    return `${title} (link do podstrony otworzy się w tym samym oknie)`;
+  }
+
+  shouldItemBeAriaHidden(index: number): string {
+    return this.breadcrumbs.length - 1 === index ? 'true' : 'false';
+  }
+
+  shouldItemBeFocusable(index: number): number {
+    return this.breadcrumbs.length - 1 === index ? -1 : 0;
+  }
 }
 </script>
 
