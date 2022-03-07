@@ -67,3 +67,9 @@
   letter-spacing: 0.12em;
   word-spacing: 0.16em;
 }
+
+@mixin focus-shadow {
+    outline: none;
+    box-shadow: 0.5 * $spacing-unit $spacing-unit 2 * $spacing-unit
+      $secondary-color;
+  }

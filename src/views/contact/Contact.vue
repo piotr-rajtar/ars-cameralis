@@ -22,7 +22,11 @@
             required
             @change="validation(FormField.NAME)"
           />
-          <span v-if="!isNameValid" :class="style.validationMessage">
+          <span
+            v-if="!isNameValid"
+            :class="style.validationMessage"
+            role="alert"
+          >
             Imię powinno zawierać od 3 do 20 znaków.
           </span>
         </div>
@@ -44,7 +48,11 @@
             required
             @change="validation(FormField.SURNAME)"
           />
-          <span v-if="!isSurnameValid" :class="style.validationMessage">
+          <span
+            v-if="!isSurnameValid"
+            :class="style.validationMessage"
+            role="alert"
+          >
             Nazwisko powinno zawierać od 3 do 30 znaków.
           </span>
         </div>
@@ -64,7 +72,11 @@
             required
             @change="validation(FormField.EMAIL)"
           />
-          <span v-if="!isEmailValid" :class="style.validationMessage">
+          <span
+            v-if="!isEmailValid"
+            :class="style.validationMessage"
+            role="alert"
+          >
             Niepoprawny email
           </span>
         </div>
@@ -89,24 +101,40 @@
             required
             @change="validation(FormField.MESSAGE)"
           />
-          <span v-if="!isMessageValid" :class="style.validationMessage">
+          <span
+            v-if="!isMessageValid"
+            :class="style.validationMessage"
+            role="alert"
+          >
             Wiadomość powinna zawierać od 20 do 500 znaków.
           </span>
         </div>
-        <button :class="[style.formControl, style.button]" type="submit">
-          <send-icon :class="style.sendIcon" />
+        <button
+          :class="[style.formControl, style.button]"
+          type="submit"
+          aria-label="Wyślij wiadomość"
+        >
+          <send-icon :class="style.sendIcon" aria-hidden="true" />
           <span>Wyślij</span>
         </button>
       </form>
-      <div :class="style.contactBox" @click="debouncedEmailClick">
+      <div
+        :class="style.contactBox"
+        @click="debouncedEmailClick"
+        :tabindex="0"
+        aria-label="Skopiuj adres email"
+        role="button"
+      >
         <mail-icon
           :class="style.mailIcon"
           :size="isExtraSmallScreen ? 20 : 25"
+          aria-hidden="true"
         />
         <p :class="style.contactInfo">{{ mail }}</p>
         <copy-icon
           :class="style.copyIcon"
           :size="isExtraSmallScreen ? 15 : 20"
+          aria-hidden="true"
         />
       </div>
     </div>
@@ -395,9 +423,7 @@ export default class Contact extends Vue {
   padding: 2 * $spacing-unit;
 
   &:focus {
-    outline: none;
-    box-shadow: 0.5 * $spacing-unit $spacing-unit 2 * $spacing-unit
-      $secondary-color;
+    @include focus-shadow;
   }
 
   &::placeholder {
@@ -444,6 +470,10 @@ export default class Contact extends Vue {
     transition: 1s ease;
   }
 
+  &:focus {
+    @include focus-shadow;
+  }
+
   @include screen-mobile {
     width: 100%;
     padding: 2 * $spacing-unit 0;
@@ -466,6 +496,10 @@ export default class Contact extends Vue {
     opacity: 0.8;
     color: $main-color;
     transition: 1s ease;
+  }
+
+  &:focus {
+    @include focus-shadow;
   }
 
   @include screen-mobile {
