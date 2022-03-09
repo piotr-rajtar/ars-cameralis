@@ -1,5 +1,9 @@
 <template>
-  <single-repertoir :items="carols" :title="title" />
+  <single-repertoir
+    :backButtonAriaLabel="backButtonAriaLabel"
+    :items="carols"
+    :title="title"
+  />
 </template>
 
 <script lang="ts">
@@ -10,6 +14,10 @@ import { carols } from './repertoirContent';
 @Component({ components: { SingleRepertoir } })
 export default class Carols extends Vue {
   carols: string[] = carols;
+
+  get backButtonAriaLabel(): string {
+    return 'Powrót do podstrony kompozycje a capella';
+  }
 
   get title(): string {
     return 'Kolędy';

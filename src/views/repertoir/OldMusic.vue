@@ -1,5 +1,9 @@
 <template>
-  <single-repertoir :items="oldMusic" :title="title" />
+  <single-repertoir
+    :backButtonAriaLabel="backButtonAriaLabel"
+    :items="oldMusic"
+    :title="title"
+  />
 </template>
 
 <script lang="ts">
@@ -10,6 +14,10 @@ import { oldMusic } from './repertoirContent';
 @Component({ components: { SingleRepertoir } })
 export default class OldMusic extends Vue {
   oldMusic: string[] = oldMusic;
+
+  get backButtonAriaLabel(): string {
+    return 'Powrót do podstrony kompozycje a capella';
+  }
 
   get title(): string {
     return 'Muzyka dawna';

@@ -1,5 +1,9 @@
 <template>
-  <single-repertoir :items="vocalInstrumentalMusic" :title="title" />
+  <single-repertoir
+    :backButtonAriaLabel="backButtonAriaLabel"
+    :items="vocalInstrumentalMusic"
+    :title="title"
+  />
 </template>
 
 <script lang="ts">
@@ -10,6 +14,10 @@ import { vocalInstrumentalMusic } from './repertoirContent';
 @Component({ components: { SingleRepertoir } })
 export default class VocalInstrumental extends Vue {
   vocalInstrumentalMusic: string[] = vocalInstrumentalMusic;
+
+  get backButtonAriaLabel(): string {
+    return 'Powrót do podstrony repertuar';
+  }
 
   get title(): string {
     return 'Kompozycje wokalno-instrumentalne';

@@ -8,8 +8,13 @@
           <p :class="style.itemText">{{ item }}</p>
         </li>
       </ul>
-      <button v-if="isScreenMobile" :class="style.button" @click="onBackClick">
-        <arrow-icon :class="style.icon" />
+      <button
+        v-if="isScreenMobile"
+        :class="style.button"
+        :aria-label="backButtonAriaLabel"
+        @click="onBackClick"
+      >
+        <arrow-icon :class="style.icon" aria-hidden="true" />
         <span>Powrót</span>
       </button>
     </div>
@@ -26,6 +31,7 @@ import { Breadcrumb } from '@/typings';
 export default class SingleRepertoir extends Vue {
   @Prop({ type: String, required: true }) title!: string;
   @Prop({ type: Array, required: true }) items!: string[];
+  @Prop({ type: String, required: true }) backButtonAriaLabel!: string;
   mobileBreakPoint: MediaQueryList = window.matchMedia('(max-width: 600px)');
   isScreenMobile: boolean = this.mobileBreakPoint.matches;
 
@@ -118,6 +124,10 @@ export default class SingleRepertoir extends Vue {
     opacity: 0.8;
     color: $main-color;
     transition: 1s ease;
+  }
+
+  &:focus {
+    @include focus-shadow;
   }
 }
 

@@ -1,5 +1,9 @@
 <template>
-  <single-repertoir :items="passionMusic" :title="title" />
+  <single-repertoir
+    :backButtonAriaLabel="backButtonAriaLabel"
+    :items="passionMusic"
+    :title="title"
+  />
 </template>
 
 <script lang="ts">
@@ -10,6 +14,10 @@ import { passionMusic } from './repertoirContent';
 @Component({ components: { SingleRepertoir } })
 export default class PassionMusic extends Vue {
   passionMusic: string[] = passionMusic;
+
+  get backButtonAriaLabel(): string {
+    return 'Powrót do podstrony kompozycje a capella';
+  }
 
   get title(): string {
     return 'Utwory pasyjne';

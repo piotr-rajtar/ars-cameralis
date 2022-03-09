@@ -1,5 +1,9 @@
 <template>
-  <single-repertoir :items="liturgicalMusic" :title="title" />
+  <single-repertoir
+    :backButtonAriaLabel="backButtonAriaLabel"
+    :items="liturgicalMusic"
+    :title="title"
+  />
 </template>
 
 <script lang="ts">
@@ -10,6 +14,10 @@ import { liturgicalMusic } from './repertoirContent';
 @Component({ components: { SingleRepertoir } })
 export default class LiturgicalMusic extends Vue {
   liturgicalMusic: string[] = liturgicalMusic;
+
+  get backButtonAriaLabel(): string {
+    return 'Powrót do podstrony kompozycje a capella';
+  }
 
   get title(): string {
     return 'Repertuar liturgiczny (w tym ślubny)';

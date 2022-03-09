@@ -4,8 +4,13 @@
       <breadcrumbs v-if="!isScreenMobile" :breadcrumbs="breadcrumbs" />
       <h2 :class="style.header">Kompozycje a cappella</h2>
       <tile-list :tile-list="acapellaTiles" />
-      <button v-if="isScreenMobile" :class="style.button" @click="onBackClick">
-        <arrow-icon :class="style.icon" />
+      <button
+        v-if="isScreenMobile"
+        :class="style.button"
+        aria-label="Powrót do podstrony repertuar"
+        @click="onBackClick"
+      >
+        <arrow-icon :class="style.icon" aria-hidden="true" />
         <span>Powrót</span>
       </button>
     </div>
@@ -104,6 +109,10 @@ export default class AcapellaTiles extends Vue {
     opacity: 0.8;
     color: $main-color;
     transition: 1s ease;
+  }
+
+  &:focus {
+    @include focus-shadow;
   }
 }
 
