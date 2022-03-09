@@ -1,5 +1,8 @@
 <template>
   <table :class="style.table">
+    <caption :class="style.tableCaption">
+      Tabela z listą członków chóru
+    </caption>
     <thead>
       <tr>
         <th :class="style.tableHeader">Sopran</th>
@@ -44,6 +47,10 @@ export default class VoiceTable extends Vue {
 
 .table {
   text-align: center;
+}
+
+.tableCaption {
+  font-size: 0;
 }
 
 .tableHeader {
