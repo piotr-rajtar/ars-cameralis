@@ -12,9 +12,10 @@
       <source :data-srcset="item.path" :type="item.type" />
       <source :data-srcset="item.path_f" :type="item.type_f" />
       <img
-        :alt="item.alt"
+        :alt="`${item.alt} (Kliknięcie otwiera grafikę w trybie pełno ekranowym)`"
         :class="style.photo"
         :data-src="item.path"
+        :tabindex="0"
         width="200"
         height="200"
         @load="onImageLoad"
@@ -69,5 +70,9 @@ export default class GalleryTile extends Vue {
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  &:focus {
+    @include focus-shadow;
+  }
 }
 </style>
