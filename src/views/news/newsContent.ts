@@ -2,6 +2,26 @@ import { Post } from '@/typings';
 
 export const posts: Post[] = [
   {
+    id: '8',
+    title: 'Haydn: Missa brevis Sancti Joannis de Deo',
+    description:
+      '25 marca 2022 r., w uroczystość Zwiastowania Najświętszej Maryi Panny – święto patronalne Prowincji Polskiej, o godz. 19:30 w kościele Bonifratrów w Krakowie – Sanktuarium Diecezjalnym św. Jana Bożego w Krakowie odbędzie koncert charytatywny, z którego dochód trafi do podopiecznych Fundacji Bonifraterskiej. W programie koncertu znajdą się zarówno utwory muzyki dawnej, kompozycje maryjne stworzone w Hiszpanii w czasach świętego Jana Bożego, jak i słynna Missa brevis S. Joannis de Deo Josepha Haydna, skomponowana specjalnie dla Bonifratrów. Oczywiście będzie można nas usłyszeć. ZAPRASZAMY!',
+    image: '/images/posts/post_8.avif',
+    image_mobile: '/images/mobiles/post_8_mobile.avif',
+    image_f: '/images/posts/post_8_f.webp',
+    image_mobile_f: '/images/mobiles/post_8_mobile_f.webp',
+    image_thumb: '/images/thumbs/post_8_thumb.webp',
+    image_type: 'image/avif',
+    image_type_f: 'image/webp',
+    image_alt:
+      'Plakat promujący koncert "Haydn: Missa brevis Sancti Joannis de Deo"',
+    image_ratio: {
+      width: 3,
+      height: 4,
+    },
+    date: '10.03.2022',
+  },
+  {
     id: '7',
     title: 'Warsztaty i nagrania naszego chóru',
     description:
