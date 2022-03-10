@@ -2,12 +2,18 @@
   <header :class="style.container">
     <nav :class="style.navigation">
       <logo @click.native="onDesktopNavItemClick" />
-      <menu-icon
-        :class="style.menuIcon"
-        :fill-color="iconFillColor"
-        :size="35"
+      <button
+        :aria-label="menuIconAriaLabel"
+        :class="style.menuButton"
         @click="toggleMobileMenu"
-      />
+      >
+        <menu-icon
+          :class="style.menuIcon"
+          :fill-color="iconFillColor"
+          :size="35"
+          aria-hidden="true"
+        />
+      </button>
       <menu-item-list
         :class="style.menuItems"
         :menu-items="menuItems"
@@ -38,6 +44,12 @@ export default class NavBar extends Vue {
 
   get iconFillColor(): string {
     return '#ffffff';
+  }
+
+  get menuIconAriaLabel(): string {
+    return this.isMobileMenuVisible
+      ? 'Menu główne, kliknięcie zwinie listę menu'
+      : 'Menu główne, kliknięcie rozwinie listę menu';
   }
 
   onDesktopNavItemClick(): void {
@@ -83,6 +95,11 @@ export default class NavBar extends Vue {
   @include screen-tablet {
     display: flex;
   }
+}
+
+.menuButton {
+  border: 0;
+  background-color: transparent;
 }
 
 .menuIcon {
