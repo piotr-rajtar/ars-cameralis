@@ -2,6 +2,13 @@ import { Post } from '@/typings';
 
 export const posts: Post[] = [
   {
+    id: '9',
+    title: 'Teledysk',
+    description:
+      'Pod koniec ubiegłego roku nagraliśmy piosenkę z repertuaru Ewy Demarczyk pt. "Jaki śmieszny" w aranżacji Stanisława Rzepieli. Widzieliście już nasz pierwszy chóralny <a href="https://www.youtube.com/watch?v=4D5lt0KCSdw" target="_blank" rel="noreferrer" aria-label="Teledysk do utowru jaki śmieszny (link otwiera nowe okno)">teledysk</a>? Jeśli nie, to zapraszamy!<br /><br />Muzyka: Z.Konieczny<br />Słowa: W.Faber<br />Opracowanie muz.: S.Rzepiela<br />Fortepian: A.Włodarz<br />Dyrygent: A.Sułkowska-Migoń<br />Realizacja nagrania: R.Szumny<br />Film: M.Rymarz, W.Szałaj<br /><br />Nagranie zrealizowano przy wsparciu finansowym Województwa Małopolskiego.',
+    date: '09.05.2022',
+  },
+  {
     id: '8',
     title: 'Haydn: Missa brevis Sancti Joannis de Deo',
     description:
