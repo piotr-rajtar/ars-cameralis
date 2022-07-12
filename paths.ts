@@ -103,7 +103,7 @@ const paths = [
   },
   {
     path: '/contact',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-12',
     changefreq: 'monthly',
   },
 ];
