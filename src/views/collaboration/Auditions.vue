@@ -25,10 +25,10 @@
         </p>
         <div
           :class="style.contactBox"
-          @click="debouncedPhoneClick"
           :tabindex="0"
           aria-label="Skopiuj numer telefonu"
           role="button"
+          @click="debouncedPhoneClick"
         >
           <phone-icon
             :class="style.phoneIcon"
@@ -46,9 +46,7 @@
     </single-collaboration-item>
     <snackbar
       :isVisible="isSnackBarVisible"
-      :variant="
-        copiedSuccessfully ? SnackbarVariant.POSITIVE : SnackbarVariant.NEGATIVE
-      "
+      :variant="snackbarVariant"
       @close="onClose"
     >
       {{ snackbarMessage }}
@@ -62,28 +60,30 @@ import SingleCollaborationItem from '@/components/collaboration/SingleCollaborat
 import PhoneIcon from 'vue-material-design-icons/Phone.vue';
 import CopyIcon from 'vue-material-design-icons/ContentCopy.vue';
 import Snackbar from '@/components/shared/Snackbar.vue';
-import { snackbarMessages } from './collaborationContent';
-import debounce from 'lodash/debounce';
+import { phoneNumber, snackbarMessages } from './collaborationContent';
 import { SnackbarVariant, SnackbarStatus } from '@/typings';
-import { DebouncedFunc } from 'lodash';
+import { debounce, DebouncedFunc } from 'lodash';
 
 @Component({
   components: { SingleCollaborationItem, PhoneIcon, CopyIcon, Snackbar },
 })
 export default class Auditions extends Vue {
-  debouncedPhoneClick: DebouncedFunc<() => void> = debounce(
-    this.onPhoneClick,
-    500
-  );
+  SnackbarVariant: typeof SnackbarVariant = SnackbarVariant;
+
+  copiedSuccessfully: boolean = false;
+  isSnackBarVisible: boolean = false;
+  messageVariant: string = '';
+  phone: string = phoneNumber;
+
   smallMobileBreakPoint: MediaQueryList = window.matchMedia(
     '(max-width: 375px)'
   );
   isExtraSmallScreen: boolean = this.smallMobileBreakPoint.matches;
-  phone: string = '+48 601 373 414';
-  copiedSuccessfully: boolean = false;
-  messageVariant: string = '';
-  isSnackBarVisible: boolean = false;
-  SnackbarVariant: typeof SnackbarVariant = SnackbarVariant;
+
+  debouncedPhoneClick: DebouncedFunc<() => void> = debounce(
+    this.onPhoneClick,
+    500
+  );
 
   mounted(): void {
     this.smallMobileBreakPoint.onchange = this.mediaQueryHandler;
@@ -93,34 +93,40 @@ export default class Auditions extends Vue {
     return snackbarMessages[this.messageVariant];
   }
 
+  get snackbarVariant(): SnackbarVariant {
+    return this.copiedSuccessfully
+      ? SnackbarVariant.POSITIVE
+      : SnackbarVariant.NEGATIVE;
+  }
+
   mediaQueryHandler(): void {
     this.isExtraSmallScreen = this.smallMobileBreakPoint.matches;
   }
 
-  onPhoneClick(): void {
-    navigator.clipboard
-      .writeText(this.phone)
-      .then(() => {
-        this.copiedSuccessfully = true;
-        this.messageVariant = SnackbarStatus.COPY_SUCCESS;
-        this.isSnackBarVisible = true;
-        setTimeout(() => {
-          this.isSnackBarVisible = false;
-          this.copiedSuccessfully = false;
-        }, 5000);
-      })
-      .catch(() => {
-        this.copiedSuccessfully = false;
-        this.messageVariant = SnackbarStatus.COPY_ERROR;
-        this.isSnackBarVisible = true;
-        setTimeout(() => {
-          this.isSnackBarVisible = false;
-        }, 5000);
-      });
-  }
-
   onClose(): void {
     this.isSnackBarVisible = false;
+  }
+
+  onPhoneClick(): void {
+    try {
+      navigator.clipboard.writeText(this.phone);
+      this.copiedSuccessfully = true;
+      this.messageVariant = SnackbarStatus.COPY_SUCCESS;
+      this.isSnackBarVisible = true;
+
+      setTimeout(() => {
+        this.isSnackBarVisible = false;
+        this.copiedSuccessfully = false;
+      }, 5000);
+    } catch {
+      this.copiedSuccessfully = false;
+      this.messageVariant = SnackbarStatus.COPY_ERROR;
+      this.isSnackBarVisible = true;
+
+      setTimeout(() => {
+        this.isSnackBarVisible = false;
+      }, 5000);
+    }
   }
 }
 </script>

@@ -78,22 +78,22 @@ const paths = [
   },
   {
     path: '/collaboration',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
   {
     path: '/collaboration/auditions',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
   {
     path: '/collaboration/concerts',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
   {
     path: '/collaboration/weddings-and-liturgy',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
   {
@@ -103,7 +103,7 @@ const paths = [
   },
   {
     path: '/contact',
-    lastmod: '2022-07-12',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
 ];

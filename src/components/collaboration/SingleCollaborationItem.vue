@@ -7,9 +7,9 @@
       <div :class="style.content"><slot name="contact" /></div>
       <button
         v-if="isScreenMobile"
-        @click="onBackClick"
         :class="style.button"
         aria-label="Powrót do podstrony Współpraca"
+        @click="onBackClick"
       >
         <arrow-icon :class="style.icon" aria-hidden="true" />
         <span>Powrót</span>
@@ -29,12 +29,12 @@ export default class SingleCollaborationItem extends Vue {
   mobileBreakPoint: MediaQueryList = window.matchMedia('(max-width: 600px)');
   isScreenMobile: boolean = this.mobileBreakPoint.matches;
 
-  get breadcrumbs(): Breadcrumb[] {
-    return this.$route.meta.breadcrumb;
-  }
-
   mounted(): void {
     this.mobileBreakPoint.onchange = this.mediaQueryHandler;
+  }
+
+  get breadcrumbs(): Breadcrumb[] {
+    return this.$route.meta.breadcrumb;
   }
 
   mediaQueryHandler(): void {

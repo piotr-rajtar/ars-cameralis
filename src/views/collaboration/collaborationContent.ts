@@ -12,3 +12,5 @@ export const snackbarMessages: {
   copySuccess: 'Skopiowano pomyślnie',
   copyError: 'Błąd w kopiowaniu',
 };
+
+export const phoneNumber: string = '+48 601 373 414';
