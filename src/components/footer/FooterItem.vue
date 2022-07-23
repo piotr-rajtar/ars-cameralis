@@ -7,7 +7,7 @@
       { [style.youtube]: name === 'youtube' },
     ]"
   >
-    <a :href="link" target="_blank" rel="noreferrer" :aria-label="ariaLabel">
+    <a :aria-label="ariaLabel" :href="link" rel="noreferrer" target="_blank">
       <component
         :is="iconType"
         :class="style.icon"
@@ -33,6 +33,10 @@ export default class FooterItem extends Vue {
     return `Oficjalny ${this.name} chóru (link otwiera nowe okno)`;
   }
 
+  get fillColor(): string {
+    return '#ffffff';
+  }
+
   get iconType(): string {
     const icons: {
       [key: string]: string;
@@ -43,10 +47,6 @@ export default class FooterItem extends Vue {
     };
 
     return icons[this.name];
-  }
-
-  get fillColor(): string {
-    return '#ffffff';
   }
 }
 </script>

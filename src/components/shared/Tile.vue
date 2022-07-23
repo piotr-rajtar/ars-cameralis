@@ -1,8 +1,8 @@
 <template>
   <router-link
     :to="{ name: tile.name }"
-    :class="style.link"
     :aria-label="ariaLabel"
+    :class="style.link"
   >
     <div :class="style.tile">{{ tile.title }}</div>
   </router-link>

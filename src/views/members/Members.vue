@@ -34,9 +34,10 @@ import MemberMobileTile from '@/components/members/MemberMobileTile.vue';
 export default class Members extends Vue {
   altMembers: Member[] = altMembers;
   bassMembers: Member[] = bassMembers;
+  membersData: VoiceTableRow[] = [];
   sopranoMembers: Member[] = sopranoMembers;
   tenorMembers: Member[] = tenorMembers;
-  membersData: VoiceTableRow[] = [];
+
   tabletBreakPoint: MediaQueryList = window.matchMedia('(max-width: 900px)');
   isTablet: boolean = this.tabletBreakPoint.matches;
 

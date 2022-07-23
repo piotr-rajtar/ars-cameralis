@@ -14,16 +14,16 @@
     <tbody>
       <tr v-for="(member, index) in membersData" :key="index">
         <td :class="style.tableCell">
-          {{ member.sopran.name ? member.sopran.name : null }}
+          {{ member.sopran.name }}
         </td>
         <td :class="style.tableCell">
-          {{ member.alt.name ? member.alt.name : null }}
+          {{ member.alt.name }}
         </td>
         <td :class="style.tableCell">
-          {{ member.tenor.name ? member.tenor.name : null }}
+          {{ member.tenor.name }}
         </td>
         <td :class="style.tableCell">
-          {{ member.bas.name ? member.bas.name : null }}
+          {{ member.bas.name }}
         </td>
       </tr>
     </tbody>

@@ -27,16 +27,16 @@ import { Breadcrumb, RouterTile } from '@/typings';
 
 @Component({ components: { Breadcrumbs, ArrowIcon, TileList } })
 export default class AcapellaTiles extends Vue {
+  acapellaTiles: RouterTile[] = acapellaTiles;
   mobileBreakPoint: MediaQueryList = window.matchMedia('(max-width: 600px)');
   isScreenMobile: boolean = this.mobileBreakPoint.matches;
-  acapellaTiles: RouterTile[] = acapellaTiles;
-
-  get breadcrumbs(): Breadcrumb[] {
-    return this.$route.meta.breadcrumb;
-  }
 
   mounted(): void {
     this.mobileBreakPoint.onchange = this.mediaQueryHandler;
+  }
+
+  get breadcrumbs(): Breadcrumb[] {
+    return this.$route.meta.breadcrumb;
   }
 
   mediaQueryHandler(): void {

@@ -4,10 +4,10 @@
       <h2 :class="style.header">Galeria</h2>
       <div :class="style.tileContainer">
         <gallery-tile
-          v-lazyload
           v-for="item in galleryMiniatures"
-          :key="item.id"
+          v-lazyload
           :item="item"
+          :key="item.id"
           @click.native="openGallery(item.id)"
         />
       </div>
@@ -30,10 +30,10 @@ import { Photo } from '@/typings';
 
 @Component({ components: { ImageGallery, GalleryTile } })
 export default class Gallery extends Vue {
+  activePhotoId: string = '';
   galleryMiniatures: Photo[] = galleryMiniatures;
   galleryPhotos: Photo[] = galleryPhotos;
   isGalleryOpen: boolean = false;
-  activePhotoId: string = '';
 
   openGallery(id: string): void {
     this.activePhotoId = id;

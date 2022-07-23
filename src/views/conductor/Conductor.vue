@@ -46,32 +46,33 @@ import { Photo } from '@/typings';
 @Component({})
 export default class Conductor extends Vue {
   conductorPhoto: Photo = conductorPhoto;
+  isImageLoaded: boolean = false;
   paragraph1: string = paragraph1;
   paragraph2: string = paragraph2;
+
   smallMobileBreakPoint: MediaQueryList = window.matchMedia(
     '(max-width: 350px)'
   );
   isExtraSmallScreen: boolean = this.smallMobileBreakPoint.matches;
-  isImageLoaded: boolean = false;
 
   mounted(): void {
     this.smallMobileBreakPoint.onchange = this.mediaQueryHandler;
   }
 
-  onImageLoad(): void {
-    this.isImageLoaded = true;
-  }
-
-  mediaQueryHandler(): void {
-    this.isExtraSmallScreen = this.smallMobileBreakPoint.matches;
+  get imageHeight(): number {
+    return this.isExtraSmallScreen ? 369 : 438;
   }
 
   get imageWidth(): number {
     return this.isExtraSmallScreen ? 250 : 300;
   }
 
-  get imageHeight(): number {
-    return this.isExtraSmallScreen ? 369 : 438;
+  mediaQueryHandler(): void {
+    this.isExtraSmallScreen = this.smallMobileBreakPoint.matches;
+  }
+
+  onImageLoad(): void {
+    this.isImageLoaded = true;
   }
 }
 </script>

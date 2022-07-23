@@ -3,20 +3,20 @@
     <p :class="style.date">{{ post.date }}</p>
     <h3 :class="style.title">{{ post.title }}</h3>
     <p
+      v-html="post.description"
       :class="[
         style.description,
         !isPhotoIncluded ? style.noBottomMargin : null,
       ]"
-      v-html="post.description"
     />
-    <div v-lazyload v-if="post.image" :class="style.imageContainer">
+    <div v-if="post.image" v-lazyload :class="style.imageContainer">
       <img
         v-if="!isImageLoaded && post.image_thumb"
         :alt="post.image_alt"
         :class="style.image"
         :data-src="post.image_thumb"
-        :height="post.image_ratio.height"
-        :width="post.image_ratio.width"
+        :height="post.image_ratio && post.image_ratio.height"
+        :width="post.image_ratio && post.image_ratio.width"
       />
       <picture v-show="isImageLoaded" :class="style.picture">
         <source :data-srcset="mainImageSource" :type="post.image_type" />
@@ -29,8 +29,8 @@
           :alt="post.image_alt"
           :class="style.image"
           :data-src="mainImageSource"
-          :height="post.image_ratio.height"
-          :width="post.image_ratio.width"
+          :height="post.image_ratio && post.image_ratio.height"
+          :width="post.image_ratio && post.image_ratio.width"
           @load="onImageLoad"
         />
       </picture>
@@ -54,20 +54,6 @@ export default class SinglePost extends Vue {
     this.mobileBreakPoint.onchange = this.mediaQueryHandler;
   }
 
-  onImageLoad(): void {
-    this.isImageLoaded = true;
-  }
-
-  mediaQueryHandler(): void {
-    this.isScreenMobile = this.mobileBreakPoint.matches;
-  }
-
-  get mainImageSource(): string | null {
-    const desktopPath: string | null = this.post.image ?? null;
-    const mobilePath: string | null = this.post.image_mobile ?? null;
-    return this.isScreenMobile && mobilePath ? mobilePath : desktopPath;
-  }
-
   get fallbackImageSource(): string | null {
     const desktopPath: string | null = this.post.image_f ?? null;
     const mobilePath: string | null = this.post.image_mobile_f ?? null;
@@ -76,6 +62,20 @@ export default class SinglePost extends Vue {
 
   get isPhotoIncluded(): boolean {
     return !!this.post.image;
+  }
+
+  get mainImageSource(): string | null {
+    const desktopPath: string | null = this.post.image ?? null;
+    const mobilePath: string | null = this.post.image_mobile ?? null;
+    return this.isScreenMobile && mobilePath ? mobilePath : desktopPath;
+  }
+
+  mediaQueryHandler(): void {
+    this.isScreenMobile = this.mobileBreakPoint.matches;
+  }
+
+  onImageLoad(): void {
+    this.isImageLoaded = true;
   }
 }
 </script>

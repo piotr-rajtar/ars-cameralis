@@ -5,8 +5,8 @@
       :alt="item.alt"
       :class="style.photo"
       :data-src="item.path_thumb"
-      width="200"
       height="200"
+      width="200"
     />
     <picture v-show="isImageLoaded" :class="style.picture">
       <source :data-srcset="item.path" :type="item.type" />
@@ -16,8 +16,8 @@
         :class="style.photo"
         :data-src="item.path"
         :tabindex="0"
-        width="200"
         height="200"
+        width="200"
         @load="onImageLoad"
       />
     </picture>

@@ -4,14 +4,14 @@
       <breadcrumbs v-if="!isScreenMobile" :breadcrumbs="breadcrumbs" />
       <h2 :class="style.header">{{ title }}</h2>
       <ul :class="style.list">
-        <li v-for="(item, index) in items" :key="index" :class="style.listItem">
+        <li v-for="(item, index) in items" :class="style.listItem" :key="index">
           <p :class="style.itemText">{{ item }}</p>
         </li>
       </ul>
       <button
         v-if="isScreenMobile"
-        :class="style.button"
         :aria-label="backButtonAriaLabel"
+        :class="style.button"
         @click="onBackClick"
       >
         <arrow-icon :class="style.icon" aria-hidden="true" />
@@ -35,12 +35,12 @@ export default class SingleRepertoir extends Vue {
   mobileBreakPoint: MediaQueryList = window.matchMedia('(max-width: 600px)');
   isScreenMobile: boolean = this.mobileBreakPoint.matches;
 
-  get breadcrumbs(): Breadcrumb[] {
-    return this.$route.meta.breadcrumb;
-  }
-
   mounted(): void {
     this.mobileBreakPoint.onchange = this.mediaQueryHandler;
+  }
+
+  get breadcrumbs(): Breadcrumb[] {
+    return this.$route.meta.breadcrumb;
   }
 
   mediaQueryHandler(): void {

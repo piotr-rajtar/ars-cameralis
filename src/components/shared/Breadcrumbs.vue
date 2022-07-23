@@ -2,14 +2,14 @@
   <ol :class="style.breadcrumbs">
     <li
       v-for="(breadcrumb, index) in breadcrumbs"
-      :key="index"
       :class="style.linkItem"
+      :key="index"
     >
       <router-link
         :to="{ name: breadcrumb.name }"
-        :class="style.link"
         :aria-hidden="shouldItemBeAriaHidden(index)"
         :aria-label="getAriaLabel(breadcrumb.title)"
+        :class="style.link"
         :tabindex="shouldItemBeFocusable(index)"
       >
         {{ breadcrumb.title }}

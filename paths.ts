@@ -1,79 +1,79 @@
 const paths = [
   {
     path: '/',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     priority: 0.8,
     changefreq: 'monthly',
   },
   {
     path: '/about',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
   {
     path: '/news',
-    lastmod: '2022-05-09',
+    lastmod: '2022-07-23',
     priority: 0.8,
     changefreq: 'weekly',
   },
   {
     path: '/conductor',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
   {
     path: '/members',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
   {
     path: '/repertoir',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
   {
     path: '/repertoir/vocal-instrumental',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
   {
     path: '/repertoir/acapella',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
   {
     path: '/repertoir/acapella/old-music',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
   {
     path: '/repertoir/acapella/century-music',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
   {
     path: '/repertoir/acapella/world-and-folk-music',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
   {
     path: '/repertoir/acapella/entertainment-music',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
   {
     path: '/repertoir/acapella/liturgical-music',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
   {
     path: '/repertoir/acapella/passion-music',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
   {
     path: '/repertoir/acapella/carols',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
   {
@@ -98,7 +98,7 @@ const paths = [
   },
   {
     path: '/gallery',
-    lastmod: '2022-03-10',
+    lastmod: '2022-07-23',
     changefreq: 'monthly',
   },
   {
