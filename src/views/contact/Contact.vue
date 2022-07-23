@@ -3,7 +3,7 @@
     <div :class="style.textContainer">
       <h2 :class="style.header">Kontakt</h2>
       <p :class="style.description">{{ contactHeader }}</p>
-      <form :class="style.form" @submit="debouncedFormSubmit">
+      <form :class="style.form" @submit="onSubmit">
         <div :class="style.formControlContainer">
           <label :class="style.label" for="name">Imię</label>
           <input
@@ -18,9 +18,9 @@
             :minlength="3"
             name="name"
             placeholder="Wpisz imię"
-            type="text"
             required
-            @change="validation(FormField.NAME)"
+            type="text"
+            @change="validateFormField(FormField.NAME)"
           />
           <span
             v-if="!isNameValid"
@@ -44,9 +44,9 @@
             :minlength="3"
             name="surname"
             placeholder="Wpisz nazwisko"
-            type="text"
             required
-            @change="validation(FormField.SURNAME)"
+            type="text"
+            @change="validateFormField(FormField.SURNAME)"
           />
           <span
             v-if="!isSurnameValid"
@@ -68,9 +68,9 @@
             ]"
             name="email"
             placeholder="Wpisz adres email"
-            type="email"
             required
-            @change="validation(FormField.EMAIL)"
+            type="email"
+            @change="validateFormField(FormField.EMAIL)"
           />
           <span
             v-if="!isEmailValid"
@@ -97,9 +97,9 @@
             :rows="2"
             name="message"
             placeholder="Wpisz wiadomość"
-            type="text"
             required
-            @change="validation(FormField.MESSAGE)"
+            type="text"
+            @change="validateFormField(FormField.MESSAGE)"
           />
           <span
             v-if="!isMessageValid"
@@ -111,8 +111,8 @@
         </div>
         <button
           :class="[style.formControl, style.button]"
-          type="submit"
           aria-label="Wyślij wiadomość"
+          type="submit"
         >
           <send-icon :class="style.sendIcon" aria-hidden="true" />
           <span>Wyślij</span>
@@ -120,10 +120,10 @@
       </form>
       <div
         :class="style.contactBox"
-        @click="debouncedEmailClick"
         :tabindex="0"
         aria-label="Skopiuj adres email"
         role="button"
+        @click="debouncedEmailClick"
       >
         <mail-icon
           :class="style.mailIcon"
@@ -140,11 +140,7 @@
     </div>
     <snackbar
       :isVisible="isSnackBarVisible"
-      :variant="
-        copiedSuccessfully || sentSuccessfully
-          ? SnackbarVariant.POSITIVE
-          : SnackbarVariant.NEGATIVE
-      "
+      :variant="snackbarVariant"
       @close="onClose"
     >
       {{ snackbarMessage }}
@@ -160,40 +156,38 @@ import SendIcon from 'vue-material-design-icons/EmailSend.vue';
 import Snackbar from '@/components/shared/Snackbar.vue';
 import { contactHeader, mail, snackbarMessages } from './contactData';
 import { SnackbarVariant, SnackbarStatus, FormField } from '@/typings';
-import { validateEmail } from '@/utils';
+import { isEmailValid } from '@/utils';
 import emailjs from 'emailjs-com';
-import debounce from 'lodash/debounce';
-import { DebouncedFunc } from 'lodash';
+import { debounce, DebouncedFunc } from 'lodash';
 
 @Component({ components: { MailIcon, CopyIcon, Snackbar, SendIcon } })
 export default class Contact extends Vue {
+  FormField: typeof FormField = FormField;
+  SnackbarVariant: typeof SnackbarVariant = SnackbarVariant;
+
   contactHeader: string = contactHeader;
-  mail: string = mail;
-  isSnackBarVisible: boolean = false;
   copiedSuccessfully: boolean = false;
+  formEmail: string = '';
+  formMessage: string = '';
+  formName: string = '';
+  formSurname: string = '';
+  isEmailValid: boolean = true;
+  isMessageValid: boolean = true;
+  isNameValid: boolean = true;
+  isSnackBarVisible: boolean = false;
+  isSurnameValid: boolean = true;
+  mail: string = mail;
+  messageVariant: string = '';
   sentSuccessfully: boolean = false;
+
   smallMobileBreakPoint: MediaQueryList = window.matchMedia(
     '(max-width: 375px)'
   );
   isExtraSmallScreen: boolean = this.smallMobileBreakPoint.matches;
-  formName: string = '';
-  formSurname: string = '';
-  formEmail: string = '';
-  formMessage: string = '';
-  messageVariant: string = '';
-  isNameValid: boolean = true;
-  isSurnameValid: boolean = true;
-  isMessageValid: boolean = true;
-  isEmailValid: boolean = true;
-  SnackbarVariant: typeof SnackbarVariant = SnackbarVariant;
-  FormField: typeof FormField = FormField;
+
   debouncedEmailClick: DebouncedFunc<() => void> = debounce(
     this.onEmailClick,
-    500
-  );
-  debouncedFormSubmit: DebouncedFunc<(event: Event) => void> = debounce(
-    this.onSubmit,
-    500
+    200
   );
 
   mounted(): void {
@@ -201,94 +195,77 @@ export default class Contact extends Vue {
     emailjs.init(process.env.VUE_APP_EMAIL_USER_ID);
   }
 
-  validation(field: FormField): void {
-    switch (field) {
-      case FormField.NAME:
-        this.formName.trim().length >= 3 && this.formName.trim().length <= 20
-          ? (this.isNameValid = true)
-          : (this.isNameValid = false);
-        break;
-      case FormField.SURNAME:
-        this.formSurname.trim().length >= 3 &&
-        this.formSurname.trim().length <= 30
-          ? (this.isSurnameValid = true)
-          : (this.isSurnameValid = false);
-        break;
-      case FormField.MESSAGE:
-        this.formMessage.trim().length >= 20 &&
-        this.formMessage.trim().length <= 500
-          ? (this.isMessageValid = true)
-          : (this.isMessageValid = false);
-        break;
-      case FormField.EMAIL: {
-        validateEmail(this.formEmail)
-          ? (this.isEmailValid = true)
-          : (this.isEmailValid = false);
-        break;
-      }
-    }
+  get areAllFormFieldsValid(): boolean {
+    return (
+      this.isNameValid &&
+      this.isSurnameValid &&
+      this.isMessageValid &&
+      this.isEmailValid
+    );
   }
 
   get snackbarMessage(): string {
     return snackbarMessages[this.messageVariant];
   }
 
-  mediaQueryHandler(): void {
-    this.isExtraSmallScreen = this.smallMobileBreakPoint.matches;
+  get snackbarVariant(): SnackbarVariant {
+    return this.copiedSuccessfully || this.sentSuccessfully
+      ? SnackbarVariant.POSITIVE
+      : SnackbarVariant.NEGATIVE;
   }
 
-  onEmailClick(): void {
-    navigator.clipboard
-      .writeText(this.mail)
-      .then(() => {
-        this.copiedSuccessfully = true;
-        this.messageVariant = SnackbarStatus.COPY_SUCCESS;
-        this.isSnackBarVisible = true;
-        setTimeout(() => {
-          this.isSnackBarVisible = false;
-          this.copiedSuccessfully = false;
-        }, 5000);
-      })
-      .catch(() => {
-        this.copiedSuccessfully = false;
-        this.messageVariant = SnackbarStatus.COPY_ERROR;
-        this.isSnackBarVisible = true;
-        setTimeout(() => {
-          this.isSnackBarVisible = false;
-        }, 5000);
-      });
+  clearFormFields(): void {
+    this.formName = '';
+    this.formSurname = '';
+    this.formEmail = '';
+    this.formMessage = '';
+  }
+
+  mediaQueryHandler(): void {
+    this.isExtraSmallScreen = this.smallMobileBreakPoint.matches;
   }
 
   onClose(): void {
     this.isSnackBarVisible = false;
   }
 
+  onEmailClick(): void {
+    try {
+      navigator.clipboard.writeText(this.mail);
+      this.copiedSuccessfully = true;
+      this.messageVariant = SnackbarStatus.COPY_SUCCESS;
+      this.isSnackBarVisible = true;
+
+      setTimeout(() => {
+        this.isSnackBarVisible = false;
+        this.copiedSuccessfully = false;
+      }, 5000);
+    } catch {
+      this.copiedSuccessfully = false;
+      this.messageVariant = SnackbarStatus.COPY_ERROR;
+      this.isSnackBarVisible = true;
+
+      setTimeout(() => {
+        this.isSnackBarVisible = false;
+      }, 5000);
+    }
+  }
+
   onSubmit(event: Event): void {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
+    Object.values(FormField).forEach((field: FormField) =>
+      this.validateFormField(field)
+    );
 
-    [
-      FormField.NAME,
-      FormField.SURNAME,
-      FormField.EMAIL,
-      FormField.MESSAGE,
-    ].forEach((item: FormField) => this.validation(item));
-
-    if (
-      this.isNameValid &&
-      this.isSurnameValid &&
-      this.isMessageValid &&
-      this.isEmailValid
-    ) {
+    if (this.areAllFormFieldsValid) {
       this.sendEmail(form);
-      this.formName = '';
-      this.formSurname = '';
-      this.formEmail = '';
-      this.formMessage = '';
+      this.clearFormFields();
     } else {
       this.sentSuccessfully = false;
       this.messageVariant = SnackbarStatus.INVALID_FORM_DATA;
       this.isSnackBarVisible = true;
+
       setTimeout(() => {
         this.isSnackBarVisible = false;
       }, 5000);
@@ -296,29 +273,72 @@ export default class Contact extends Vue {
   }
 
   sendEmail(form: HTMLFormElement): void {
-    emailjs
-      .sendForm(
+    try {
+      emailjs.sendForm(
         process.env.VUE_APP_EMAIL_SERVICE_ID,
         process.env.VUE_APP_EMAIL_TEMPLATE_ID,
         form
-      )
-      .then(() => {
-        this.sentSuccessfully = true;
-        this.messageVariant = SnackbarStatus.SEND_SUCCESS;
-        this.isSnackBarVisible = true;
-        setTimeout(() => {
-          this.isSnackBarVisible = false;
-          this.sentSuccessfully = false;
-        }, 5000);
-      })
-      .catch(() => {
+      );
+      this.sentSuccessfully = true;
+      this.messageVariant = SnackbarStatus.SEND_SUCCESS;
+      this.isSnackBarVisible = true;
+
+      setTimeout(() => {
+        this.isSnackBarVisible = false;
         this.sentSuccessfully = false;
-        this.messageVariant = SnackbarStatus.SEND_ERROR;
-        this.isSnackBarVisible = true;
-        setTimeout(() => {
-          this.isSnackBarVisible = false;
-        }, 5000);
-      });
+      }, 5000);
+    } catch {
+      this.sentSuccessfully = false;
+      this.messageVariant = SnackbarStatus.SEND_ERROR;
+      this.isSnackBarVisible = true;
+
+      setTimeout(() => {
+        this.isSnackBarVisible = false;
+      }, 5000);
+    }
+  }
+
+  validateEmail(): void {
+    isEmailValid(this.formEmail)
+      ? (this.isEmailValid = true)
+      : (this.isEmailValid = false);
+  }
+
+  validateFormField(field: FormField): void {
+    switch (field) {
+      case FormField.NAME:
+        this.validateName();
+        break;
+      case FormField.SURNAME:
+        this.validateSurname();
+        break;
+      case FormField.MESSAGE:
+        this.validateMessage();
+        break;
+      case FormField.EMAIL: {
+        this.validateEmail();
+        break;
+      }
+    }
+  }
+
+  validateMessage(): void {
+    this.formMessage.trim().length >= 20 &&
+    this.formMessage.trim().length <= 500
+      ? (this.isMessageValid = true)
+      : (this.isMessageValid = false);
+  }
+
+  validateName(): void {
+    this.formName.trim().length >= 3 && this.formName.trim().length <= 20
+      ? (this.isNameValid = true)
+      : (this.isNameValid = false);
+  }
+
+  validateSurname(): void {
+    this.formSurname.trim().length >= 3 && this.formSurname.trim().length <= 30
+      ? (this.isSurnameValid = true)
+      : (this.isSurnameValid = false);
   }
 }
 </script>
