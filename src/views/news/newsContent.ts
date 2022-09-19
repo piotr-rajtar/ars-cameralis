@@ -2,10 +2,36 @@ import { Post } from '@/typings';
 
 export const posts: Post[] = [
   {
+    id: '11',
+    title: 'Chodźże do nas! Nabór do chóru Ars Cameralis',
+    description:
+      'Poszukujemy wszystkich głosów do naszego zespołu (sopran, mezzosopran, alt, tenor, baryton, bas). Gwarantujemy przyjacielską atmosferę podczas prób, rozwój głosu i słuchu, satysfakcję ze wspólnego śpiewania, a także udział w ciekawych projektach. Umiejętność czytania nut nie jest konieczna. Czekamy na osoby muzykalne, wesołe, sumienne, chętne do nauki i wspólnego śpiewania różnorodnego repertuaru.<br /><br />Oto Najbliższe terminy przesłuchań:<br /><br />- poniedziałek 03.10 o godz. 18:15 w Instytucie Muzykologii na ul. Westerplatte 10<br />- środa 05.10 o godz. 19:00 w szpitalu Bonifratrów przy ul. Trynitarskiej',
+    date: '19.09.2022',
+  },
+  {
+    id: '10',
+    title: 'Koncert "Muzyka Świata"',
+    description:
+      'Słyszeliście kiedyś piosenkę z Wysp Samoa, ludową melodię z Serbii czy muzyczną legendę z Majorki? Koniecznie przyjdźcie na nasz koncert 28 września 2022, o godz. 20:00 w Auli Florianka w Krakowie i posłuchajcie muzyki z różnych krańców świata!<br />Szczegóły w facebookowym <a href="https://www.facebook.com/events/1037526273541690" target="_blank" rel="noreferrer" aria-label="Wydarzenie na facebooku (link otwiera nowe okno)">wydarzeniu</a>.<br />ZAPRASZAMY!',
+    image: '/images/posts/post_10.avif',
+    image_mobile: '/images/mobiles/post_10_mobile.avif',
+    image_f: '/images/posts/post_10_f.webp',
+    image_mobile_f: '/images/mobiles/post_10_mobile_f.webp',
+    image_thumb: '/images/thumbs/post_10_thumb.webp',
+    image_type: 'image/avif',
+    image_type_f: 'image/webp',
+    image_alt: 'Plakat promujący koncert "Muzyka Świata"',
+    image_ratio: {
+      width: 3,
+      height: 4,
+    },
+    date: '19.09.2022',
+  },
+  {
     id: '9',
     title: 'Teledysk',
     description:
-      'Pod koniec ubiegłego roku nagraliśmy piosenkę z repertuaru Ewy Demarczyk pt. "Jaki śmieszny" w aranżacji Stanisława Rzepieli. Widzieliście już nasz pierwszy chóralny <a href="https://www.youtube.com/watch?v=4D5lt0KCSdw" target="_blank" rel="noreferrer" aria-label="Teledysk do utowru jaki śmieszny (link otwiera nowe okno)">teledysk</a>? Jeśli nie, to zapraszamy!<br /><br />Muzyka: Z.Konieczny<br />Słowa: W.Faber<br />Opracowanie muz.: S.Rzepiela<br />Fortepian: A.Włodarz<br />Dyrygent: A.Sułkowska-Migoń<br />Realizacja nagrania: R.Szumny<br />Film: M.Rymarz, W.Szałaj<br /><br />Nagranie zrealizowano przy wsparciu finansowym Województwa Małopolskiego.',
+      'Pod koniec ubiegłego roku nagraliśmy piosenkę z repertuaru Ewy Demarczyk pt. "Jaki śmieszny" w aranżacji Stanisława Rzepieli. Widzieliście już nasz pierwszy chóralny <a href="https://www.youtube.com/watch?v=4D5lt0KCSdw" target="_blank" rel="noreferrer" aria-label="Teledysk do utworu jaki śmieszny (link otwiera nowe okno)">teledysk</a>? Jeśli nie, to zapraszamy!<br /><br />Muzyka: Z.Konieczny<br />Słowa: W.Faber<br />Opracowanie muz.: S.Rzepiela<br />Fortepian: A.Włodarz<br />Dyrygent: A.Sułkowska-Migoń<br />Realizacja nagrania: R.Szumny<br />Film: M.Rymarz, W.Szałaj<br /><br />Nagranie zrealizowano przy wsparciu finansowym Województwa Małopolskiego.',
     date: '09.05.2022',
   },
   {

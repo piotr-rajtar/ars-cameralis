@@ -2,7 +2,7 @@
   <div :class="style.container">
     <div :class="style.textContainer">
       <h2 :class="style.header">Aktualności</h2>
-      <single-post v-for="post in posts" :key="post.id" :post="post" />
+      <single-post v-for="post in latestPosts" :key="post.id" :post="post" />
     </div>
   </div>
 </template>
@@ -16,6 +16,10 @@ import { Post } from '@/typings';
 @Component({ components: { SinglePost } })
 export default class News extends Vue {
   posts: Post[] = posts;
+
+  get latestPosts(): Post[] {
+    return this.posts.filter((_post, key) => key < 10);
+  }
 }
 </script>
 
