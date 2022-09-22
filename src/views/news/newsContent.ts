@@ -5,8 +5,21 @@ export const posts: Post[] = [
     id: '11',
     title: 'Chodźże do nas! Nabór do chóru Ars Cameralis',
     description:
-      'Poszukujemy wszystkich głosów do naszego zespołu (sopran, mezzosopran, alt, tenor, baryton, bas). Gwarantujemy przyjacielską atmosferę podczas prób, rozwój głosu i słuchu, satysfakcję ze wspólnego śpiewania, a także udział w ciekawych projektach. Umiejętność czytania nut nie jest konieczna. Czekamy na osoby muzykalne, wesołe, sumienne, chętne do nauki i wspólnego śpiewania różnorodnego repertuaru.<br /><br />Oto Najbliższe terminy przesłuchań:<br /><br />- poniedziałek 03.10 o godz. 18:15 w Instytucie Muzykologii na ul. Westerplatte 10<br />- środa 05.10 o godz. 19:00 w szpitalu Bonifratrów przy ul. Trynitarskiej',
-    date: '19.09.2022',
+      'Poszukujemy wszystkich głosów do naszego zespołu (sopran, mezzosopran, alt, tenor, baryton, bas). Gwarantujemy przyjacielską atmosferę podczas prób, rozwój głosu i słuchu, satysfakcję ze wspólnego śpiewania, a także udział w ciekawych projektach. Umiejętność czytania nut nie jest konieczna. Czekamy na osoby muzykalne, wesołe, sumienne, chętne do nauki i wspólnego śpiewania różnorodnego repertuaru.<br /><br />Oto Najbliższe terminy przesłuchań:<br /><br />- poniedziałki 03.10 i 10.10 o godz. 18:15 w Instytucie Muzykologii na ul. Westerplatte 10<br />- środy 05.10 i 12.10 o godz. 19:00 w szpitalu Bonifratrów przy ul. Trynitarskiej',
+    image: '/images/posts/post_11.avif',
+    image_mobile: '/images/mobiles/post_11_mobile.avif',
+    image_f: '/images/posts/post_11_f.webp',
+    image_mobile_f: '/images/mobiles/post_11_mobile_f.webp',
+    image_thumb: '/images/thumbs/post_11_thumb.webp',
+    image_type: 'image/avif',
+    image_type_f: 'image/webp',
+    image_alt:
+      'Plakat informujący o przesłuchaniach do zespołu w październiku 2022 roku',
+    image_ratio: {
+      width: 3,
+      height: 4,
+    },
+    date: '22.09.2022',
   },
   {
     id: '10',

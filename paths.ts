@@ -12,7 +12,7 @@ const paths = [
   },
   {
     path: '/news',
-    lastmod: '2022-09-19',
+    lastmod: '2022-09-22',
     priority: 0.8,
     changefreq: 'weekly',
   },
