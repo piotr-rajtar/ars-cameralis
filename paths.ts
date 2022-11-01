@@ -23,7 +23,7 @@ const paths = [
   },
   {
     path: '/members',
-    lastmod: '2022-07-23',
+    lastmod: '2022-11-01',
     changefreq: 'monthly',
   },
   {

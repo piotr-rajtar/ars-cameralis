@@ -2,31 +2,19 @@ import { Member } from '@/typings';
 
 export const altMembers: Member[] = [
   {
-    name: 'Aleksandra Komorek',
-  },
-  {
-    name: 'Angelika Świętochowska',
+    name: 'Aleksandra Bochan',
   },
   {
     name: 'Anna Bernat',
   },
   {
-    name: 'Joanna Guja',
-  },
-  {
-    name: 'Justyna Tuchowska',
+    name: 'Grażyna Wojdyńska',
   },
   {
     name: 'Karolina Trybus',
   },
   {
-    name: 'Karolina Zarosa',
-  },
-  {
     name: 'Monika Jawańska',
-  },
-  {
-    name: 'Patrycja Urbaniak',
   },
   {
     name: 'Paulina Kijowska',
@@ -38,7 +26,7 @@ export const altMembers: Member[] = [
 
 export const bassMembers: Member[] = [
   {
-    name: 'Aleksander Olszowski',
+    name: 'Artur Lesner',
   },
   {
     name: 'Bartosz Kowalik',
@@ -62,16 +50,19 @@ export const sopranoMembers: Member[] = [
     name: 'Anna Frey',
   },
   {
+    name: 'Anna Lech',
+  },
+  {
     name: 'Barbara Łacny',
   },
   {
     name: 'Daria Stawiarska',
   },
   {
-    name: 'Dominika Szendzielarz',
+    name: 'Dominika Kolisz-Rachwał',
   },
   {
-    name: 'Elżbieta Biega',
+    name: 'Elżbieta Freisler',
   },
   {
     name: 'Joanna Krochmal',
@@ -80,7 +71,10 @@ export const sopranoMembers: Member[] = [
     name: 'Judyta Pawlak',
   },
   {
-    name: 'Karolina Stypuła',
+    name: 'Katarzyna Madeja',
+  },
+  {
+    name: 'Monika Dąbrowska',
   },
   {
     name: 'Paulina Woźniczka-Głąbień',
@@ -88,22 +82,16 @@ export const sopranoMembers: Member[] = [
   {
     name: 'Sylwia Panas',
   },
-  {
-    name: 'Weronika Kulczycka',
-  },
 ];
 
 export const tenorMembers: Member[] = [
   {
+    name: 'Bartłomiej Rachwał',
+  },
+  {
     name: 'Bartłomiej Waśko',
   },
   {
-    name: 'Grzegorz Ciemięga',
-  },
-  {
-    name: 'Jacek Skulicz',
-  },
-  {
-    name: 'Marek Bebak',
+    name: 'Paweł Łabuzek',
   },
 ];
