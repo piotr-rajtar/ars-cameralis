@@ -2,6 +2,27 @@ import { Post } from '@/typings';
 
 export const posts: Post[] = [
   {
+    id: '12',
+    title:
+      'Koncert jubileuszowy "100-lecie reaktywacji Prowincji Polskiej Zakonu Bonifratrów',
+    description:
+      'Mamy ogromną przyjemność poinformować Was o naszym kolejnym koncercie. Już 20 listopada 2022r. zaśpiewamy z zaprzyjaźnionymi zespołami i artystami. Zapraszamy!',
+    image: '/images/posts/post_12.avif',
+    image_mobile: '/images/mobiles/post_12_mobile.avif',
+    image_f: '/images/posts/post_12_f.webp',
+    image_mobile_f: '/images/mobiles/post_12_mobile_f.webp',
+    image_thumb: '/images/thumbs/post_12_thumb.webp',
+    image_type: 'image/avif',
+    image_type_f: 'image/webp',
+    image_alt:
+      'Plakat informujący o koncercie jubileuszowym "100-lecie reaktywacji Prowincji Polskiej Zakonu Bonifratrów',
+    image_ratio: {
+      width: 3,
+      height: 3,
+    },
+    date: '13.11.2022',
+  },
+  {
     id: '11',
     title: 'Chodźże do nas! Nabór do chóru Ars Cameralis',
     description:
