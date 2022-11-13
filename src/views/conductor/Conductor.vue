@@ -2,27 +2,34 @@
   <div :class="style.container">
     <div :class="style.conductor">
       <h2 :class="style.header">Dyrygent</h2>
-      <div :class="style.conductorItemContainer">
+      <div
+        v-for="conductor in conductors"
+        :class="style.conductorItemContainer"
+        :key="conductor.id"
+      >
         <div :class="style.conductorPhotoContainer">
           <img
             v-if="!isImageLoaded"
-            :alt="conductorPhoto.alt"
+            :alt="conductor.photo.alt"
             :class="style.image"
             :height="imageHeight"
-            :src="conductorPhoto.path_thumb"
+            :src="conductor.photo.path_thumb"
             :width="imageWidth"
           />
           <picture v-show="isImageLoaded" :class="style.finalImageContainer">
-            <source :srcset="conductorPhoto.path" :type="conductorPhoto.type" />
             <source
-              :srcset="conductorPhoto.path_f"
-              :type="conductorPhoto.type_f"
+              :srcset="conductor.photo.path"
+              :type="conductor.photo.type"
+            />
+            <source
+              :srcset="conductor.photo.path_f"
+              :type="conductor.photo.type_f"
             />
             <img
-              :alt="conductorPhoto.alt"
+              :alt="conductor.photo.alt"
               :class="style.image"
               :height="imageHeight"
-              :src="conductorPhoto.path"
+              :src="conductor.photo.path"
               :width="imageWidth"
               @load="onImageLoad"
             />
@@ -30,8 +37,8 @@
         </div>
 
         <div :class="style.description">
-          <p :class="style.paragraph">{{ paragraph1 }}</p>
-          <p>{{ paragraph2 }}</p>
+          <p :class="style.paragraph">{{ conductor.description1 }}</p>
+          <p>{{ conductor.description2 }}</p>
         </div>
       </div>
     </div>
@@ -40,15 +47,13 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { conductorPhoto, paragraph1, paragraph2 } from './conductorData';
-import { Photo } from '@/typings';
+import { conductors } from './conductorData';
+import { ConductorI } from '@/typings';
 
 @Component({})
 export default class Conductor extends Vue {
-  conductorPhoto: Photo = conductorPhoto;
+  conductors: ConductorI[] = conductors;
   isImageLoaded: boolean = false;
-  paragraph1: string = paragraph1;
-  paragraph2: string = paragraph2;
 
   smallMobileBreakPoint: MediaQueryList = window.matchMedia(
     '(max-width: 350px)'
@@ -116,16 +121,22 @@ export default class Conductor extends Vue {
 .conductorItemContainer {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 25 * $spacing-unit;
 
   @include screen-tablet {
     flex-direction: column;
     align-items: center;
+    margin-bottom: 12.5 * $spacing-unit;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
 .conductorPhotoContainer {
   width: 300px;
-  height: fit-content;
+  height: 450px;
   border-radius: 0.5 * $spacing-unit;
   margin: 0 5 * $spacing-unit 5 * $spacing-unit;
   border: 0.5 * $spacing-unit solid $secondary-color;
@@ -141,6 +152,7 @@ export default class Conductor extends Vue {
 
 .finalImageContainer {
   display: flex;
+  height: 100%;
 }
 
 .description {
@@ -160,5 +172,6 @@ export default class Conductor extends Vue {
 .image {
   width: 100%;
   height: auto;
+  object-fit: cover;
 }
 </style>

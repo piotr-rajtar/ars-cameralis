@@ -12,13 +12,13 @@ const paths = [
   },
   {
     path: '/news',
-    lastmod: '2022-09-22',
+    lastmod: '2022-11-13',
     priority: 0.8,
     changefreq: 'weekly',
   },
   {
     path: '/conductor',
-    lastmod: '2022-07-23',
+    lastmod: '2022-11-13',
     changefreq: 'monthly',
   },
   {

@@ -1,27 +1,22 @@
-export interface LinkListItemI {
-  name: string;
-  link: string;
-}
-
 export interface Breadcrumb {
   title: string;
   name?: string;
 }
 
-export interface RouterTile {
+export interface ConductorI {
+  id: string;
+  description1: string;
+  description2: string;
+  photo: Photo;
+}
+
+export interface LinkListItemI {
   name: string;
-  title: string;
+  link: string;
 }
 
 export interface Member {
   name: string;
-}
-
-export interface VoiceTableRow {
-  sopran: Member;
-  alt: Member;
-  tenor: Member;
-  bas: Member;
 }
 
 export interface Photo {
@@ -50,14 +45,28 @@ export interface Post {
   date: string;
 }
 
+export interface RouterTile {
+  name: string;
+  title: string;
+}
+
+export interface VoiceTableRow {
+  sopran: Member;
+  alt: Member;
+  tenor: Member;
+  bas: Member;
+}
+
 export interface Ratio {
   width: number;
   height: number;
 }
 
-export enum SnackbarVariant {
-  POSITIVE = 'positive',
-  NEGATIVE = 'negative',
+export enum FormField {
+  NAME = 'name',
+  SURNAME = 'surname',
+  EMAIL = 'email',
+  MESSAGE = 'message',
 }
 
 export enum SnackbarStatus {
@@ -68,9 +77,7 @@ export enum SnackbarStatus {
   INVALID_FORM_DATA = 'invalidFormData',
 }
 
-export enum FormField {
-  NAME = 'name',
-  SURNAME = 'surname',
-  EMAIL = 'email',
-  MESSAGE = 'message',
+export enum SnackbarVariant {
+  POSITIVE = 'positive',
+  NEGATIVE = 'negative',
 }
