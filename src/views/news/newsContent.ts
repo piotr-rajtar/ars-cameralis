@@ -2,6 +2,26 @@ import { Post } from '@/typings';
 
 export const posts: Post[] = [
   {
+    id: '13',
+    title: 'Kolędowanie z krakowskimi chórami',
+    description:
+      'W najbliższy piątek, 16 grudnia 2022r., serdecznie zapraszamy Was na krakowski Rynek! Od godz. 18:00 na scenie kolędować będą wspaniałe krakowskie chóry, a nas usłyszycie o godz. 19:40. Bądźcie z nami!',
+    image: '/images/posts/post_13.avif',
+    image_mobile: '/images/mobiles/post_13_mobile.avif',
+    image_f: '/images/posts/post_13_f.webp',
+    image_mobile_f: '/images/mobiles/post_13_mobile_f.webp',
+    image_thumb: '/images/thumbs/post_13_thumb.webp',
+    image_type: 'image/avif',
+    image_type_f: 'image/webp',
+    image_alt:
+      'Plakat akcji "Śpiewaj z nami! Kolędowanie z krakowskimi chórami"',
+    image_ratio: {
+      width: 3,
+      height: 4,
+    },
+    date: '12.12.2022',
+  },
+  {
     id: '12',
     title:
       'Koncert jubileuszowy "100-lecie reaktywacji Prowincji Polskiej Zakonu Bonifratrów',
