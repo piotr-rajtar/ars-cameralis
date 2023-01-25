@@ -1,4 +1,3 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://chorarscameralis.pl/sitemap.xml
+user-agent: *
+disallow:
+sitemap: https://www.chorarscameralis.pl/sitemap.xml

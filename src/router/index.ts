@@ -1,27 +1,32 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import Homepage from '@/views/homepage/Homepage.vue';
-import About from '@/views/about/About.vue';
-import News from '@/views/news/News.vue';
-import Conductor from '@/views/conductor/Conductor.vue';
-import Members from '@/views/members/Members.vue';
-import Repertoir from '@/views/repertoir/Repertoir.vue';
-import VocalInstrumental from '@/views/repertoir/VocalInstrumental.vue';
-import AcapellaTiles from '@/views/repertoir/AcapellaTiles.vue';
-import OldMusic from '@/views/repertoir/OldMusic.vue';
-import CenturyMusic from '@/views/repertoir/CenturyMusic.vue';
-import WorldAndFolkMusic from '@/views/repertoir/WorldAndFolkMusic.vue';
-import EntertainmentMusic from '@/views/repertoir/EntertainmentMusic.vue';
-import LiturgicalMusic from '@/views/repertoir/LiturgicalMusic.vue';
-import PassionMusic from '@/views/repertoir/PassionMusic.vue';
-import Carols from '@/views/repertoir/Carols.vue';
-import Collaboration from '@/views/collaboration/Collaboration.vue';
-import Auditions from '@/views/collaboration/Auditions.vue';
-import Concerts from '@/views/collaboration/Concerts.vue';
-import WeddingsAndLiturgy from '@/views/collaboration/WeddingsAndLiturgy.vue';
-import Gallery from '@/views/gallery/Gallery.vue';
-import Contact from '@/views/contact/Contact.vue';
-import NotFound from '@/views/notFound/NotFound.vue';
+
+const Homepage = () => import('@/views/homepage/Homepage.vue');
+const About = () => import('@/views/about/About.vue');
+const News = () => import('@/views/news/News.vue');
+const Conductor = () => import('@/views/conductor/Conductor.vue');
+const Members = () => import('@/views/members/Members.vue');
+const Repertoir = () => import('@/views/repertoir/Repertoir.vue');
+const VocalInstrumental = () =>
+  import('@/views/repertoir/VocalInstrumental.vue');
+const AcapellaTiles = () => import('@/views/repertoir/AcapellaTiles.vue');
+const OldMusic = () => import('@/views/repertoir/OldMusic.vue');
+const CenturyMusic = () => import('@/views/repertoir/CenturyMusic.vue');
+const WorldAndFolkMusic = () =>
+  import('@/views/repertoir/WorldAndFolkMusic.vue');
+const EntertainmentMusic = () =>
+  import('@/views/repertoir/EntertainmentMusic.vue');
+const LiturgicalMusic = () => import('@/views/repertoir/LiturgicalMusic.vue');
+const PassionMusic = () => import('@/views/repertoir/PassionMusic.vue');
+const Carols = () => import('@/views/repertoir/Carols.vue');
+const Collaboration = () => import('@/views/collaboration/Collaboration.vue');
+const Auditions = () => import('@/views/collaboration/Auditions.vue');
+const Concerts = () => import('@/views/collaboration/Concerts.vue');
+const WeddingsAndLiturgy = () =>
+  import('@/views/collaboration/WeddingsAndLiturgy.vue');
+const Gallery = () => import('@/views/gallery/Gallery.vue');
+const Contact = () => import('@/views/contact/Contact.vue');
+const NotFound = () => import('@/views/notFound/NotFound.vue');
 
 Vue.use(VueRouter);
 
