@@ -2,6 +2,25 @@ import { Post } from '@/typings';
 
 export const posts: Post[] = [
   {
+    id: '14',
+    title: 'Koncert pieśni pasyjnych',
+    description:
+      'Z przyjemnością informujemy, że nasz najbliższy koncert odbędzię się już w najbliższą niedzielę, 26 marca 2023r., w Opactwie Benedyktynów w Tyńcu. Zapraszamy!',
+    image: '/images/posts/post_14.avif',
+    image_mobile: '/images/mobiles/post_14_mobile.avif',
+    image_f: '/images/posts/post_14_f.webp',
+    image_mobile_f: '/images/mobiles/post_14_mobile_f.webp',
+    image_thumb: '/images/thumbs/post_14_thumb.webp',
+    image_type: 'image/avif',
+    image_type_f: 'image/webp',
+    image_alt: 'Plakat koncertu pieśni pasyjnych"',
+    image_ratio: {
+      width: 3,
+      height: 4,
+    },
+    date: '20.03.2023',
+  },
+  {
     id: '13',
     title: 'Kolędowanie z krakowskimi chórami',
     description:
