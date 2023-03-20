@@ -369,6 +369,14 @@ const routes: RouteConfig[] = [
     path: '*',
     name: 'NotFound',
     component: NotFound,
+    beforeEnter: (_to, _from, next) => {
+      const meta = document.createElement('meta');
+      meta.name = 'robots';
+      meta.content = 'noindex';
+      meta.title = '404';
+      document.head.appendChild(meta);
+      next();
+    },
     meta: {
       title: 'Ars Cameralis',
     },
@@ -385,6 +393,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, _from, next) => {
+  document.head.querySelector('[title="404"]')?.remove();
   document.title = to.meta.title || 'Ars Cameralis';
   next();
 });
