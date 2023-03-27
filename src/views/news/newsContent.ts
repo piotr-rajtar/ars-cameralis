@@ -2,6 +2,25 @@ import { Post } from '@/typings';
 
 export const posts: Post[] = [
   {
+    id: '15',
+    title: 'Koncert pieśni pasyjnych',
+    description:
+      'Jeśli nie mieliście okazji nas usłyszeć w ostatnią niedzielę, to będzie na to szansa już w najbliższą niedzielę, 02 kwietnia 2023r. o godz. 16:15, w Krakowie, w Kościele Bonifratrów pw. Trójcy Przenajświętszej. Zapraszamy!',
+    image: '/images/posts/post_15.avif',
+    image_mobile: '/images/mobiles/post_15_mobile.avif',
+    image_f: '/images/posts/post_15_f.webp',
+    image_mobile_f: '/images/mobiles/post_15_mobile_f.webp',
+    image_thumb: '/images/thumbs/post_15_thumb.webp',
+    image_type: 'image/avif',
+    image_type_f: 'image/webp',
+    image_alt: 'Plakat koncertu pieśni pasyjnych"',
+    image_ratio: {
+      width: 3,
+      height: 4,
+    },
+    date: '27.03.2023',
+  },
+  {
     id: '14',
     title: 'Koncert pieśni pasyjnych',
     description:
