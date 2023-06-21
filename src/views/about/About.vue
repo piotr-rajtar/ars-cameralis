@@ -4,18 +4,20 @@
       <h2 :class="style.header">O nas</h2>
       <p :class="style.paragraph">{{ paragraph1 }}</p>
       <p :class="style.paragraph">{{ paragraph2 }}</p>
+      <p :class="style.paragraph">{{ paragraph3 }}</p>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { paragraph1, paragraph2 } from './aboutContent';
+import { paragraph1, paragraph2, paragraph3 } from './aboutContent';
 
 @Component({})
 export default class About extends Vue {
   paragraph1: string = paragraph1;
   paragraph2: string = paragraph2;
+  paragraph3: string = paragraph3;
 }
 </script>
 
@@ -59,7 +61,8 @@ export default class About extends Vue {
   @include text-paragraph;
   font-size: $font-size-paragraph;
 
-  &:first-of-type {
+  &:nth-of-type(1),
+  &:nth-of-type(2) {
     margin-bottom: 2em;
   }
 

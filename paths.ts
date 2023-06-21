@@ -7,7 +7,7 @@ const paths = [
   },
   {
     path: '/about',
-    lastmod: '2022-07-23',
+    lastmod: '2023-06-21',
     changefreq: 'monthly',
   },
   {
