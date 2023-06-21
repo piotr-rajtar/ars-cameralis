@@ -2,6 +2,25 @@ import { Post } from '@/typings';
 
 export const posts: Post[] = [
   {
+    id: '16',
+    title: 'Muzyczne podróże',
+    description:
+      'Zapraszamy na koncert "Muzyczne podróże"! Wykonamy utwory z różnych kontynentów, w kilku językach, ciesząc się różnorodnością świata. Koncert odbędzie się w środę 28 czerwca o godz. 19:30, w Klubie Pod Jaszczurami, przy Rynku Głównym 8.<br />Spędźcie ten wieczór z nami i dajcie się zaskoczyć!',
+    image: '/images/posts/post_16.avif',
+    image_mobile: '/images/mobiles/post_16_mobile.avif',
+    image_f: '/images/posts/post_16_f.webp',
+    image_mobile_f: '/images/mobiles/post_16_mobile_f.webp',
+    image_thumb: '/images/thumbs/post_16_thumb.webp',
+    image_type: 'image/avif',
+    image_type_f: 'image/webp',
+    image_alt: 'Plakat koncertu muzyczne podróże"',
+    image_ratio: {
+      width: 3,
+      height: 2,
+    },
+    date: '21.06.2023',
+  },
+  {
     id: '15',
     title: 'Koncert pieśni pasyjnych',
     description:
