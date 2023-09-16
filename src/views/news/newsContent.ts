@@ -2,6 +2,25 @@ import { Post } from '@/typings';
 
 export const posts: Post[] = [
   {
+    id: '17',
+    title: 'Koncerty Mistrzejowickie',
+    description:
+      'Zapraszamy na koncert "Z polską muzyką chóralną przez wieki"! Koncert odbędzie się w niedzielę 24 września o godz. 18:00, w Kościele pw. św. M. M. Kolbego, znajdującym się w Krakowie pod adresem os. Tysiąclecia 86. Zapraszamy!',
+    image: '/images/posts/post_17.avif',
+    image_mobile: '/images/mobiles/post_17_mobile.avif',
+    image_f: '/images/posts/post_17_f.webp',
+    image_mobile_f: '/images/mobiles/post_17_mobile_f.webp',
+    image_thumb: '/images/thumbs/post_17_thumb.webp',
+    image_type: 'image/avif',
+    image_type_f: 'image/webp',
+    image_alt: 'Plakat wydarzenia koncerty mistrzejowickie"',
+    image_ratio: {
+      width: 3,
+      height: 4,
+    },
+    date: '16.09.2023',
+  },
+  {
     id: '16',
     title: 'Muzyczne podróże',
     description:

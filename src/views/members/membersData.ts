@@ -8,16 +8,10 @@ export const altMembers: Member[] = [
     name: 'Anna Bernat',
   },
   {
-    name: 'Grażyna Wojdyńska',
-  },
-  {
     name: 'Karolina Trybus',
   },
   {
     name: 'Monika Jawańska',
-  },
-  {
-    name: 'Paulina Kijowska',
   },
   {
     name: 'Urszula Rusnak',
@@ -26,7 +20,7 @@ export const altMembers: Member[] = [
 
 export const bassMembers: Member[] = [
   {
-    name: 'Artur Lesner',
+    name: 'Bartłomiej Waśko',
   },
   {
     name: 'Bartosz Kowalik',
@@ -71,12 +65,6 @@ export const sopranoMembers: Member[] = [
     name: 'Judyta Pawlak',
   },
   {
-    name: 'Katarzyna Madeja',
-  },
-  {
-    name: 'Monika Dąbrowska',
-  },
-  {
     name: 'Paulina Woźniczka-Głąbień',
   },
   {
@@ -87,9 +75,6 @@ export const sopranoMembers: Member[] = [
 export const tenorMembers: Member[] = [
   {
     name: 'Bartłomiej Rachwał',
-  },
-  {
-    name: 'Bartłomiej Waśko',
   },
   {
     name: 'Paweł Łabuzek',
