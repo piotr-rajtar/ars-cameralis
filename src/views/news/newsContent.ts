@@ -2,6 +2,25 @@ import { Post } from '@/typings';
 
 export const posts: Post[] = [
   {
+    id: '18',
+    title: 'Koncerty muzyki chóralnej',
+    description:
+      'Już w najbliższą niedzielę 1.10.2023 wystąpimy dla Was w Krakowie z zaprzyjaźnionym chórem Junger Kammerchor Berlin. Wstęp wolny, zapraszamy na krakowski Kazimierz do kościoła OO. Bonifratrów!',
+    image: '/images/posts/post_18.avif',
+    image_mobile: '/images/mobiles/post_18_mobile.avif',
+    image_f: '/images/posts/post_18_f.webp',
+    image_mobile_f: '/images/mobiles/post_18_mobile_f.webp',
+    image_thumb: '/images/thumbs/post_18_thumb.webp',
+    image_type: 'image/avif',
+    image_type_f: 'image/webp',
+    image_alt: 'Plakat wydarzenia koncerty muzyki chóralnej"',
+    image_ratio: {
+      width: 3,
+      height: 4,
+    },
+    date: '28.09.2023',
+  },
+  {
     id: '17',
     title: 'Koncerty Mistrzejowickie',
     description:
