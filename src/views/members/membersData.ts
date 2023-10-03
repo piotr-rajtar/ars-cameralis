@@ -5,16 +5,28 @@ export const altMembers: Member[] = [
     name: 'Aleksandra Bochan',
   },
   {
+    name: 'Alicja Kaczmarzyk',
+  },
+  {
+    name: 'Aneta Babula',
+  },
+  {
     name: 'Anna Bernat',
   },
   {
-    name: 'Karolina Trybus',
+    name: 'Joanna Łęgowik-Śliwka',
   },
   {
-    name: 'Monika Jawańska',
+    name: 'Kamila Chmiel',
+  },
+  {
+    name: 'Magdalena Żuradzka',
   },
   {
     name: 'Urszula Rusnak',
+  },
+  {
+    name: 'Wanda Sordoń',
   },
 ];
 
@@ -32,6 +44,9 @@ export const bassMembers: Member[] = [
     name: 'Mateusz Orzech',
   },
   {
+    name: 'Piotr Kaczmarzyk',
+  },
+  {
     name: 'Piotr Rajtar',
   },
   {
@@ -41,10 +56,7 @@ export const bassMembers: Member[] = [
 
 export const sopranoMembers: Member[] = [
   {
-    name: 'Anna Frey',
-  },
-  {
-    name: 'Anna Lech',
+    name: 'Anna Dyduła',
   },
   {
     name: 'Barbara Łacny',
@@ -65,6 +77,9 @@ export const sopranoMembers: Member[] = [
     name: 'Judyta Pawlak',
   },
   {
+    name: 'Michalina Turczyńska',
+  },
+  {
     name: 'Paulina Woźniczka-Głąbień',
   },
   {
@@ -75,6 +90,15 @@ export const sopranoMembers: Member[] = [
 export const tenorMembers: Member[] = [
   {
     name: 'Bartłomiej Rachwał',
+  },
+  {
+    name: 'Beata Nowak',
+  },
+  {
+    name: 'Konrad Kozubek',
+  },
+  {
+    name: 'Maciej Babula',
   },
   {
     name: 'Paweł Łabuzek',
