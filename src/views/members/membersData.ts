@@ -17,10 +17,10 @@ export const altMembers: Member[] = [
     name: 'Joanna Łęgowik-Śliwka',
   },
   {
-    name: 'Kamila Chmiel',
+    name: 'Magdalena Żuradzka',
   },
   {
-    name: 'Magdalena Żuradzka',
+    name: 'Romanna Tymruk',
   },
   {
     name: 'Urszula Rusnak',
@@ -71,9 +71,6 @@ export const sopranoMembers: Member[] = [
     name: 'Elżbieta Freisler',
   },
   {
-    name: 'Joanna Krochmal',
-  },
-  {
     name: 'Judyta Pawlak',
   },
   {
@@ -95,7 +92,7 @@ export const tenorMembers: Member[] = [
     name: 'Beata Nowak',
   },
   {
-    name: 'Konrad Kozubek',
+    name: 'Luis Bustos',
   },
   {
     name: 'Maciej Babula',
