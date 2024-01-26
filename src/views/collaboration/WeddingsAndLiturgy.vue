@@ -22,8 +22,9 @@
             :class="style.contactLink"
             aria-label="Kontakt (link przechodzi do sekcji kontakt w tym samym oknie)"
           >
-            kontakt.
+            kontakt
           </router-link>
+          .
         </p>
       </template>
     </single-collaboration-item>

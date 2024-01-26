@@ -5,12 +5,3 @@ export const collaborationTiles: RouterTile[] = [
   { name: 'Concerts', title: 'Koncerty' },
   { name: 'WeddingsAndLiturgy', title: 'Śluby / Oprawa liturgii' },
 ];
-
-export const snackbarMessages: {
-  [key: string]: string;
-} = {
-  copySuccess: 'Skopiowano pomyślnie',
-  copyError: 'Błąd w kopiowaniu',
-};
-
-export const phoneNumber: string = '+48 601 373 414';

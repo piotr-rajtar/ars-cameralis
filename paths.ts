@@ -78,12 +78,12 @@ const paths = [
   },
   {
     path: '/collaboration',
-    lastmod: '2022-07-23',
+    lastmod: '2024-01-26',
     changefreq: 'monthly',
   },
   {
     path: '/collaboration/auditions',
-    lastmod: '2022-07-23',
+    lastmod: '2024-01-26',
     changefreq: 'monthly',
   },
   {
@@ -93,7 +93,7 @@ const paths = [
   },
   {
     path: '/collaboration/weddings-and-liturgy',
-    lastmod: '2022-07-23',
+    lastmod: '2024-01-26',
     changefreq: 'monthly',
   },
   {
