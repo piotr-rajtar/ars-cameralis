@@ -18,9 +18,8 @@
             :class="style.contactLink"
             aria-label="Wiadomość email (link przechodzi do sekcji kontakt w tym samym oknie)"
           >
-            wiadomość e-mail
+            wiadomość e-mail.
           </router-link>
-          .
         </p>
       </template>
     </single-collaboration-item>
