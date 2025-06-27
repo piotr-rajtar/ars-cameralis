@@ -14,10 +14,6 @@ export const menuItems: LinkListItemI[] = [
     link: '/conductor',
   },
   {
-    name: 'Skład',
-    link: '/members',
-  },
-  {
     name: 'Repertuar',
     link: '/repertoir',
   },

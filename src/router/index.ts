@@ -5,7 +5,6 @@ const Homepage = () => import('@/views/homepage/Homepage.vue');
 const About = () => import('@/views/about/About.vue');
 const News = () => import('@/views/news/News.vue');
 const Conductor = () => import('@/views/conductor/Conductor.vue');
-const Members = () => import('@/views/members/Members.vue');
 const Repertoir = () => import('@/views/repertoir/Repertoir.vue');
 const VocalInstrumental = () =>
   import('@/views/repertoir/VocalInstrumental.vue');
@@ -61,14 +60,6 @@ const routes: RouteConfig[] = [
     component: Conductor,
     meta: {
       title: 'Ars Cameralis - Dyrygent',
-    },
-  },
-  {
-    path: '/members',
-    name: 'Members',
-    component: Members,
-    meta: {
-      title: 'Ars Cameralis - Skład',
     },
   },
   {

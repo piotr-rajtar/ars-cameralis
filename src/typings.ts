@@ -15,10 +15,6 @@ export interface LinkListItemI {
   link: string;
 }
 
-export interface Member {
-  name: string;
-}
-
 export interface Photo {
   id: string;
   path: string;
@@ -48,13 +44,6 @@ export interface Post {
 export interface RouterTile {
   name: string;
   title: string;
-}
-
-export interface VoiceTableRow {
-  sopran: Member;
-  alt: Member;
-  tenor: Member;
-  bas: Member;
 }
 
 export interface Ratio {
