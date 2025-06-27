@@ -2,6 +2,69 @@ import { Post } from '@/typings';
 
 export const posts: Post[] = [
   {
+    id: '21',
+    title: 'Lećże głosie... czyli Arsy Pod Jaszczurami',
+    description: `W najbliższy poniedziałek w klimatycznych wnętrzach
+      <a href="https://www.facebook.com/KlubPodJaszczurami" target="_blank" rel="noreferrer" aria-label="Profil facebookowy klubu pod jaszczurami (link otwiera nowe okno)">Klubu Pod Jaszczurami</a>
+      ponownie przeniesiemy się w świat muzyki ludowej!.<br /><br />
+      Koncert odbędzie się 30.06.2025 o 19:00.`,
+    image: '/images/posts/post_21.avif',
+    image_mobile: '/images/mobiles/post_21_mobile.avif',
+    image_f: '/images/posts/post_21_f.webp',
+    image_mobile_f: '/images/mobiles/post_21_mobile_f.webp',
+    image_thumb: '/images/thumbs/post_21_thumb.webp',
+    image_type: 'image/avif',
+    image_type_f: 'image/webp',
+    image_alt: 'Plakat wydarzenia koncertu muzyki ludowej"',
+    image_ratio: {
+      width: 3,
+      height: 4,
+    },
+    date: '26.06.2025',
+  },
+  {
+    id: '20',
+    title: 'Koncert jubileuszowy „Lećże głosie” – 10-lecie Chóru Ars Cameralis',
+    description: `24 maja 2025 roku odbył się uroczysty koncert z okazji 10-lecia Chóru Ars Cameralis, zatytułowany „Lećże głosie”. 
+      Podczas koncertu wykonaliśmy bogaty program muzyki chóralnej, nawiązujący do polskiej tradycji ludowej i artystycznej. 
+      W repertuarze znalazły się utwory m.in. Feliksa Nowowiejskiego, Tadeusza Szeligowskiego, Kazimierza Serockiego, Antoniego Szalińskiego oraz kompozycje współczesne, 
+      w tym utwory w opracowaniu Marka Kluzy, Marcina Wawruka, Mariusza Kramarza czy Marka Bebaka. Występ został wzbogacony udziałem znakomitych gości:<br /><br />
+      <ul style="margin-left: 2em;">
+        <li><b>Wiśnickiego Kwartetu Smyczkowego</b> w składzie: Jakub Adamczyk, Julia Kupiec, Anna Wołowczyk, Nikodem Przybojewski,</li>
+        <li>młodego akordeonisty <b>Bartłomieja Widełki</b>,</li>
+        <li>oraz solistki <b>Wandy Cichoń</b>.</li>
+      </ul>
+      <br />
+      Koncert przygotowali i prowadzili: <b>Martyna Dymura</b>, <b>Joanna Kosiba</b> oraz <b>Marek Bebak</b>.</br></br>
+
+      Zdjęcia z wydarzenia można zobaczyć na naszym 
+      <a href="https://www.facebook.com/acameralis" target="_blank" rel="noreferrer" aria-label="Profil facebookowy chóru (link otwiera nowe okno)">profilu</a>
+      na Facebooku.<br /><br />
+      
+      Już wkrótce na naszym 
+      <a href="https://www.youtube.com/@ArsCameralisChoir" target="_blank" rel="noreferrer" aria-label="Kanał chóru w serwisie youtube (link otwiera nowe okno)">oficjalnym kanale</a>
+      YouTube pojawią się nagrania z koncertu.<br /><br />
+
+      Serdecznie dziękujemy wszystkim, którzy byli z nami w tym wyjątkowym dniu!
+      <br /><br />
+
+      Wydarzenie było częścią projektu <b>„Ars Cameralis śpiewa z duszą – jubileuszowo i ludowo”</b>, realizowanego w ramach zadania publicznego <b>współfinansowanego ze środków Miasta Krakowa</b>.
+      `,
+    image: '/images/posts/post_20.avif',
+    image_mobile: '/images/mobiles/post_20_mobile.avif',
+    image_f: '/images/posts/post_20_f.webp',
+    image_mobile_f: '/images/mobiles/post_20_mobile_f.webp',
+    image_thumb: '/images/thumbs/post_20_thumb.webp',
+    image_type: 'image/avif',
+    image_type_f: 'image/webp',
+    image_alt: 'Plakat wydarzenia koncertu jubileuszowego',
+    image_ratio: {
+      width: 3,
+      height: 4,
+    },
+    date: '22.06.2025',
+  },
+  {
     id: '19',
     title: 'Koncert kolęd',
     description: `Kto jeszcze nie nacieszył się kolędowaniem, ma na to szansę w ostatnią niedzielę stycznia.
