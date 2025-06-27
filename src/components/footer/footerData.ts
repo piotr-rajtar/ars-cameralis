@@ -11,6 +11,6 @@ export const footerItems: LinkListItemI[] = [
   },
   {
     name: 'youtube',
-    link: 'https://www.youtube.com/channel/UCalCJcqBtt66lsN4p-jCfLA',
+    link: 'https://www.youtube.com/@ArsCameralisChoir',
   },
 ];
