@@ -13,10 +13,10 @@ export const menuItems: LinkListItemI[] = [
     name: 'Dyrygent',
     link: '/conductor',
   },
-  {
-    name: 'Repertuar',
-    link: '/repertoir',
-  },
+  // {
+  //   name: 'Repertuar',
+  //   link: '/repertoir',
+  // },
   {
     name: 'Współpraca',
     link: '/collaboration',
