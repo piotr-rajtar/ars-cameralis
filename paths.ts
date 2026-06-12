@@ -98,7 +98,7 @@ const paths = [
   },
   {
     path: '/contact',
-    lastmod: '2025-06-27',
+    lastmod: '2026-06-12',
     changefreq: 'monthly',
   },
 ];

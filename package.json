@@ -10,7 +10,6 @@
   "dependencies": {
     "@vue/runtime-dom": "^3.5.17",
     "core-js": "^3.6.5",
-    "emailjs-com": "^3.2.0",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-material-design-icons": "^4.11.0",
