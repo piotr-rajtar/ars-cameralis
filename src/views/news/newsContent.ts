@@ -2,6 +2,34 @@ import { Post } from '@/typings';
 
 export const posts: Post[] = [
   {
+    id: '22',
+    title: 'Piosenki żartobliwe - Arsy Pod Jaszczurami',
+    description: `Z dumą kontynuujemy naszą małą tradycję letnich koncertów w 
+      <a href="https://www.facebook.com/KlubPodJaszczurami" target="_blank" rel="noreferrer" aria-label="Profil facebookowy klubu pod jaszczurami (link otwiera nowe okno)">Klubie Pod Jaszczurami</a>.
+      Już po raz czwarty zapraszamy na koncert kończący sezon artystyczny do tego kultowego miejsca.<br /><br />
+      Wykonamy tradycyjne, polskie, żartobliwe ;)  utwory w pięknych opracowaniach oraz sięgniemy po kilka z regionów nieco od nas oddalonych.<br /><br />
+      Zapraszamy serdecznie,<br />
+      Chór Ars Cameralis wraz z Dyrygentkami<br /><br />
+      Klub Pod Jaszczurami<br />
+      Rynek Główny 8<br />
+      22 czerwca 2026 r.<br />
+      godz. 19:00
+      `,
+    image: '/images/posts/post_22.avif',
+    image_mobile: '/images/mobiles/post_22_mobile.avif',
+    image_f: '/images/posts/post_22_f.webp',
+    image_mobile_f: '/images/mobiles/post_22_mobile_f.webp',
+    image_thumb: '/images/thumbs/post_22_thumb.webp',
+    image_type: 'image/avif',
+    image_type_f: 'image/webp',
+    image_alt: 'Plakat wydarzenia koncertu piosenki żartobliwej"',
+    image_ratio: {
+      width: 3,
+      height: 2,
+    },
+    date: '12.06.2026',
+  },
+  {
     id: '21',
     title: 'Lećże głosie... czyli Arsy Pod Jaszczurami',
     description: `W najbliższy poniedziałek w klimatycznych wnętrzach
@@ -18,7 +46,7 @@ export const posts: Post[] = [
     image_alt: 'Plakat wydarzenia koncertu muzyki ludowej"',
     image_ratio: {
       width: 3,
-      height: 4,
+      height: 2,
     },
     date: '26.06.2025',
   },
